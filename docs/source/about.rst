@@ -1,58 +1,30 @@
-О книге
+About book
 -------
 
-Если "в двух словах", то это такой CCNA по Python. С одной стороны,
-книга достаточно базовая, чтобы её мог одолеть любой желающий, а с
-другой стороны, в книге рассматриваются все основные темы, которые
-позволят дальше расти самостоятельно. Книга не ставит своей целью
-глубокое рассмотрение Python. Задача книги – объяснить понятным языком
-основы Python и дать понимание необходимых инструментов для его
-практического использования. Всё, что рассматривается в книге,
-ориентировано на сетевое оборудование и работу с ним. Это даёт
-возможность сразу использовать в работе сетевого инженера то, что было
-изучено на курсе. Все примеры показываются на примере оборудования
-Cisco, но, конечно же, они применимы и для любого другого оборудования.
+In nutshell, this book is like CCNA but for python. From the one hand, the book is basic enough, so everyone can handle it, from the other hand, the book considers all main topics which allow you to develop skill independently in the future. Python deep dive is not a goal of this book. The goal is to explain Python basics in plain language and provide understanding of necessary tools for practical usage. Everything in this book is focused on network equipment and interaction with it. It right away gives opportunity to use knowledge gained at the course in network engineers daily work. All shown examples are based on Cisco equipment but, of course, they could be applied to any other equipment.
 
-Для кого эта книга
+Who is this book for?
 ~~~~~~~~~~~~~~~~~~
 
-Для сетевых инженеров с опытом программирования и без. Все примеры и
-домашние задания будут построены с уклоном на сетевое оборудование. Эта
-книга будет полезна сетевым инженерам, которые хотят автоматизировать
-задачи, с которыми сталкиваются каждый день и хотели заняться
-программированием, но не знали, с какой стороны подойти.
+For network engineers with or without programming experience. All examples and homework will be formed with a focus on network equipment. This book will be useful for network engineers who want to automate their daily basis routine tasks and want start coding but don't know how to approach this.
+Still haven't decided whether it worth reading this book? Read
+:ref:`feedbacks <testimonials>`.
 
-Ещё не решили, нужно ли читать книгу? Почитайте
-:ref:`отзывы <testimonials>`.
-
-Зачем Вам учиться программировать?
+Why you need to learn programming?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Знание программирования для сетевого инженера сравнимо со знанием
-английского. Если вы знаете английский хотя бы на уровне, который
-позволяет читать техническую документацию, вы сразу же расширяете свои
-возможности:
+Programming knowledge for network engineer could be compared with necessity of English knowledge. When you know English at least on level which allows to read technical documentation you expand your opportunities at once:
 
--  доступно в несколько раз больше литературы, форумов и блогов;
--  практически для любого вопроса или проблемы достаточно быстро
-   находится решение, если вы ввели запрос в Google.
+-  Much more literature, forums, blogs are available;
+-  Easier to find solution for almost every question or issue if you ask Google.
 
-Знание программирования в этом очень похоже. Если вы знаете, например,
-Python хотя бы на базовом уровне, вы уже открываете массу новых
-возможностей для себя. Аналогия с английским подходит ещё и потому, что
-можно работать сетевым инженером и быть хорошим специалистом без знания
-английского. Английский просто даёт возможности, но он не является
-обязательным требованием.
+Knowledge of programming is very similar in this. For instance, If you know Python at least on basic level  you open plenty of new opportunities. Also analogy to English fits here because you can be capable specialist without knowledge of English language. English gives you opportunity but it's not a mandatory requirement.
 
 
-Требуемые версии ОС и Python
+OS and Python requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Все примеры и выводы терминала в книге показываются на Debian Linux. В
-книге используется Python 3.7, но для большинства примеров подойдет и
-Python 3.x. Только в некоторых примерах требуется версия 3.6 или
-выше чем 3.5. Это всегда явно указано и, как правило, касается
-дополнительных возможностей.
+All examples and terminal outputs in the book are shown on Debian Linux. Python 3.7 is used in this book but for the majority of examples Python 3.x will be enough. Only some examples requires Python version higher than 3.5. It always explicitly indicated and generally concerns some additional features.
 
 Примеры
 ~~~~~~~
