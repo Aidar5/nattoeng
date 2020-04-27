@@ -45,7 +45,7 @@ All examples and terminal outputs in the book are shown on Debian Linux. Python 
 самостоятельно позже. В любом случае, обязательно нужно делать задания
 вручную.
 
-Задания
+Tasks
 ~~~~~~~
 
 Все задания и вспомогательные файлы можно скачать в
