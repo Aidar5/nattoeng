@@ -1,10 +1,9 @@
-Ресурсы для обучения по книге
+Studying recources
 -----------------------------
 
-Здесь собраны ссылки на все ресурсы, которые пригодятся в процессе
-обучения:
+Here are links to all resources which will be helpful during study process:
 
--  `варианты виртуальной машины для курса <https://pyneng.github.io/docs/course-vm/>`__;
+-  `Variants of virtual machines for this course <https://pyneng.github.io/docs/course-vm/>`__;
 -  `репозиторий с примерами и заданиями <https://github.com/natenka/pyneng-examples-exercises/>`__
 -  `вопросы <https://github.com/natenka/pyneng-examples-exercises/blob/master/tests.md>`__;
 -  `чат PyNEng <https://join.slack.com/t/pyneng/shared_invite/enQtNzkyNTYwOTU5Njk5LWE4OGNjMmM1ZTlkNWQ0N2RhODExZDA0OTNhNDJjZDZlOTZhOGRiMzIyZjBhZWYzYzc3MTg3ZmQzODllYmQ4OWU>`__ в Slack;
