@@ -45,7 +45,7 @@ where code examples are located. If task name consist of letter (for ex. 5.2a) i
 
 Answers can show how to solve task in another way or how to solve it in better way. But no need to worry about it because in the next chapters you will likely meet an example with proper code.
 
-Questions
+Quiz
 ~~~~~~~
 
 Some chapters have additional questions:
@@ -60,7 +60,7 @@ Some chapters have additional questions:
 -  `Regular expressions. Part 2 <https://goo.gl/forms/ltuOAO62yLlZkEmm1>`__
 -  `Data bases <https://goo.gl/forms/wtGgmWg0vow1Cyqo1>`__
 
-These questions can be considered an evaluation test or as a task. It's useful to answer to these questions after reading of corresponding chapter. They will help you recall chapter's material and also see different aspects of Python usage in practice. First, try answer on your own and only then check answers in IPython on questions which you are doubting.
+These quiz can be considered an evaluation test or as a task. It's useful to answer to these questions after reading of corresponding chapter. They will help you recall chapter's material and also see different aspects of Python usage in practice. First, try answer on your own and only then check answers in IPython on questions which you are doubting.
 
 Presentations
 ~~~~~~~~~~~
