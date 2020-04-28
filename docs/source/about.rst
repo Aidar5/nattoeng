@@ -69,7 +69,7 @@ There are presentations for each book chapter in
 `repository <https://github.com/natenka/pyneng-slides>`__. It's convenient way to repeat and go through the information. If you know basics of Python it worth getting through it.
 
 All presentations can be downloaded from special
-`repository <https://github.com/natenka/pyneng-slides/tree/py3-pdf>`__
+`repository <https://github.com/natenka/pyneng-slides/tree/py3-pdf>`__.
 
 Book formats
 ~~~~~~~~~~~~~~~~~~~~
