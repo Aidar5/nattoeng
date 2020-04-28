@@ -29,103 +29,58 @@ All examples and terminal outputs in the book are shown on Debian Linux. Python 
 Examples
 ~~~~~~~
 
-Все примеры, которые используются в книге, располагаются в
-`репозитории <https://github.com/natenka/pyneng-examples-exercises>`__.
-Примеры, которые рассматриваются в разделах книги, являются обучающими.
-Это значит, что они не обязательно показывают лучший вариант решения
-задачи, так как они основаны только на той информации, которая
-рассматривалась в предыдущих главах книги. Кроме того, довольно часто
-примеры, которые давались в разделах, развиваются в заданиях. То есть, в
-заданиях вам нужно будет сделать лучшую, более универсальную, и, в
-целом, более правильную версию кода. Если есть возможность, лучше
-набирать код, который используется в книге, самостоятельно, или, как
-минимум, скачать примеры и попробовать что-то в них изменить – так
-информация будет лучше запоминаться. Если такой возможности нет,
-например, когда вы читаете книгу в дороге, лучше повторить примеры
-самостоятельно позже. В любом случае, обязательно нужно делать задания
-вручную.
+All examples from the book resides in 
+`repository <https://github.com/natenka/pyneng-examples-exercises>`__.
+All examples have educational purpose. It means they not necessarily show the best solution since they are based on information which was covered in previous chapters. Moreover, often enough the examples in chapters are developing in tasks. In other words, in tasks you have to create better, more universal and, in general, more proper version of code. It's better to write code from the book on your own or at least download examples and try to modify them. So the information will be better remembered. If you don't have this possibility, for example when you read book on road, it's better to repeat examples later on your own. In any case, it's necessary to do tasks manually.
 
 Tasks
 ~~~~~~~
 
-Все задания и вспомогательные файлы можно скачать в
-`репозитории <https://github.com/natenka/pyneng-examples-exercises>`__,
-том же, где располагаются примеры кода. Если в заданиях раздела есть
-задания с буквами (например, 5.2a), то нужно выполнить сначала задания
-без букв, а затем с буквами. Задания с буквами, как правило, немного
-сложнее заданий без букв и развивают идею в соответствующем задании без
-буквы. Если получается, лучше делать задания по порядку. В книге
-специально не приведены ответы на задания, так как, к сожалению, когда
-есть ответы, очень часто вместо того, чтобы попытаться решить сложное
-задание самостоятельно, подглядывают в них. Конечно, иногда возникает
-ситуация, когда никак не получается решить задание – попробуйте отложить
-его, задать вопрос в `Slack <https://join.slack.com/t/pyneng/shared_invite/enQtNzkyNTYwOTU5Njk5LWE4OGNjMmM1ZTlkNWQ0N2RhODExZDA0OTNhNDJjZDZlOTZhOGRiMzIyZjBhZWYzYzc3MTg3ZmQzODllYmQ4OWU>`__ и
-сделать какое-либо другое.
+All tasks and auxiliary files can be downloaded from the same
+`repository  <https://github.com/natenka/pyneng-examples-exercises>`__,
+where code examples are located. If task name consist of letter (for ex. 5.2a) it's better to complete this task after tasks without letters. Usually, tasks with letter are more complex and they continue the idea of task without letter. If possible it's better to do tasks one by one. There are no answers in the book because, unfortunately, when answers are present there is a great temptation to look at them instead of solving complex task on your own. Of course, sometimes it's difficult to find a solution - try to set this task aside, ask question in `Slack <https://join.slack.com/t/pyneng/shared_invite/enQtNzkyNTYwOTU5Njk5LWE4OGNjMmM1ZTlkNWQ0N2RhODExZDA0OTNhNDJjZDZlOTZhOGRiMzIyZjBhZWYzYzc3MTg3ZmQzODllYmQ4OWU>`__ and do another task.
 
 .. note::
-    На `Stack Overflow <https://stackoverflow.com>`__ есть ответы
-    практически на любые вопросы. Так что, если Google отправил Вас на
-    него, это, с большой вероятностью значит, что ответ найден. Запросы,
-    конечно же, лучше писать на английском – по Python очень много
-    материалов и, как правило, подсказку найти легко
+    Answers to almost all questions can be found in `Stack Overflow <https://stackoverflow.com>`__. So, if you see this website in Google search results it means with high probability the answer is found. Of course, it's better to ask Google in English - there are a lot of materials on Python and in general, it's easy to find a tip.
 
-Ответы могли бы показать, как ещё можно выполнить задание или же как
-лучше это сделать. Но на этот счёт не следует переживать, так как,
-скорее всего, в следующих разделах встретится пример, в котором будет
-показано, как писать такой код.
+Answers can show how to solve task in another way or how to solve it in better way. But no need to worry about it because in the next chapters you will likely meet an example with proper code.
 
-Вопросы
+Questions
 ~~~~~~~
 
-Для части тем книги созданы вопросы:
+Some chapters have additional questions:
 
--  `Типы данных. Часть 1 <https://goo.gl/forms/xKHX5xNM8Pv5sQDf2>`__
--  `Типы данных. Часть 2 <https://goo.gl/forms/igxR3ub3tQg3ycX53>`__
--  `Контроль хода программы. Часть
-   1 <https://goo.gl/forms/2TmGcrhG11h2SdLn1>`__
--  `Контроль хода программы. Часть
-   2 <https://goo.gl/forms/KZGaDquGlUmOz2kG3>`__
--  `Функции и модули. Часть
-   1 <https://goo.gl/forms/M1DpbdD0brVbdp1G3>`__
--  `Функции и модули. Часть
-   2 <https://goo.gl/forms/rNvdX9bHw8wLajJp2>`__
--  `Регулярные выражения. Часть
-   1 <https://goo.gl/forms/5UpkJbm1dORqs4bP2>`__
--  `Регулярные выражения. Часть
-   2 <https://goo.gl/forms/ltuOAO62yLlZkEmm1>`__
--  `Базы данных <https://goo.gl/forms/wtGgmWg0vow1Cyqo1>`__
+-  `Data types. Part 1 <https://goo.gl/forms/xKHX5xNM8Pv5sQDf2>`__
+-  `Data types. Part 2 <https://goo.gl/forms/igxR3ub3tQg3ycX53>`__
+-  `Compound statements. Part 1 <https://goo.gl/forms/2TmGcrhG11h2SdLn1>`__
+-  `Compound statements. Part 2 <https://goo.gl/forms/KZGaDquGlUmOz2kG3>`__
+-  `Functions and modules. Part 1 <https://goo.gl/forms/M1DpbdD0brVbdp1G3>`__
+-  `Functions and modules. Part 2 <https://goo.gl/forms/rNvdX9bHw8wLajJp2>`__
+-  `Regular expressions. Part 1 <https://goo.gl/forms/5UpkJbm1dORqs4bP2>`__
+-  `Regular expressions. Part 2 <https://goo.gl/forms/ltuOAO62yLlZkEmm1>`__
+-  `Data bases <https://goo.gl/forms/wtGgmWg0vow1Cyqo1>`__
 
-Эти вопросы можно использовать как для проверки знаний, так и в роли
-заданий. Очень полезно поотвечать на вопросы после прочтения соответствующей темы.
-Они позволят вам вспомнить материал темы, а также увидеть на практике
-разные аспекты работы с Python. Постарайтесь сначала ответить
-самостоятельно, а затем подсмотреть ответы в IPython по тем вопросам, в
-которых вы сомневаетесь.
+These questions can be considered an evaluation test or as a task. It's useful to answer to these questions after reading of corresponding chapter. They will help you recall chapter's material and also see different aspects of Python usage in practice. First, try answer on your own and only then check answers in IPython on questions which you are doubting.
 
-Презентации
+Presentations
 ~~~~~~~~~~~
 
-Для всех тем книги есть презентации в
-`репозитории <https://github.com/natenka/pyneng-slides>`__. По ним
-удобно быстро просматривать информацию и повторять. Если вы знаете
-основы Python, то стоит их пролистать.
+There are presentations for each book chapter in
+`repository <https://github.com/natenka/pyneng-slides>`__. It's convenient way to repeat and go through the information. If you know basics of Python it worth getting through it.
 
-Скачать все презентации в формате PDF можно в специальном
-`репозитории <https://github.com/natenka/pyneng-slides/tree/py3-pdf>`__
+All presentations can be downloaded from special
+`repository <https://github.com/natenka/pyneng-slides/tree/py3-pdf>`__
 
-Форматы файлов книги
+Book formats
 ~~~~~~~~~~~~~~~~~~~~
 
-Книгу можно скачать в двух форматах: PDF, Epub.
-Они автоматически обновляются, поэтому всегда содержат одинаковую
-информацию.
+Book is available in PDF and Epub formats. Both of them are being updated automatically, therefore the content is equal.
 
 
-Обсуждение
+Discussion
 ~~~~~~~~~~
 
-Для обсуждения книги, заданий, а также связанных вопросов используется
-`Slack <https://pyneng-slack.herokuapp.com>`__. Все вопросы, предложения
-и замечания по книге также пишите в
-`Slack <https://pyneng-slack.herokuapp.com>`__.
+Discussions of book, tasks and other related topics are taken place in
+`Slack <https://pyneng-slack.herokuapp.com>`__. Also write to 
+`Slack <https://pyneng-slack.herokuapp.com>`__ in case of questions, suggestions, comments and observations on book.
 
