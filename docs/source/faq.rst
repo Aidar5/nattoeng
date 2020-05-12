@@ -1,61 +1,44 @@
-Часто задаваемые вопросы (FAQ)
+Frequently Asked Questions (FAQ)
 ------------------------------
 
-Здесь собраны вопросы, которые наиболее часто возникают при чтении
-книги.
+Here are some of the most frequently asked questions in reading
+books.
 
-Чем это отличается от обычного вводного курса по Python?
+How does this differ from the regular Python introductory course?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Основных отличий три:
+The main differences are three:
 
--  основы даются достаточно коротко;
--  подразумевается определённая предметная область знаний (сетевое
+-  The basis is rather brief;
+-  Implies a certain domain of knowledge (network-based equipment);
    оборудование);
--  все примеры, по возможности, ориентированы на сетевое оборудование.
+-  All examples are, as far as possible, focused on network equipment.
 
-Я сетевик. Для чего мне нужна эта книга?
+I'm a network engineer. What do I need this book for?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-В первую очередь – для автоматизации рутинных задач. Автоматизация даёт
-несколько преимуществ:
+First of all, to automate routine tasks. Automation provides
+several advantages:
 
--  высокоуровневое мышление – проще подняться над всем, когда вы
-   свободны от рутинной работы. У Вас появится время и возможность
-   думать об улучшениях;
--  доверие – вы не будете бояться делать изменения, которые, как
-   правило, сопряжены с риском, так как сеть это основа работы всех
-   приложений и цена ошибки высока;
--  консистентная конфигурация – вы сможете автоматизированно создавать
-   файлы настроек сетевого оборудования, от пользователей и подписей
-   интерфейсов до функционала безопасности, и будете меньше переживать о
-   том, забыли ли вы нечто.
+-  High-level thinking - it’s easier to rise above everything when you 
+free of routine work. You’ll have time and opportunity to think of improvements;
+-  Trust - you won’t be afraid to make changes that are often risky because the network is the backbone of every
+ applications and the cost of error is high;
+-  A coherent configuration - you will able to automatically create
+ network configuration files, from users and interface descriptions to security functionality, 
+and you’ll be less worried about whether you have forgotten something.
 
-Конечно, не будет такого, что после прочтения книги, вы "всё
-автоматизируете и наступит счастье", но это шаг в данном направлении. Я
-ни в коем случае не агитирую за то, чтобы автоматизация выполнялась
-кучей самописных скриптов. Если есть софт, который решает нужные Вам
-задачи, это отлично, используйте его. Но если его нет, или если вы
-просто ещё о таком не думали, попробуйте начать с простого – Ansible,
-например, позволит выполнять многие задачи практически "из коробки".
+Of course, it won’t be that after reading the book, you "automate everything and happiness will come", but this is a step in this direction. I am in no way encouraging for all automation to be done via bunch of scripts. If there is some software that solves your needs, that’s great, use it. But if there isn’t, or if you are just haven’t thought about it yet, try to start with a simple - Ansible, for example, allows to perfrom many tasks almost "out of the box".
 
-Зачем тогда учить Python? Дело в том, что тот же Ansible не решит все
-вопросы. И, возможно, вам понадобится добавить какой-то функционал
-самостоятельно. Кроме непосредственной настройки оборудования, есть
-ежедневные рутинные задачи, которые можно автоматизировать с помощью
-Python. Скажем так, если вы не хотите разбираться с Python, но хотите
-автоматизировать процесс настройки и работы с оборудованием, обратите
-своё внимание на Ansible. Даже "из коробки" он будет очень полезен. Если
-же вы потом войдете во вкус и захотите добавить своё, чего нет в
-Ansible, возвращайтесь :-)
+Why then learn Python? The fact is that the same Ansible won’t solve everything. And you may need to add some functionality independently. In addition, apart of equipment configuration adjustment, there are daily routine tasks that can be automated by Python. Let’s just say that if you don’t want to deal with Python, but want to
+automate setup and operation processes, please turn attention on Ansible. Even "out of the box" it will be very useful.
+Later, if you get taste for it and you want to add something that missed in Ansible, come back :-)
 
-И ещё, этот курс не только о том, как использовать Python для
-подключения к оборудованию и его настройке. Он и о том, как решать
-задачи, которые не касаются подключения к оборудованию, например,
-изменить что-то в нескольких файлах конфигурации, или обработать
-log-файл – Python поможет вам решать в том числе и подобные задачи.
+And yes, this course is not only about how to use Python for network equipment configuration and connecton to it.
+It’s also about how to solve tasks that are not connected to the equipment. 
+For example, change something in multiple configuration files or parse log-file - Python will help you solve theese tasks.
 
-Почему книга именно для сетевых инженеров?
+Why is this book specifically for network engineers?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Есть несколько причин:
