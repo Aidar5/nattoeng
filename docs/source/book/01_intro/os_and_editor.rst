@@ -23,17 +23,15 @@ On the one hand, there’s nothing superfluous about it that can initially be ve
 IDE PyCharm 
 ^^^^^^^^^^^
 
-`PyCharm <https://www.jetbrains.com/pycharm/>`__ — интегрированная среда разработки для Python. Для начинающих изучать язык может оказаться сложным вариантом из-за обилия настроек, но это зависит от личных предпочтений.
-В PyCharm поддерживается огромное количество возможностей, даже в бесплатной версии.
+`PyCharm <https://www.jetbrains.com/pycharm/>`__ — is an integrated development environment for Python. For beginners it may be difficult because of the plethora of settings, but it depends on personal preferences. Pycharm supports a huge number of features, even in the free version.
 
-PyCharm прекрасный IDE, но, на мой взгляд, он сложноват для начинающих. Я бы не советовала использовать его, если вы с ним не знакомы и только начинаете учить Python. Вы всегда сможете перейти на него после книги, но пока что лучше попробовать что-то другое.
+Pycharm is a great IDE, but I think it’s a little difficult for beginners. I wouldn’t recommend using it if you don’t know it and you’re just starting to learn Python. You can always switch to it after the book, but for now it’s better to try something else.
 
 
 Geany
 ^^^^^
 
-`Geany <https://www.geany.org/>`__ - текстовый редактор, который поддерживает разные языки программирования, среди них Python. Также является кроссплатформенным редактором и поддерживает ОС Linux, macOS, Windows.
+`Geany <https://www.geany.org/>`__ - is a text editor that supports different programming languages, including Python. It is also a cross-platform editor and supports Linux, macOS, and Windows.
 
 .. note::
-    Варианты редакторов выше приведены для примера, вместо них можно использовать любой
-    текстовый редактор, который поддерживает Python.
+    The editor variants above are given for example, they can be replaced by any text editor that supports Python.
