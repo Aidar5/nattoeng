@@ -6,7 +6,7 @@ First part of the book is dedicated to Python basics. It examines:
 -  Python data types;
 -  How to create basic scripts;
 -  Compound statements;
--  Working with files.
+-  Working with files;
 
 
 .. toctree::
