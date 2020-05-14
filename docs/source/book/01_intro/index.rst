@@ -4,7 +4,7 @@
 
 .. _intro_index:
 
-1. Подготовка к работе
+1. Preparation for work
 **********************
 
 .. toctree::
