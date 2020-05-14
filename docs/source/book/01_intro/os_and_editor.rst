@@ -1,27 +1,23 @@
-ОС и редактор
+OS and editor
 =============
 
-Можно выбрать любую ОС и любой редактор, но желательно использовать
-Python версии 3.7, так как в книге используется именно эта версия.
+You can choose any OS and any editor but it is desirable to use Python version 3.7 because the book uses this version.
 
-Все примеры в книге выполнялись на Debian, на других ОС вывод может незначительно отличаться. 
-Для выполнения заданий из книги можно использовать Linux, macOS или Windows.
-Однако, стоит учитывать, что, например, Ansible можно установить только на Linux/macOS.
+All of the examples in the book were run on Debian, but other operating systems may have a slightly different output. You can use Linux, macOS or Windows to perform tasks from a book. However, it is worth considering that, for example, Ansible can only be installed on Linux/macOS.
 
+You can select any text editor or IDE that supports Python to work with Python. Generally, working with Python requires minimal editor settings and often the editor recognizes Python by default.
 
-Для работы с Python можно выбрать любой текстовый редактор или IDE, который поддерживает Python. Как правило, для работы с Python требуется минимум настройки редактора и часто редактор по умолчанию распознает Python.
-
-Редактор Mu
+Mu editor
 ^^^^^^^^^^^
 
-Отдельно стоит упомянуть `редактор Mu <https://codewith.mu/>`__: это редактор для начинающих изучать Python (он поддерживает только Python).
+It is worth mentioning  `the Mu editor <https://codewith.mu/>`__: it is an editor for beginners to learn Python (it supports only Python).
 
-С одной стороны, в нём нет ничего лишнего, что поначалу может сильно отвлекать и путать. В то же время, в нём есть такие важные функции как проверка кода на соблюдение PEP 8 и debugger. Плюс, Mu работает на разных ОС (macOS, Windows, Linux).
+On the one hand, there’s nothing superfluous about it that can initially be very distracting and confusing. At the same time, it has important features such as checking code against PEP 8 and debugger. Plus, Mu runs on different operating systems (macOS, Windows, Linux).
 
 .. note::
-    Записи лекций по редактору Mu:
-    `Основы работы с Mu <https://youtu.be/9qH92jz0p58>`__,
-    `Использование debugger в  Mu <https://youtu.be/s9Lskg37xss>`__
+    Video tutorial on Mu:
+    `Basics of Mu <https://youtu.be/9qH92jz0p58>`__,
+    `Using Debugger in Mu <https://youtu.be/s9Lskg37xss>`__
 
 
 IDE PyCharm 
