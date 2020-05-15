@@ -1,35 +1,28 @@
-Виртуальные окружения
+Virtual environment
 =====================
 
-Виртуальные окружения:
+Virtual environments:
 
--  позволяют изолировать различные проекты друг от друга;
--  пакеты, которые нужны разным проектам, находятся в разных местах –
-   если, например, в одном проекте требуется пакет версии 1.0, а в
-   другом проекте требуется тот же пакет, но версии 3.1, то они не будут
-   мешать друг другу;
--  пакеты, которые установлены в виртуальных окружениях, не перебивают
-   глобальные пакеты.
+-  Allow different projects to be isolated from each other;
+-  Packages that are needed by different projects are in different places - if, for example, one project requires a 1.0 package and another project requires the same package but version 3.1, they will not interfere with each other;
+-  Packages that are installed in virtual environments do not impact on global packages.
 
 .. note::
-    В Python есть несколько вариантов для создания виртуальных окружений.
-    Использовать можно любой из них. Для начала можно использовать virtualenvwrapper,
-    а затем со временем уже разбираться с тем, какие еще есть варианты.
+    Python has several options for creating virtual environments. You can use any one of them. To start with, you can use virtualenvwrapper and then eventually you can figure out which options are still available.
 
 
 virtualenvwrapper
 ^^^^^^^^^^^^^^^^^
 
-Виртуальные окружения создаются с помощью virtualenvwrapper.
+Virtual environments are created with virtualenvwrapper.
 
-Установка virtualenvwrapper с помощью pip:
+Installing virtualenvwrapper with pip:
 
 ::
 
     $ sudo pip3.7 install virtualenvwrapper
 
-После установки, в файле .bashrc, находящимся в домашней папке текущего
-пользователя, нужно добавить несколько строк:
+After installation, in the . bashrc file in the current user’s home folder, you need to add several lines:
 
 ::
 
@@ -37,30 +30,24 @@ virtualenvwrapper
     export WORKON_HOME=~/venv
     . /usr/local/bin/virtualenvwrapper.sh
 
-Если вы используете командный интерпретатор, отличный от bash,
-посмотрите, поддерживается ли он в
-`документации <http://virtualenvwrapper.readthedocs.io/en/latest/install.html>`__
-virtualenvwrapper. Переменная окружения VIRTUALENVWRAPPER\_PYTHON
-указывает на бинарный файл командной строки Python, WORKON\_HOME – на
-расположение виртуальных окружений. Третья строка указывает, где
-находится скрипт, установленный с пакетом virtualenvwrapper. Для того,
-чтобы скрипт virtualenvwrapper.sh выполнился и можно было работать с
-виртуальными окружениями, надо перезапустить bash.
+If you are using a command interpreter other than bash, see if it is supported in the virtualenvwrapper 
+`documentation <http://virtualenvwrapper.readthedocs.io/en/latest/install.html>`__
+virtualenvwrapper. The environment variable VIRTUALENVWRAPPER\_PYTHON
+points to the Python command line binary file, WORKON\_HOME – points to the location of virtual environments. The third line indicates location of the script installed with the virtualenvwrapper package. For virtualenvwrapper.sh script start to work with virtual environments, bash must be restarted.
 
-Перезапуск командного интерпретатора:
+Restart the command interpreter:
 
 ::
 
     $ exec bash
 
-Такой вариант может быть не всегда правильным. Подробнее на `Stack
+This may not always be the right option. More on `Stack
 Overflow <http://stackoverflow.com/questions/2518127/how-do-i-reload-bashrc-without-logging-out-and-back-in>`__.
 
-Работа с виртуальными окружениями
+Working with virtual environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Создание нового виртуального окружения, в котором Python 3.7
-используется по умолчанию:
+Creating a new virtual environment in which Python 3.7 is used by default:
 
 ::
 
@@ -70,8 +57,7 @@ Overflow <http://stackoverflow.com/questions/2518127/how-do-i-reload-bashrc-with
     Installing pip...............done.
     (pyneng)$ 
 
-В скобках перед стандартным приглашением отображается имя виртуального
-окружения. Это означает, что вы находитесь в нём. В virtualenvwrapper по
+The name of the virtual environment is shown in brackets before the standard invitation. That means you’re inside it. В virtualenvwrapper по
 Tab работает автодополнение имени виртуального окружения. Это особенно
 удобно в тех случаях, когда виртуальных окружений много. Теперь в том
 каталоге, который был указан в переменной окружения WORKON_HOME, создан
