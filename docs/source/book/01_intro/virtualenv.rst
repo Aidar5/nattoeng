@@ -31,9 +31,8 @@ After installation, in the . bashrc file in the current user’s home folder, yo
     . /usr/local/bin/virtualenvwrapper.sh
 
 If you are using a command interpreter other than bash, see if it is supported in the virtualenvwrapper 
-`documentation <http://virtualenvwrapper.readthedocs.io/en/latest/install.html>`__
-virtualenvwrapper. The environment variable VIRTUALENVWRAPPER\_PYTHON
-points to the Python command line binary file, WORKON\_HOME – points to the location of virtual environments. The third line indicates location of the script installed with the virtualenvwrapper package. For virtualenvwrapper.sh script start to work with virtual environments, bash must be restarted.
+`documentation <http://virtualenvwrapper.readthedocs.io/en/latest/install.html>`__. The environment variable VIRTUALENVWRAPPER\_PYTHON
+points to the Python command line binary file, WORKON\_HOME – points to the location of virtual environments. The third line indicates location of the script installed with the virtualenvwrapper package. To start virtualenvwrapper.sh script work with virtual environments, bash must be restarted.
 
 Restart the command interpreter:
 
@@ -129,13 +128,13 @@ See which packages are installed in a virtual environment using "lssitepackages"
 Built-in venv module
 ^^^^^^^^^^^^^^^^^^^^^^
 
-НStarting from version 3.5, it is recommended that Python use venv to create virtual environments:
+Starting from version 3.5, it is recommended that Python use venv to create virtual environments:
 
 ::
 
     $ python3.7 -m venv new/pyneng
 
-Python or python3 can be used instead of python 3.7, depending on how Python 3.7 is installed. This command creates the specified directory and all necessary directories within it if they have not been created.
+Python or python3 can be used instead of python 3.7, depending on how Python 3.7 is installed. This command creates the specified directory and all necessary subdirectories within it if they have not been created.
 
 The command creates the following directory structure:
 
