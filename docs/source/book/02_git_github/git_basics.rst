@@ -11,7 +11,7 @@ It can:
 
 Git stores the changes as a snapshot of the entire repository. This snapshot is created after each “commit” command.
 
-Установка Git:
+Git installation:
 
 ::
 
@@ -20,7 +20,7 @@ Git stores the changes as a snapshot of the entire repository. This snapshot is 
 Git initial setup
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-To start working with Git, you need to specify the user name and e-mail that will be used to synchronize the local repository with the Github repository:
+To start working with Git you need to specify the user name and e-mail that will be used to synchronize the local repository with the Github repository:
 
 ::
 
@@ -44,4 +44,4 @@ The repository is initialized using the "git init" command:
     $ git init
     Initialized empty Git repository in /home/vagrant/tools/first_repo/.git/
 
-After executing this command, the current directory creates a . git folder containing the service files needed for Git.
+After executing this command, the current directory creates .git folder containing the service files needed for Git.
