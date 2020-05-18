@@ -28,7 +28,7 @@ The invitation shows that there are two files that Git is not following
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_status_1.png
 
-Two files came out because I have undo-files configured for Vim. These are special files that allow you to cancel changes not only in the current file session but also in the past. Note that Git reports there are files that it does not follow and tells using which command you can start following.
+Two files came out because I have undo-files configured for Vim. These are special files that allow you to cancel changes not only in the current file session but also in the past. Note that Git reports there are files that it does not follow and tells you using which command you can start following.
 
 File .gitignore
 '''''''''''''''
@@ -71,11 +71,11 @@ Now the files are in a section called "Changes to be committed".
 git commit
 ''''''''''
 
-After all the necessary files have been added in staging, you can commit the changes. Staging is a collection of files that will be added to the next commit. The git commit command has only one obligatory parameter - the flag "-m". It allows you to specify a message for this commit.
+After all the necessary files have been added in staging, you can commit the changes. Staging is a collection of files that will be added to the next commit. The "git commit" command has only one obligatory parameter - the flag "-m". It allows you to specify a message for this commit.
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_commit_1.png
 
-After that git status displays
+After that, git status displays
 
 .. figure:: https://raw.githubusercontent.com/natenka/PyNEng/master/images/git/git_status_4.png
 
