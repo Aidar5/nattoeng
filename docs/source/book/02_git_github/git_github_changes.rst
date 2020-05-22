@@ -21,7 +21,7 @@ Cloning a Github repository
 
 To work locally with the repository, it must be cloned.
 
-Use “git clone: command to clone repository:
+Use “git clone" command to clone repository:
 
 ::
 
@@ -39,7 +39,7 @@ Compared to this command, you need to change:
 -  The pyneng user name for your Github user name;
 -  The online-2-natasha-samoylenko repository name for your Github repository.
 
-As a result, in the current directory in which git clone was executed, a directory with the name of the repository will appear, in my case - "online-2-natasha-samoylenko". This directory now contains the contents of the Github repository.
+As a result, in the current directory in which "git clone" was executed, a directory with the name of the repository will appear, in my case - "online-2-natasha-samoylenko". This directory now contains the contents of the Github repository.
 
 Working with the repository
 ^^^^^^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ Now you have a complete local Git repository where you can work. Typically, the 
 -  Modifying repository files
 -  Adding modified files to staging with “git add” command
 -  Commit changes using “git commit” command
--  ransferring local changes to the Github repository with “git push” command
+-  Transferring local changes to the Github repository with “git push” command
 
 When working with tasks at work and at home, it is necessary to pay special attention to the first and last step:
 
@@ -76,7 +76,7 @@ If the contents of the local repository are the same as those of the remote repo
     $ git pull
     Already up-to-date.
 
-If there were changes, the conclusion would be something like this:
+If there were changes, the output would be something like this:
 
 ::
 
@@ -118,4 +118,4 @@ The “git push” command is used to load all local changes to Github:
     To ssh://git@github.com/pyneng/online-2-natasha-samoylenko.git
        fc4c721..edcf417  master -> master
 
-Before executing “git push”, you can run git log -p/origin.. - it will show what changes you are going to add to your repository on Github.
+Before executing “git push” you can run ``git log -p/origin..`` - it will show what changes you are going to add to your repository on Github.
