@@ -4,7 +4,7 @@ Additional facilities
 git diff
 ''''''''
 
-The command git diff allows you to see the difference between different states. For example, README and .gitignore files have been changed in repository.
+The command "git diff" allows you to see the difference between different states. For example, README and .gitignore files have been changed in repository.
 
 The "git status" command shows that both files have been changed
 
