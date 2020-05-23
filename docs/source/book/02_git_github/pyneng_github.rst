@@ -50,8 +50,7 @@ If there were updates, the output would be something like this:
      README.md | 2 +-
      1 file changed, 1 insertion(+), 1 deletion(-)
 
-Обратите внимание на информацию о том, что изменился только файл
-README.md.
+Please note that only README.md file has been changed.
 
 View changes
 ^^^^^^^^^^^^^^^^^^
@@ -90,7 +89,7 @@ In this command ``-p`` flag indicates that the output of the Linux diff utility 
 View changes that will be synchronized
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The previous version of “git log” relies on the number of commands, but this is not always convenient. Before executing “git pull”, you can see what changes have been made since the last synchronization.
+The previous version of “git log” relies on the number of commands but this is not always convenient. Before executing “git pull” you can see what changes have been made since the last synchronization.
 
 The following command shall be used:
 
@@ -116,6 +115,6 @@ In this case, the changes were in only one file. This command will be very usefu
 .. note::
     "..origin/master" in ``git log -p ..origin/master``
     means to show all commits that are present in origin/master
-    (in this case, it's GitHub), but that are not in the local copy of the repository
+    (in this case, it's GitHub) but that are not in the local copy of the repository
 
 If the changes were in tasks you haven’t yet done, this output will tell you which files should be copied from the course repository to your personal repository (and maybe the entire section if you haven’t yet done the tasks from this section).
