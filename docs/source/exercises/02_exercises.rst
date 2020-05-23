@@ -2,39 +2,33 @@
 
    \newpage
 
-Задания
+Exercises
 ~~~~~~~
 
 .. include:: ./exercises_intro.rst
 
 
-Задание 2.1
+Task 2.1
 ^^^^^^^^^^^
 
-Создайте клон
-`репозитория <https://github.com/natenka/pyneng-examples-exercises/>`__
-с заданиями и примерами, а затем обновите его с помощью команды git pull
-– должно отобразиться сообщение "Already up-to-date". В этом репозитории
-вы не можете вносить изменения, поэтому он будет использоваться только
-для получения заданий и примеров. Для работы с заданиями необходимо
-создать собственный репозиторий и скопировать задания в него.
+Create a 
+`repository <https://github.com/natenka/pyneng-examples-exercises/>`__
+clone with jobs and examples and then update it with the “git pull” command
+– the "Already up-to-date" message should be displayed. This repository does not allow you to make changes, so it will only be used to get tasks and examples. To work with tasks, you need to create your own repository and copy tasks to it.
 
-Задание 2.2
+Task 2.2
 ^^^^^^^^^^^
 
-В этом задании необходимо:
+This task requires:
 
--  создать свой репозиторий на GitHub для выполнения заданий;
--  создать его клон на своей виртуальной машине.
+-  Create a repository on Github to perform tasks;
+-  Create its clone on his virtual machine.
 
-В своём репозитории можно создать любую структуру каталогов. Так как
-задания иногда обновляются, лучше выбрать следующий подход к работе:
+You can create any directory structure in your repository. Since tasks are sometimes updated, it is best to choose the following approach to work:
 
--  обновляете
-   `репозиторий <https://github.com/natenka/pyneng-examples-exercises/>`__
-   с заданиями и примерами;
--  копируете задания одного раздела из репозитория
-   pyneng-examples-exercises в свой репозиторий;
--  выполняете задания;
--  при переходе к следующему разделу, повторяете всё с начала.
+-  Update 
+   `repository <https://github.com/natenka/pyneng-examples-exercises/>`__
+   with tasks and examples;
+-  Copy the tasks of one section from the pyneng-examples-exercises repository to your repository;
+-  When move to the next section, repeat everything from the beginning.
 
