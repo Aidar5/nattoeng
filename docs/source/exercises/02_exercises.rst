@@ -22,9 +22,9 @@ Task 2.2
 This task requires:
 
 -  Create a repository on Github to perform tasks;
--  Create its clone on his virtual machine.
+-  Clone it to your virtual machine.
 
-You can create any directory structure in your repository. Since tasks are sometimes updated, it is best to choose the following approach to work:
+You can create any directory structure in your repository. Since tasks are sometimes updated, it is better to choose the following approach to work:
 
 -  Update 
    `repository <https://github.com/natenka/pyneng-examples-exercises/>`__
