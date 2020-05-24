@@ -37,8 +37,8 @@ The second feature of Python is that some expressions must be followed by colon 
 
 Several rules and recommendations on indentation:
 
--  •	Tabs or spaces can be used as indents (it is better to use spaces or more precisely to configure the editor so that the tab is 4 spaces - then when using the tab key, 4 spaces will be placed instead of 1 tab sign).
--  •	The number of spaces must be the same in one block (it is better to have the same number of spaces in the whole code - the popular option is to use 2-4 spaces, for example, this book uses 4 spaces).
+-  Tabs or spaces can be used as indents (it is better to use spaces or more precisely to configure the editor so that the tab is 4 spaces - then when using the tab key, 4 spaces will be placed instead of 1 tab sign).
+-  The number of spaces must be the same in one block (it is better to have the same number of spaces in the whole code - the popular option is to use 2-4 spaces, for example, this book uses 4 spaces).
 
 Another feature of the code above is the empty lines. It makes reading code easier. Other syntax features will be shown during the process of familiarization with data structures in Python.
 
