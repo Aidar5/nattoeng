@@ -3,13 +3,13 @@ Python interpreter. Ipython
 
 The interpreter makes it possible to receive an instant response to the executed actions. You can say that the interpreter works as the CLI (Command Line Interface) of network devices: each command will be executed immediately after pressing Enter. However, there is an exception: more complex objects (such as cycles or functions) are executed only after twice pressing Enter.  
 
-In the previous section, a standard interpreter was called to verify the installation of Python. There is also an improved `IPython <http://ipython.readthedocs.io/en/stable/index.html>`__.
+In the previous section, a standard interpreter was called to verify the installation of Python. There is also an improved interpreter `IPython <http://ipython.readthedocs.io/en/stable/index.html>`__.
 Ipython allows much more than the standard interpreter called by "python" command. Some examples (Ipython features are much broader):
 
 -  Autocomplete Tab commands or hints if there are more than one command variant;
 -  More structured and understandable output of commands;
 -  Automatic indentation in cycles and other objects;
--  You can either walk through the command execution history, or watch it with the %history "magic" command.
+-  You can either walk through the command execution history or watch it with the %history 'magic' command.
 
 You can install Ipython using pip (installation will be done in a virtual environment if configured):
 
@@ -28,7 +28,7 @@ After that, you can move to Ipython as follows:
 
     In [1]:
 
-The “quit” command is used to exit. The following is how Ipython will be used.
+The “quit” command is used to exit. The following is how IPython will be used.
 
 To get acquainted with the interpreter, you can use it as a calculator:
 
@@ -43,11 +43,11 @@ To get acquainted with the interpreter, you can use it as a calculator:
     In [3]: 2**3
     Out[3]: 8
 
-In Ipython, input and output are marked:
+In IPython, input and output are marked:
 
 -  In - user input data
--  Out is the result that returns the command (if any)
--  Nmbers after In or Out are sequential numbers of executed commands in the current Ipython session
+-  Out - the result that the command returns (if any)
+-  Numbers after In or Out are sequential numbers of executed commands in the current IPython session
 
 Example of string output by function print():
 
@@ -72,7 +72,7 @@ When a loop is created in the interpreter, for example, the invitation changes t
 help()
 ^^^^^^
 
-In Ipython you can view the help for an arbitrary object, function or method using help():
+In IPython on you can view the help for an arbitrary object, function or method using help():
 
 ::
 
@@ -149,7 +149,7 @@ If you want to get several values in a row through a space, you have to enumerat
     In [9]: print('one', 'two', 'three')
     one two three
 
-By default, at the end of each expression passed to print(), there will be a line feed. If it is necessary that after the output of each expression there would be no line feed, an additional end argument should be specified as the last expression in print().
+By default, at the end of each expression passed to print(), there will be a line feed. If it is necessary that after the output of each expression there would be no line feed, an additional "end" argument should be specified as the last expression in print().
 
 .. seealso:: Additional parameters of print function :ref:`print`
 
@@ -158,7 +158,7 @@ dir()
 
 The ``dir()`` function can be used to see what attributes (variables tied to the object) and methods (functions tied to the object) are available.
 
-pay attention on various methods that allow arithmetic operations):
+For example, for number the output will be (pay attention on various methods that allow arithmetic operations):
 
 .. code:: python
 
