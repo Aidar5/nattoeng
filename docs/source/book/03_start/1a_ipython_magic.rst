@@ -1,7 +1,7 @@
-Ipython special commands
+IPython special commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ipython has special commands which make work with interpreter easier. All of them are started with percent sign.
+IPython has special commands that make work with interpreter easier. All of them are started with percent sign.
 
 %history
 ''''''''
