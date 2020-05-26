@@ -2,18 +2,15 @@
 
    \newpage
 
-Задания
+Exercises
 ~~~~~~~
 
 .. include:: ./exercises_intro.rst
 
-Задание 3.1
+Task 3.1
 ^^^^^^^^^^^
 
-Выполните установку IPython в виртуальном окружении или глобально в
-системе, если виртуальные окружения не используются. После установки, по
-команде ipython должен открываться интерпретатор IPython (вывод может
-незначительно отличаться):
+Install Python in virtual environment or globally in the system if virtual environment is not used. After installation you can open IPython entering "ipython" command (output can slightly differ):
 
 .. code:: python
 
