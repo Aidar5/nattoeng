@@ -15,8 +15,8 @@ Why you need to learn programming?
 
 Programming knowledge for network engineer could be compared with necessity of English knowledge. When you know English at least on level which allows to read technical documentation you expand your opportunities at once:
 
--  much more literature, forums, blogs are available;
--  easier to find solution for almost every question or issue if you ask Google.
+-  Much more literature, forums, blogs are available;
+-  Easier to find solution for almost every question or issue if you ask Google.
 
 Knowledge of programming is very similar in this. For instance, If you know Python at least on basic level  you open plenty of new opportunities. Also analogy to English fits here because you can be capable specialist without knowledge of English language. English gives you opportunity but it's not a mandatory requirement.
 
