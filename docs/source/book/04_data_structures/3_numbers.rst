@@ -119,7 +119,7 @@ And, of course, you can do several changes at the same time:
     In [27]: bin(int('ff', 16))
     Out[27]: '0b11111111'
 
-For more complex mathematical functions, Python has a math **math** module:
+For more complex mathematical functions, Python has a **math** module:
 
 .. code:: python
 
