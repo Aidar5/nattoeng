@@ -3,9 +3,10 @@ Variables
 
 Variables in Python do not require variable type declaration (since Python is a language with dynamic typing) and they are references to a memory area. Variable naming rules:
 
--  the name of the variable can consist only of letters, digits and an underscore;
--  the name cannot start with a digit;
--  name cannot contain special characters @, $, %.
+-  The name of the variable can consist only of letters, digits and an underscore;
+-  The name cannot start with a digit;
+-  Name cannot contain special characters @, $, %.
+
 An example of creating variables in Python:
 
 .. code:: python
@@ -36,7 +37,7 @@ Variables are references to the memory area. This can be demonstrated by using i
     In [8]: id(c)
     Out[8]: 31671480
 
-In this example you can see that all three names refer to the same identifier, that is, it is the same object to which the three references "a", "b" and "c" point. With numbers Python has one feature that can be slightly misunderstood: numbers from -5 to 256 are pre-created and stored in an array (list). Therefore, when you create a number from this range, you actually create a reference to the number in the generated array.
+In this example you can see that all three names refer to the same identifier, so it is the same object to which the three references "a", "b" and "c" point. Concerning numbers Python has one feature that can be slightly misunderstood: numbers from -5 to 256 are pre-created and stored in an array (list). Therefore, when you create a number from this range you actually create a reference to the number in the generated array.
 
 .. note::
     This feature is specific to the implementation of Cpython which is discussed in the book
@@ -100,6 +101,6 @@ Variable names
 Variable names should not overlap with the names of operators and modules or other reserved words. Python has recommendations for naming functions, classes and variables:
 
 -  variable names are usually written in lowercase or in uppercase (e.g., DB_NAME, db_name);
--  function names are written in lowercase, with underlining between words (for example get_names);
--  class names are given with capital letters without spaces, it is called Camelcase (for example, CiscoSwitch).
+-  function names are written in lowercase, with underline between words (for example get_names);
+-  class names are given with capital letters without spaces, it is called CamelCase (for example, CiscoSwitch).
 
