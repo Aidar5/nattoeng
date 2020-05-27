@@ -6,7 +6,7 @@ The list is a mutable  data type, so it is important to note that most methods f
 ``join()``
 ^^^^^^^^^^
 
-The **join()** method collects a list of strings into one line with the separator specified before join:
+The **join()** method collects a list of strings into one string with the separator specified before join:
 
 .. code:: python
 
@@ -16,7 +16,7 @@ The **join()** method collects a list of strings into one line with the separato
     Out[17]: '10,20,30'
 
 .. note::
-    The join method actually relates to strings, but since the value must be given as a list, it is considered in this section.
+    The join method actually relates to strings but since the value must be given as a list, it is considered in this section.
 
 ``append()``
 ^^^^^^^^^^^^
@@ -107,7 +107,7 @@ remove() does not return the deleted item:
     In [33]: vlans
     Out[33]: ['10', '30', '100-200']
 
-In remove method you must specify the item to be deleted, not its number in the list. If item number is specified, error occurs:
+In remove() method you must specify the item to be deleted, not its number in the list. If item number is specified, error occurs:
 
 .. code:: python
 
