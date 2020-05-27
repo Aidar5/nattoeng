@@ -21,7 +21,7 @@ Creation of a list by means of a literal:
     In [1]: vlans = [10, 20, 30, 50]
 
 .. note::
-    The literal is the expression that creates the object.
+    The literal is an expression that creates the object.
 
 Create a list using the **list()** function:
 
