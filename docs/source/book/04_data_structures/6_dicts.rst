@@ -1,17 +1,17 @@
 Dictionary
 ====================
 
-Dictionaries are a mutable ordered data type:
+Dictionaries are mutable ordered data type:
 
-* data in the dictionary are pairs ``ключ: значение``
+* data in the dictionary are pairs ``key: value``
 * values are accessible by key, not by number as in lists
 * the entries in the dictionary display in the order they were defined.
 * since dictionaries are mutable, the dictionary items can be changed, added, removed
 * the key must be an immutable object: number, string, tuple
-* значение может быть данными любого типа
+* value can be data of any type
 
 .. note::
-    In other programming languages, a similar dictionary can be called an associative array, hash, or hash table.
+    In other programming languages a similar dictionary can be called an associative array, hash, or hash table.
 
 Example of dictionary:
 
