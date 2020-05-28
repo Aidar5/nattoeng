@@ -39,7 +39,7 @@ If one dictionary is equal to the other:
     In [9]: london2['vendor']
     Out[9]: 'Juniper'
 
-In this case london2 is another name that refers to the dictionary. And when you change the “london” dictionary, the “london2” dictionary changes because it’s a link to the same object.
+In this case london2 is another name that refers to the dictionary. And when you change the “london” dictionary the “london2” dictionary changes as well because it’s a link to the same object.
 
 Therefore, if you want to make a copy of the dictionary, use copy() method:
 
