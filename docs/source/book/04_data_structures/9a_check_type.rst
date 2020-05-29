@@ -17,7 +17,7 @@ The error is perfectly logical. We’re trying to convert string 'a' into decima
 
 And if the example here is probably stupid, however, when you want to go through a list of strings and convert to a number the strings that contain numbers, you can get that error.
 
-To avoid it, it would be nice to be able to check what we’re working with
+To avoid it, it would be nice to be able to check what we’re working with.
 
 ``isdigit()``
 ^^^^^^^^^^^^^
@@ -58,7 +58,7 @@ The ``isalpha()`` method makes it possible to check whether a string consists on
 ``isalnum()``
 ^^^^^^^^^^^^^
 
-The ``isalnum()`` пmethod makes it possible to check whether a string consists of letters or numbers:
+The ``isalnum()`` пethod makes it possible to check whether a string consists of letters or numbers:
 
 .. code:: python
 
