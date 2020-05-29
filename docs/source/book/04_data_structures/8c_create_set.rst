@@ -26,7 +26,7 @@ Set from string:
     In [5]: set('long long long long string')
     Out[5]: {' ', 'g', 'i', 'l', 'n', 'o', 'r', 's', 't'}
 
-Set from the list:
+Set from list:
 
 .. code:: python
 
