@@ -8,16 +8,16 @@ The ``input()`` function is used to obtain information from the user::
 
 .. code:: python
 
-    In [1]: print(input('Твой любимый протокол маршрутизации? '))
-    Твой любимый протокол маршрутизации? OSPF
+    In [1]: print(input('What is your faivorite routing protocol? '))
+    What is your faivorite routing protocol? OSPF
     OSPF
 
 In this case the information is immediately displayed to user, but in addition, the information entered by user can be stored in a variable and can be used later in the script.
 
 .. code:: python
 
-    In [2]: protocol = input('Твой любимый протокол маршрутизации? ')
-    Твой любимый протокол маршрутизации? OSPF
+    In [2]: protocol = input('What is your faivorite routing protocol? ')
+    What is your faivorite routing protocol? OSPF
 
     In [3]: print(protocol)
     OSPF
