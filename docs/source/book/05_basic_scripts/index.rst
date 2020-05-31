@@ -9,9 +9,9 @@
 
 Generally speaking, the script is a regular file. This file stores the sequence of commands that you want to execute.
 
-Let’s start with basic script. Display several string on the standard output.
+Let’s start with basic script and display several strings on the standard output.
 
-To do this, you must create an access_template.py file with this content:
+To do this, you need to create an access_template.py file with this content:
 
 .. code:: python
 
@@ -38,11 +38,11 @@ This is the execution of the script:
     spanning-tree portfast
     spanning-tree bpduguard enable
 
-Extension .py is not necessarily for a file.
+It is not necessary to specify extension .py for a file. 
 
 But if you are using Windows it is better to do so because Windows uses a file extension to determine how to process a file.
 
-All the scripts that will be created in that course have extension. You can say that it is a «good manners» - to create Python scripts with .py extension.
+All the scripts that will be created in this course have an extension. You can say that it is a «good manners» - to create Python scripts with .py extension.
 
 .. toctree::
    :maxdepth: 1
