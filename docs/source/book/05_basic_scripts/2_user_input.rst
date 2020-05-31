@@ -1,10 +1,10 @@
-Ввод информации пользователем
+User input
 -----------------------------
 
-Иногда необходимо получить информацию от пользователя, например, запросить пароль.
+Sometimes it is necessary to get information from the user, for example, to request a password.
 
 
-Для получения информации от пользователя используется функция ``input()``:
+The ``input()`` function is used to obtain information from the user::
 
 .. code:: python
 
@@ -12,9 +12,7 @@
     Твой любимый протокол маршрутизации? OSPF
     OSPF
 
-В данном случае информация тут же выводится пользователю, но
-кроме этого, информация, которую ввел пользователь, может быть сохранена
-в какую-то переменную и может использоваться далее в скрипте.
+In this case the information is immediately displayed to user, but in addition, the information entered by user can be stored in a variable and can be used later in the script.
 
 .. code:: python
 
@@ -24,10 +22,9 @@
     In [3]: print(protocol)
     OSPF
 
-В скобках обычно пишется какой-то вопрос, который уточняет, какую
-информацию нужно ввести.
+In brackets, a question is usually written that specifies what information to enter.
 
-Запрос информации из скрипта (файл access_template_input.py):
+Request information from script (file access_template_input.py):
 
 .. code:: python
 
@@ -44,12 +41,11 @@
     print('interface {}'.format(interface))
     print('\n'.join(access_template).format(vlan))
 
-В первых двух строках запрашивается информация у пользователя.
+The first two lines request information from user.
 
-Строка ``print('\n' + '-' * 30)`` используется для того,
-чтобы визуально отделить запрос информации от вывода.
+The ``print('\n' + '-' * 30)`` line is used to visually separate the information request from the output.
 
-Выполнение скрипта:
+Execution of the script:
 
 ::
 
