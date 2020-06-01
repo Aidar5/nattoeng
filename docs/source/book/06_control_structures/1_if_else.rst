@@ -3,15 +3,15 @@ if/elif/else
 
 The ``if/elif/else`` construction allows make branches during program implementation. The program goes into the branch when a certain condition is met.
 
-In this construction only "if" is mandatory, elif and else
+In this construction only **if** is mandatory, **elif** and **else**
 are optional:
 
-* “If” condition is always checked first.
-* After “If” operator there must be some condition: if this condition is met (returns true), then the actions in block “if” are executed.
-* “Elif” can be used to make multiple branches, that is, to check incoming data for different conditions.
-* The “elif” block is the same as “if” but it checked next. Roughly speaking, it is "what if ..."
+* **If** condition is always checked first.
+* After **If** operator there must be some condition: if this condition is met (returns true), then the actions in block **if** are executed.
+* **elif** can be used to make multiple branches, that is, to check incoming data for different conditions.
+* **elif** block is the same as **if** but it checked next. Roughly speaking, it is "what if ..."
 * There can be many “elif” blocks.
-* The “else” block is executed if none of the conditions “if” or “elif” were true.
+* **else** block is executed if none of the conditions **if** or **elif** were true.
 
 
 
@@ -34,14 +34,14 @@ Example of construction:
 Condition
 -------
 
-“If” construction is based on conditions: conditions are always written after “if” and “elif”.
+**If** construction is based on conditions: conditions are always written after **if** and **elif**.
 Blocks if/elif are executed only when the condition returns True, so the first thing to deal with is what is true and what is false in Python.
 
 
 True and False
 ~~~~~~~~~~~~
 
-In Python, apart from the obvious True and False values, all other objects also have a false or true value:
+In Python, apart from the obvious True and False values, all other objects also have false or true value:
 
 * True value:
 
@@ -81,7 +81,7 @@ The same result could have been achieved somewhat differently:
 Comparison operators
 ~~~~~~~~~~~~~~~~~~~
 
-**Операторы сравнения** can be used in conditions like:
+**Comparison operators** can be used in conditions like:
 
 .. code:: python
 
@@ -202,7 +202,7 @@ The conditions can also use **logical operators**
 Operator and
 ^^^^^^^^^^^^
 
-In Python the ``and`` returns not a boolean value but a value of one of the operands.
+In Python the ``and`` operator returns not a boolean value but a value of one of the operands.
 
 If both operands are true, the result is a last value:
 
@@ -227,7 +227,7 @@ If one of the operators is a false, the result of the expression will be the fir
 Operator or
 ^^^^^^^^^^^
 
-Operator ``or``, like ``and`` operator, returns the value of one of the operands.
+Operator ``or``, like operator ``and``, returns the value of one of the operands.
 
 When checking operands, the first true operand is returned:
 
