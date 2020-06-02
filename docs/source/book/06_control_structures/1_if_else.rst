@@ -10,7 +10,7 @@ are optional:
 * After **If** operator there must be some condition: if this condition is met (returns true), then the actions in block **if** are executed.
 * **elif** can be used to make multiple branches, that is, to check incoming data for different conditions.
 * **elif** block is the same as **if** but it checked next. Roughly speaking, it is "what if ..."
-* There can be many “elif” blocks.
+* There can be many **elif** blocks.
 * **else** block is executed if none of the conditions **if** or **elif** were true.
 
 
