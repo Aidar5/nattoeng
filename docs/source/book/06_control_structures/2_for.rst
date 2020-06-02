@@ -1,9 +1,9 @@
 for
 ---
 
-Very often the same action should be performed for a set of the same data type. For example, convert all rows in the list to uppercase. Python uses ``for`` loop to perform such purposes.
+Very often the same action should be performed for a set of the same data type. For example, convert all strings in the list to uppercase. Python uses ``for`` loop for such purposes.
 
-Loop **for** iterates elements of specified sequence and performs the actions specified in the block **for** each element.
+Loop **for** iterates elements of specified sequence and performs the actions specified for each element.
 
 Examples of sequences of elements that can be iterated by **for**:
 
@@ -66,10 +66,7 @@ means "for each word in the **words** list to perform actions in the block **for
 Note, that **word** is the name of variable that refers to different values for each iteration of the loop.
 
 .. note::
-    `The pythontutor <http://www.pythontutor.com/>`__ project can help to understand the loops.
- There is a special visualization of the code that allows you to see what happens at every stage of the code execution, which is especially useful in the first steps of learning loops.
-    The `pythontutor <http://www.pythontutor.com/visualize.html#mode=edit>`__ allows you to upload your code but, for instance, you can see 
-    `example above <http://www.pythontutor.com/visualize.html#code=words%20%3D%20%5B'list',%20'dict',%20'tuple'%5D%0Aupper_words%20%3D%20%5B%5D%0A%0Afor%20word%20in%20words%3A%0A%20%20%20%20upper_words.append%28word.upper%28%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false>`__.
+    The ` pythontutor <http://www.pythontutor.com/>`__ project can help to understand the loops. There is a special visualization of the code that allows you to see what happens at every stage of the code execution, which is especially useful in the first steps of learning loops. The `pythontutor <http://www.pythontutor.com/visualize.html#mode=edit>`__ allows you to upload your code but, for instance, you can see `example above <http://www.pythontutor.com/visualize.html#code=words%20%3D%20%5B'list',%20'dict',%20'tuple'%5D%0Aupper_words%20%3D%20%5B%5D%0A%0Afor%20word%20in%20words%3A%0A%20%20%20%20upper_words.append%28word.upper%28%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false>`__.
 
 
 The **for** loop can work with any sequence of elements. For example, the list was used above and the loop iterates through the list elements. Similarly, **for** works with tuples.
