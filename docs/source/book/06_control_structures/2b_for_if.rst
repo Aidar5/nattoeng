@@ -28,14 +28,14 @@ Generate_access_port_config.py file:
 
 Comments to the code:
 
-* In the first **for** loop iterates keys and values in nested fast\_int['access'] dictionary
+* The first **for** loop iterates keys and values in nested fast\_int['access'] dictionary
 * At this moment of the loop the current key is stored in **intf** variable
 * At this moment of the loop the current value is stored in **vlan** variable
 * The string “interface Fastethernet” is displayed with interface number added
 * The second cycle **for** iterates commands from the access_template list
-* Так как к команде switchport access vlan надо добавить номер VLAN:
+* Since **switchport access to vlan** command requires a VLAN number:
 
-  * within the second cycle **for** commands are checked
+  * within the second loop **for** commands are checked
   * if command ends with “access vlan”
   
     * command is displayed and a VLAN number is added to it
