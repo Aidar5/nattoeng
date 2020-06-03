@@ -27,7 +27,7 @@ First, create a variable with a value of 5.
 
 Then, in the **while** loop the condition a > 0 is specified. That is, as long as the value is greater than 0, actions in the body of the loop will be performed. In this case, the value of variable **a** will be displayed.
 
-In addition, in the body of the loop, at each pass the value of **a** becomes one less.
+In addition, in the body of the loop, after each pass the value of **a** becomes one less.
 
 .. note::
     Record ``a -= 1`` can be a bit unusual. Python allows this format to be used instead of ``a = a - 1``.
@@ -37,10 +37,10 @@ In addition, in the body of the loop, at each pass the value of **a** becomes on
 
 As the value **a** decreases, the loop will not be infinite, and at some point the expression a > 0 becomes false.
 
-The following example is based on the example about password from section about using **if** construction :ref:`if_example`.
+The following example is based on the example about password from section which describes **if** construction use :ref:`if_example`.
 In that example you had to restart the script if the password did not meet the requirements.
 
-With a **while** loop, you can make sure that the script itself requests the password again if it does not meet the requirements.
+With a **while** loop you can make sure that the script itself requests the password again if it does not meet the requirements.
 
 Check_password_with_while.py file:
 
