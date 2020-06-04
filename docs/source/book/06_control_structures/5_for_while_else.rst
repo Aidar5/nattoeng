@@ -9,7 +9,7 @@ for/else
 In the loop **for**:
 
 * block **else** is executed if the loop has completed the iteration of the list
-* but it _does_not__execute_ if **break** was applied in the loop.
+* but it _does not_ _execute_ if **break** was applied in the loop.
 
 Example of a loop **for** with **else** (block **else** is executed after loop **for**):
 
