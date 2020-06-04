@@ -26,12 +26,12 @@ There are two exceptions: **ZeroDivisionError** and **TypeError**.
 
 Most often, it is possible to predict what kind of exceptions will occur during the execution of the program.
 
-For example, if the program expects two numbers on the input and at the output returns their sum, and the user has entered a string instead of one of the numbers, a TypeError error will appear as in the example above.
+For example, if the program expects two numbers on the input and at the output returns their sum, and the user has entered a string instead of one of the numbers a TypeError error will appear as in the example above.
 
 Python allows working with exceptions. They can be intercepted and acted upon if an exception has been occurred.
 
 .. note::
-    When an exception appears in the program, it is immediately completed.
+    When an exception appears, the program is immediately interrupted.
 
 In order to work with exceptions the ``try/except`` construction is used:
 
@@ -49,8 +49,8 @@ The **try** construction works as follows:
 * first execute the expressions that are written in the **try** block
 * if there are no exceptions during the execution of the **try** block, the block **except** is skipped and the following code is executed
 * if there is an exception within the **try** block, the rest part of the **try** block is skipped
-  * if ** except** block contains an exception which has been occurred, the code in ** except** block is executed
-  * if the exception that has raised is not specified in ** except** block, the program execution is interrupted and an error is generated
+  * if **except** block contains an exception which has been occurred, the code in **except** block is executed
+  * if the exception that has raised is not specified in **except** block, the program execution is interrupted and an error is generated
 
 Note that the ``Cool!`` string in the **try** block is not displayed:
 
@@ -81,7 +81,7 @@ For example, the divide.py script divides two numbers entered by the user:
     except ValueError:
         print("Please enter only numbers")
     except ZeroDivisionError:
-        print("It is not possible to divide by zero")
+        print("You can't divide by zero")
 
 Examples of script execution:
 
@@ -95,7 +95,7 @@ Examples of script execution:
     $ python divide.py
     Enter first number: 5
     Enter second number: 0
-    It is not possible to divide by zero
+    You can't divide by zero
 
     $ python divide.py
     Enter first number: qewr
@@ -234,9 +234,9 @@ For example, this version of the code:
         try:
             result = int(a)/int(b)
         except ValueError:
-            print("Only numbers supported")
+            print("Only digits are supported")
         except ZeroDivisionError:
-            print("It is not possible to divide by zero")
+            print("You can't divide by zero")
         else:
             print(result)
             break
@@ -250,12 +250,12 @@ You can rewrite this without try/except (try_except_divide.py file):
         b = input("Enter second number: ")
         if a.isdigit() and b.isdigit():
             if int(b) == 0:
-                print("На ноль делить нельзя")
+                print("You can't divide by zero")
             else:
                 print(int(a)/int(b))
                 break
         else:
-            print("Поддерживаются только числа")
+            print("Only digits are supported")
 
 But the same option without exceptions will not always be simple and understandable.
 
