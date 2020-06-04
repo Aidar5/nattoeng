@@ -67,12 +67,12 @@ Use break in an example with a password request (check\_password\_with\_while\_b
 
 Now it is possible not to repeat the string ``password = input('Enter password once again: ')`` in each branch, it is enough to move it to the end of the loop.
 
-And as soon as the correct password is entered, break will take the program out of loop while.
+And as soon as the correct password is entered, **break** will take the program out of loop **while**.
 
 Continue operator
 ~~~~~~~~~~~~~~~~~
 
-The **continue** operator returns the control at the beginning of the loop. That is, **continue** allows to «jump» the remaining expressions in the loop and go to the next iteration.
+The **continue** operator returns the control to the beginning of the loop. That is, **continue** allows to «jump» the remaining expressions in the loop and go to the next iteration.
 
 Example of a loop **for**:
 
@@ -110,7 +110,7 @@ Example of a loop **while**:
     Current value:  5
     Current value:  6
 
-Use **continue** in the example with a password request (check_password_with_while_continue.py file):
+Use of **continue** in the example with a password request (check_password_with_while_continue.py file):
 
 .. code:: python
 
