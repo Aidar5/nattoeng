@@ -25,7 +25,7 @@ Let’s see how to read contents of files using the example of r1.txt:
 ``read()``
 ^^^^^^^^^^
 
-The ``read()`` - method reads the entire file in one line.
+The ``read()`` method reads the entire file to one string.
 
 Example of the use of ``read()``:
 
@@ -107,7 +107,7 @@ Another useful method is ``readlines()``. It reads file lines to the list:
      'ip ssh version 2\n',
      '!\n']
 
-If you want to get lines of a file but without a Line feed character at the end, you can use ``split`` and specify the symbol ``\n`` as a separator:
+If you want to get lines of a file but without a line feed character at the end, you can use ``split()`` method and specify the symbol ``\n`` as a separator:
 
 ::
 
@@ -129,7 +129,7 @@ If you want to get lines of a file but without a Line feed character at the end,
 
 Note that the last item in the list is an empty string.
 
-If you use ``split()``, before ``rstrip()``, the list will be without empty string at the end:
+If you use ``split()`` before ``rstrip()``, the list will be without empty string at the end:
 
 .. code:: python
 
