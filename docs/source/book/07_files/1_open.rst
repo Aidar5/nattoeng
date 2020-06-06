@@ -1,7 +1,7 @@
 File opening
 ---------------
 
-To start working with a file, you have to open it.
+To start working with a file you have to open it.
 
 ``open()``
 ^^^^^^^^^^
@@ -29,7 +29,7 @@ File opening modes:
   *  if the file exists, its content is removed
   *  if the file does not exist, a new one is created
 
-*  ``w+`` - открыть файл для чтения и записи
+*  ``w+`` - open file for reading and writing
   *  if the file exists, its content is removed
   *  if the file does not exist, a new one is created
 
