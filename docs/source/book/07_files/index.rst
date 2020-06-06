@@ -24,7 +24,7 @@ When working with network equipment (and not only), files can be:
 
   * usually they are structured files in some particular format: YAML, JSON, CSV
 
-    * section `Data serialization <../17_serialization/>`__ discusses how to handle such files other Python scripts
+    * section `Data serialization <../17_serialization/>`__ discusses how to handle such files
 
 * other Python scripts
   
