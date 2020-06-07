@@ -3,7 +3,7 @@ File writing
 
 When writing it is very important to decide how to open a file in order not to accidentally delete it:
 
-*  ``w`` - open file for writing. If file exists, its contents is removed
+*  ``w`` - open file for writing. If file exists, its content is removed
 *  ``a`` - open file to add data. Data is added to the end of the file
 
 Both modes create a file if it does not exist.
@@ -11,7 +11,7 @@ Both modes create a file if it does not exist.
 These methods are used to write to a file:
 
 *  ``write()`` - write one line to file
-*  ``writelines()`` - allows to send as argument a list of rows
+*  ``writelines()`` - allows to send as argument a list of strings
 
 ``write()``
 ^^^^^^^^^^^
@@ -86,7 +86,7 @@ Since ipython supports the *cat* command, you can easily see the content of the 
 ``writelines()``
 ^^^^^^^^^^^^^^^^
 
-The ``writelines()`` method expects list of strings as argument.
+The ``writelines()`` method expects list of strings as an argument.
 
 Writing cfg_lines list into the file:
 
@@ -112,7 +112,7 @@ Writing cfg_lines list into the file:
     In [12]: cat r2.txt
     !service timestamps debug datetime msec localtime show-timezone yearservice timestamps log datetime msec localtime show-timezone yearservice password-encryptionservice sequence-numbers!no ip domain lookup!ip ssh version 2!
 
-As a result, all lines in the list were written into one line of the file because there was no symbol ``\n`` at the end of the lines.
+As a result, all lines in the list were written into one line because there was no symbol ``\n`` at the end of the lines.
 
 You can add line feed character in different ways. For example, you can simply process the list in the loop:
 
