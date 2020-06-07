@@ -4,12 +4,12 @@ File closing
 .. note::
     In real life, the most common way to close files is use of ``with`` construction. It’s much more convenient way than to close file explicitly. But since you can also find the ``close`` method in life, this section discusses how to use it.
     
-After you complete the file you have to close it. In some cases, Python can close the file itself. But it’s best not to count on it and close the file explicitly.
+After you finish working with file you have to close it. In some cases Python can close the file itself. But it’s best not to count on it and close the file explicitly.
 
 ``close()``
 ^^^^^^^^^^^
 
-The close method met in `File writing  <./3_write.md>`__ section.
+The close() method met in `File writing  <./3_write.md>`__ section.
 It was there to make sure that the content of the file was written on disk.
 
 For this, Python has a separate ``flush()`` method.
@@ -64,7 +64,7 @@ If you try to read the file an exception occurs:
 
     ValueError: I/O operation on closed file
 
-Use ``try/finally``to work with files
+Use ``try/finally`` to work with files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By processing exceptions, you can:
