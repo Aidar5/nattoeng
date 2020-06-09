@@ -26,7 +26,7 @@ F-string is a literal line with a letter ``f`` in front of it. Inside the f- str
     ``"IP: {ip}, mask: {mask}".format(ip=ip, mask=mask)``.
 
 A very important difference between f-strings and format(): f-strings are expressions that are processed, not just strings. That is, in the case of ipython, as soon as we wrote the expression and pressed Enter, it was performed and instead of the expressions
-``{ip}`` and ``{mask}`` values of the variables were substituted.
+``{ip}`` and ``{mask}`` the values of the variables were substituted.
 
 Therefore, for example, you cannot first write a template and then define the variables that are used in the template:
 
