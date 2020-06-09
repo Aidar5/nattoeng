@@ -31,7 +31,7 @@ Python has a more convenient way of working with files than the ones used so far
 
     !
 
-In addition, the construction ``with`` with guarantees file closure automatically.
+In addition, the construction ``with`` guarantees file closure automatically.
 
 Pay attention to how the lines of the file are read:
 
@@ -42,7 +42,7 @@ Pay attention to how the lines of the file are read:
 
 When the file needs to be run line by line, it is best to use this option.
 
-In the previous output there were extra empty lines between the lines of the file because **print** adds another line fed character.
+In the previous output there were extra empty lines between the lines of the file because **print** adds another line feed character.
 
 To get rid of this you can use ``rstrip`` method:
 
