@@ -1,4 +1,4 @@
-Additional materials
+Additional material
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Documentation:
