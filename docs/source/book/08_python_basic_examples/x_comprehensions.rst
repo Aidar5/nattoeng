@@ -12,7 +12,7 @@ The terms are as follows:
 -  Dict comprehensions
 -  Set comprehensions
 
-Unfortunately, the official translation into Russian sounds like abstraction of lists or list inclusion <https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5>`__, which does not help to understand the essence of the object.
+Unfortunately, the official translation into Russian sounds like `abstraction of lists or list inclusion <https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5>`__ which does not help to understand the essence of the object.
 
 The book used the term «list generator», which unfortunately is also not the best version because in Python there is a separate concept of generator and generator expressions, but it better reflects the essence of expression.
 
@@ -196,7 +196,7 @@ For example, the expression:
     In [29]: print(d)
     {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
 
-You can replace with a dictionary generator:
+You can replace it with a dictionary generator:
 
 .. code:: python
 
