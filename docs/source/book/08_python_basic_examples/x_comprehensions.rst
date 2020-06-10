@@ -14,7 +14,7 @@ The terms are as follows:
 
 Unfortunately, the official translation into Russian sounds like `abstraction of lists or list inclusion <https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5>`__ which does not help to understand the essence of the object.
 
-The book used the term «list generator», which unfortunately is also not the best version because in Python there is a separate concept of generator and generator expressions, but it better reflects the essence of expression.
+The book used the term «list generator» which unfortunately is also not the best version because in Python there is a separate concept of generator and generator expressions, but it better reflects the essence of expression.
 
 These expressions not only enable more compact objects to be created but also create them faster. Although they require a certain habit of use and understanding at first, they are very often used.
 
