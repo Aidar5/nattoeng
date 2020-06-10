@@ -61,7 +61,7 @@ Getting key and value from different output lines
 
 Very often the output of commands looks like the key and the value are in different lines. And you have to figure out how to process the output to get the right match.
 
-For example, from the output of the shipinterface command you need to get the match *interface name – MTU* (sh_ip_interface.txt file):
+For example, from the output of the *sh ip int br* command you need to get the match *interface name – MTU* (sh_ip_interface.txt file):
 
 ::
 
@@ -107,7 +107,7 @@ For example, try to remember the interface each time and print its value when MT
     Ethernet0/3    1500
     Loopback0      1514
 
-TThe command output is organized in such a way that there is always a line with interface first and then a line with MTU after several lines. If you remember the name of the interface every time it appears and at the time when line meets with MTU, the last memorized interface is the one which matches this MTU.
+The command output is organized in such a way that there is always a line with interface first and then a line with MTU after several lines. If you remember the name of the interface every time it appears and at the time when line meets with MTU, the last memorized interface is the one which matches this MTU.
 
 Now, if you want to create a dictionary that matches *interface – MTU*, it’s enough to write the values when the MTU was found.
 
