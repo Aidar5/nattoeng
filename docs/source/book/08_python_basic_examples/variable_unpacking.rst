@@ -1,10 +1,10 @@
 Variable unpacking
 ---------------------
 
-РThe unpacking of variables is a special syntax that allows to assign elements of an iterated object to variables.
+The unpacking of variables is a special syntax that allows to assign elements of an iterated object to variables.
 
 .. note::
-    ДThis functionality is often referred to as tuple unpacking but the unpacking works on any iterated object, not only with tuples
+    This functionality is often referred to as tuple unpacking but the unpacking works on any iterable object, not only with tuples
 
 Example of variable unpacking:
 
@@ -67,7 +67,7 @@ If, for example, only VLAN, MAC and interface should be obtained from line, you 
     In [11]: intf
     Out[11]: 'Gi0/1'
 
-If the for record type is no longer needed, you can replace the item_type variable with underline character:
+If record type is no longer needed, you can replace the item_type variable with underline character:
 
 .. code:: python
 
@@ -89,7 +89,7 @@ The underline character can be used more than once:
     In [16]: vlan
     Out[16]: '10'
 
-Usage of ``*``
+Use ``*``
 ~~~~~~~~~~~~~~~~~~~
 
 The unpacking  of variables supports a special syntax that allows unpacking  of several elements into one. If you put ``*`` in front of the variable name all elements except those that are explicitly assigned will be written into it.
@@ -183,7 +183,7 @@ Unpacking examples
 Unpacking of iterable objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These examples show that you can unpack not only lists, tuples and strings, but also any other iterable objects.
+These examples show that you can unpack not only lists, tuples and strings but also any other iterable objects.
 
 Unpacking the range:
 
@@ -222,7 +222,7 @@ Unpacking zip:
     In [49]: last
     Out[49]: (5, 500)
 
-Example of unpacking in the **for** loop
+Example of unpacking in *for* loop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An example of a loop that runs through the keys:
