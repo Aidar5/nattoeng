@@ -8,7 +8,7 @@ Copying code is a bad idea. Because if you have to update one of the copies late
 Instead, you create a special code block with the name - function. And every time the code has to be repeated, you just call a function. The function allows not only to name a block of code but also to make it more abstract through parameters. The parameters make it possible to transfer different source data for the execution of the function. And, correspondingly, get different results depending on the input parameters.
 
 Section :ref:`functions_index` deals with the creation of functions.
-In addition, section :ref:`useful_functions_index` are considered useful embedded functions.
+In addition, section :ref:`useful_functions_index` considers useful embedded functions.
 
 Once the code is divided into functions, there comes a time when you need to use the function in another script. Of course, copying a function is as inconvenient as copying a normal code. Modules are used to reuse code from another Python script.
 
