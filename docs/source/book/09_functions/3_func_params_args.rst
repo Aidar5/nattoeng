@@ -5,7 +5,7 @@ The purpose of creating a function is typically to take a piece of code that per
 
 Typically, a function must perform some actions with input values and produce an output.
 
-When working with functions, it is important to distinguish:
+When working with functions it is important to distinguish:
 
 -  **parameters** - the variables that are used when creating a function.
 -  **arguments** - the actual values (data) that are passed to the function when called.
@@ -16,13 +16,13 @@ For a function to receive incoming values, it must be created with parameters (f
 
     In [1]: def check_passwd(username, password):
        ...:     if len(password) < 8:
-       ...:         print('Пароль слишком короткий')
+       ...:         print('Password is too short')
        ...:         return False
        ...:     elif username in password:
-       ...:         print('Пароль содержит имя пользователя')
+       ...:         print('Password contains username')
        ...:         return False
        ...:     else:
-       ...:         print(f'Пароль для пользователя {username} прошел все проверки')
+       ...:         print(f'Password for user {username} has passed all checks')
        ...:         return True
        ...:
 
