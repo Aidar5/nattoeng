@@ -1,11 +1,11 @@
 Creation of functions
 ----------------
 
-Creation of a function:
+Creation of function:
 
 * functions are created with a reserved word **def**
 * **def** followed by function name and round brackets
-* the parameters that the function accepts inside brackets
+* parameters that the function accepts inside brackets
 * after round brackets goes colon and from a new line with indent there is a block of code that the function executes
 * optionally, the first line may be a comment, so-called **docstring**
 * function can use **return** operator
@@ -54,7 +54,7 @@ The configure_intf() function expects three values when called because it was cr
 
 Current configure_intf() function prints commands to a standard output, commands can be seen but the result of the function cannot be saved to a variable.
 
-For example, the sorted() function does not simply print the sorting result to the standard output stream but **returns** it, so it can be saved to the variable in this way:
+For example, the sorted() function does not simply print the sorting result to the standard output stream but *returns* it, so it can be saved to the variable in this way:
 
 .. code:: python
 
@@ -87,8 +87,7 @@ For a function to return a value, use ``return`` operator.
 Operator return
 ~~~~~~~~~~~~~~~
 
-The **return** operator is used to return a value while it completes the function.
-Функция может возвращать любой объект Python. Function can return any Python object. By default, function always returns ``None``.
+The **return** operator is used to return a value while it completes the function. Function can return any Python object. By default, function always returns ``None``.
 
 In order for the configure_intf() function to return a value that can then be assigned to a variable, you must use ``return`` operator:
 
@@ -158,7 +157,7 @@ The function can return multiple values. In this case, they are separated by a c
 Documentation (docstring)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first line in the function definition is the docstring, the documentation string. This is a comment that is used to describe a function:
+The first line in the function definition is docstring, documentation string. This is a comment that is used to describe a function:
 
 .. code:: python
 
