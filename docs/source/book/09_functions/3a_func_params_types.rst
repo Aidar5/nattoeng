@@ -9,7 +9,7 @@ When creating a function you can specify which arguments must be passed and whic
 Required parameters
 ~~~~~~~~~~~~~~~~~~~~~~
 
-**Required parameters** - determine which arguments must be passed to functions. At the same time, they need to be passed exactly as many as the parameters of the function are specified (you cannot specify more or less)
+**Required parameters** - determine which arguments must be passed to functions. At the same time, they need to be passed exactly as many as  parameters of function are specified (you cannot specify more or less)
 
 Function with mandatory parameters (func_params_types.py file):
 
