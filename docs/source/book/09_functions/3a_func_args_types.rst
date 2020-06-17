@@ -27,7 +27,7 @@ Look at the different ways to pass arguments using check_passwd (func_check_chec
 Positional argument
 ~~~~~~~~~~~~~~~~~~~~~
 
-Positional arguments when calling a function must be passed in the correct order (therefore they are called Positional arguments).
+Positional arguments when calling a function must be passed in the correct order (therefore they are called positional arguments).
 
 .. code:: python
 
@@ -43,15 +43,15 @@ Positional arguments when calling a function must be passed in the correct order
     Password for user nata has passed all checks
     Out[4]: True
 
-If you swap arguments when calling a function the error will likely occur, depending on the function.
+If you swap arguments when calling a function the error will likely occur depending on the function.
 
 Keyword arguments
 ~~~~~~~~~~~~~~~~~~
 
 **Keyword arguments**:
 
-* are passed with the name of the argument
-* thus they can be transmitted in any order
+* are passed with name of argument
+* thus they can be passed in any order
 
 If both arguments are keyword, they can be passed in any order:
 
@@ -86,7 +86,7 @@ But in that combination it works:
 
 In real life, it is often better to specify flags (parameters with True/False values) or numerical values as a keyword argument. If you set a good name for the parameter you can immediately know by its name what it does.
 
-For example, you can add a flag that will control whether or not a user name should be checked in password:
+For example, you can add a flag that will control whether or not a username should be checked in password:
 
 .. code:: python
 
