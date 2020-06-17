@@ -7,12 +7,12 @@ In Python the expressions ``*args`` and ``**kwargs`` allow for another task - **
 
 So far we’ve called all functions manually. Hence, we passed on all the relevant arguments.
 
-In reality, it is usually necessary to transfer data to the function programmatically. And often the data comes in the form of a Python object.
+In reality, it is usually necessary to transfer data to the function programmatically. And often data comes in the form of a Python object.
 
-Unpacking position arguments
+Unpacking positional arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For example, when formatting strings you often need to pass multiple arguments to format() method. And often these arguments are already on the list or tuple. To transfer them to the format() method you have to use indexes:
+For example, when formatting strings you often need to pass multiple arguments to format() method. And often these arguments are already in the list or tuple. To transfer them to the format() method you have to use indexes:
 
 .. code:: python
 
@@ -113,10 +113,10 @@ Python will unpack the *info* list itself and transfer list elements to the func
 .. note::
     Tuple can also be unpacked in this way.
 
-Unpacking keyword Arguments
+Unpacking keyword alrguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Similarly, you can unpack the dictionary to pass it as keyword arguments.
+Similarly, you can unpack dictionary to pass it as keyword arguments.
 
 Check_passwd function (func_check_pass_optional_param_2.py file):
 
@@ -143,7 +143,7 @@ List of dictionaries ``username_passwd`` where username and password are specifi
         ...:                    {'username': 'nata', 'password': 'natapass'},
         ...:                    {'username': 'user', 'password': '123456789'}]
 
-If you pass the dictionary of the check_passwd function, there is an error:
+If you pass dictionary to check_passwd function, there is an error:
 
 .. code:: python
 
@@ -160,7 +160,7 @@ If you pass the dictionary of the check_passwd function, there is an error:
     TypeError: check_passwd() missing 1 required positional argument: 'password'
 
 
-The error is because the function has taken the dictionary as one argument and believes that it lacks only the password argument.
+The error is because the function has taken dictionary as one argument and believes that it lacks only password argument.
 
 If you add ``**`` пbefore passing a dictionary to function, the function will work properly:
 
