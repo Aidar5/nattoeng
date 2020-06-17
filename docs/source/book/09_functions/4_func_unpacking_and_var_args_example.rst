@@ -42,7 +42,7 @@ Call function in ipython:
     Out[6]: False
 
 
-We will create a add_user_to_users_file function that requests the password for the specified user, checks it and requests it again if the password has not been checked or writes the user and the password to the file if the password has been verified
+We will create add_user_to_users_file function that requests password for the specified user, checks it and requests it again if password has not been checked or writes user and password to the file if password has been verified
 
 .. code:: python
 
@@ -66,7 +66,7 @@ We will create a add_user_to_users_file function that requests the password for 
     In [9]: cat users.txt
     nata,salkfdjsalkdjfsal;dfj
 
-In this variant of the add_user_to_users_file function, it is not possible to regulate the minimum password length and whether to verify the presence of a username in the password. In the following variant of the add_user_to_users_file function, these features are added:
+In this variant of add_user_to_users_file function, it is not possible to regulate the minimum password length and whether to verify the presence of a username in the password. In the following variant of add_user_to_users_file function, these features are added:
 
 .. code:: python
 
@@ -85,7 +85,7 @@ In this variant of the add_user_to_users_file function, it is not possible to re
     Enter password for user nata: dlfjgkd
     Password for user nata has passed all checks
 
-You can now specify min_length or check_username when calling a function. However, it was necessary to repeat parameters of the check_passwd function in defining the add_user_to_users_file function. This is not very good and when there many parameters it is just inconvenient, especially considering that check_passwd function can have other parameters.
+You can now specify min_length or check_username when calling a function. However, it was necessary to repeat parameters of the check_passwd function in defining the add_user_to_users_file function. This is not very good and when there are many parameters it is just inconvenient, especially considering that check_passwd function can have other parameters.
 
 This happens quite often and Python has a common solution to this problem: all arguments for the internal function (in this case it is check_passwd) will be taken in **kwargs. Then, when calling the check_passwd function they will be unpacked into keyword arguments by the same  ``**kwargs`` syntax.
 
@@ -111,4 +111,4 @@ This happens quite often and Python has a common solution to this problem: all a
     Password for user nata has passed all checks
 
 
-In this variant, you can add arguments to the check_passwd function without having to duplicate them in the add_user_to_users_file functions.
+In this variant you can add arguments to the check_passwd function without having to duplicate them in the add_user_to_users_file function.
