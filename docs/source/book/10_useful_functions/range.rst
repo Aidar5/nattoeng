@@ -3,7 +3,7 @@
 Range
 -------------
 
-The range() function returns an immutable sequence of numbers as an **range** object.
+The range() function returns an immutable sequence of numbers as a **range** object.
 
 Function syntax:
 
@@ -15,7 +15,7 @@ Function syntax:
 Parameters of function:
 
 * **start** - from what number the sequence begins. By default - 0
-* **stop** - to which number the sequence of numbers ends. Mentioned number is not included in range
+* **stop** - on which number the sequence of numbers ends. Mentioned number is not included in range
 * **step** - with what step numbers increase. By default 1
 
 The range function stores only **start**, **stop** and **step** values and calculates values as necessary. This means that regardless of the size of range that describes the range() function, it will always occupy a fixed amount of memory.
@@ -66,7 +66,7 @@ In the descending sequence the steps can also be different:
     In [8]: list(range(10, 0, -2))
     Out[8]: [10, 8, 6, 4, 2]
 
-The function supports negative **start** and **stop ** values:
+The function supports negative **start** and **stop** values:
 
 .. code:: python
 
@@ -76,7 +76,7 @@ The function supports negative **start** and **stop ** values:
     In [10]: list(range(0, -10, -1))
     Out[10]: [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 
-The **range** object supports all `operations <https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range>`__, that support sequences in Python, except for addition and multiplication.
+The **range** object supports all `operations <https://docs.python.org/3.6/library/stdtypes.html#sequence-types-list-tuple-range>`__ that support sequences in Python, except addition and multiplication.
 
 Check whether a number falls within a range:
 
@@ -141,7 +141,7 @@ And a minimum and maximum element:
     In [25]: max(nums)
     Out[25]: 4
 
-In addition, **range** object supports the index method:
+In addition, **range** object supports index() method:
 
 .. code:: python
 
