@@ -1,7 +1,7 @@
 All
 -----------
 
-THe ``all()`` function returns True if all elements are true (or the object is empty).
+The ``all()`` function returns True if all elements are true (or the object is empty).
 
 .. code:: python
 
@@ -52,7 +52,8 @@ For example, with any() you can replace ignore_command() function:
     def ignore_command(command):
         '''
         Function checks if command contains a word from ignore list. 
-        * command is a string. Command that need to checked returns True if command contains a word from ignore list, False - if not.
+        * command is a string. Command that need to be checked returns True 
+        * if command contains a word from ignore list, False - if not.
         '''
         ignore = ['duplex', 'alias', 'Current configuration']
 
@@ -61,14 +62,15 @@ For example, with any() you can replace ignore_command() function:
                 return True
         return False
 
-With this option:
+To this option:
 
 .. code:: python
 
     def ignore_command(command):
         '''
         Function checks if command contains a word from ignore list. 
-        command is a string. Command that need to checked returns True if command contains a word from ignore list, False - if not.
+        * command is a string. Command that need to be checked returns True 
+        * if command contains a word from ignore list, False - if not.
         '''
         ignore = ['duplex', 'alias', 'Current configuration']
 
