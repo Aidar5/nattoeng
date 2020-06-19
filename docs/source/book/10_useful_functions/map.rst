@@ -1,7 +1,7 @@
 Map
 -----------
 
-The map() function applies function to each element of sequence and returns iterator with  results.
+The map() function applies function to each element of sequence and returns iterator with  result.
 
 For example, map() can be used to perform element transformations. Convert all strings to uppercase:
 
