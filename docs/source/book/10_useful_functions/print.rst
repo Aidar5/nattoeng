@@ -1,6 +1,6 @@
 .. _print:
 
-Function print
+Print
 -------------
 
 The ``print()`` function has been used many times in the book but its full syntax has not yet been considered:
@@ -35,9 +35,9 @@ For functions f() and range() the result is equivalent to str():
 sep
 ~~~
 
-The sep parameter controls which separator will be used between the elements.
+The sep parameter controls which separator will be used between elements.
 
-By default, the space used is:
+By default, the space is used:
 
 .. code:: python
 
@@ -79,7 +79,6 @@ end
 ~~~
 
 The **end** parameter controls which value will be displayed after all elements are printed. 
-элементов.
 By default, line feed character is used:
 
 .. code:: python
@@ -127,11 +126,9 @@ Python allows to pass to **file** as an argument any object with write(string) m
 flush
 ~~~~~
 
-By default, when writing to a file or print to a standard output stream, the output is buffered.  The print() function allows to disable buffering.
+By default, when writing to a file or print to a standard output stream, the output is buffered.  The print() function allows to disable buffering. You can control it in a file.
 
-    You can control it in a file
-
-An example script that displays a number from 0 to 10 every second (print_nums.py file):
+Example script that displays a number from 0 to 10 every second (print_nums.py file):
 
 .. code:: python
 
@@ -155,7 +152,7 @@ Now, a similar script but the numbers will appear in one line (print_nums_onelin
 
 Try running the function. The numbers does not appear one per second but all appear after 10 seconds.
 
-This is because, when output is displayed on standard output, the **flush** is performed after line feed character.
+This is because when output is displayed on standard output the **flush** is performed after line feed character.
 
 In order to make script work properly the **flush** should be set to True (print_nums_oneline_fixed.py file):
 
