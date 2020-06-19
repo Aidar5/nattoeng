@@ -41,7 +41,7 @@ Sorting the string:
     In [8]: sorted(string_to_sort)
     Out[8]: [' ', 'g', 'g', 'i', 'l', 'n', 'n', 'o', 'r', 's', 't']
 
-If you pass a dictionary to sorted() the function will return the sorted list of keys:
+If you pass a dictionary to sorted() the function will return sorted list of keys:
 
 .. code:: python
 
@@ -128,7 +128,7 @@ The **key** option can accept any functions, not only embedded ones. It is also 
 
 Using the **key** option you can sort objects by any element. However, this requires either lambda() or special functions from the **operator** module.
 
-For example, in order to sort the list of tuples with two elements in the second element, you should use this technique:
+For example, in order to sort the list of tuples with two items in the second element, you should use this technique:
 
 .. code:: python
 
