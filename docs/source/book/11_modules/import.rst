@@ -46,7 +46,7 @@ To invoke some function or method from the **os** module you should specify
     In [4]: os.getlogin()
     Out[4]: 'natasha'
 
-This import method is good because the module objects do not enter the namespace of the current program. That is, if you create a function named getlogin() it will not conflict with the same function of the os module.
+This import method is good because the module objects do not enter the namespace of the current program. That is, if you create a function named getlogin() it will not conflict with the same function of the **os** module.
 
 .. note::
     If file name contains a dot, the standard way of importing will not work. In such cases,     `another method <http://stackoverflow.com/questions/1828127/how-to-reference-python-package-when-filename-contains-a-period/1828249#1828249>`__ is used.
@@ -123,4 +123,4 @@ Option ``from module import *`` imports all module names into the current namesp
 
 There are many objects in the **os** module, so the output is shortened. At the end, the length of the list of names of current namespace is specified.
 
-This import option is best not use. With such code import it is not clear that a function is taken, for example from the **os** module. This makes it much harder to understand the code.
+This import option is best not to use. With such code import it is not clear which function is taken, for example from the **os** module. This makes it much harder to understand the code.
