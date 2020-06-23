@@ -4,7 +4,7 @@
 
 .. _modules_index:
 
-11. Модули
+11. Modules
 ============================
 
 Module in Python is a plain text file with Python code and **.py** extention. It allows logical ordering and grouping of the code.
