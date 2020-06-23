@@ -27,7 +27,7 @@ File check_ip_function.py:
     print(ip1, check_ip(ip1))
     print(ip2, check_ip(ip2))
 
-The check_ip_function.py file has created check_ip function which checks that the argument is an IP address. This is done by using the **ipaddress** module, which will be discussed in the next section.
+The check_ip_function.py file has created check_ip function which checks that the argument is an IP address. This is done by using the **ipaddress** module which will be discussed in the next section.
 
 The ipaddress.ip_address function itself checks the correctness of the IP address and generates  ValueError exception if the address is not validated.
 
@@ -38,7 +38,7 @@ If you run check_ip_function.py script, the output is:
 ::
 
     $ python check_ip_function.py
-    Проверка IP...
+    Checking IP...
     10.1.1.1 True
     10.1.1 False
 
