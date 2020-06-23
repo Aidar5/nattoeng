@@ -9,7 +9,7 @@
 
 Module in Python is a plain text file with Python code and **.py** extention. It allows logical ordering and grouping of the code.
 
-Division into modules can be, for example, by this logic:
+Division into modules can be done, for example, by this logic:
 
 * division of data, formatting and code logic
 * grouping functions and other objects by functionality
