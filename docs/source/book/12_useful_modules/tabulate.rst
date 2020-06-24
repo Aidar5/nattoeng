@@ -7,7 +7,7 @@ Tabulate
 
     pip install tabulate
 
-Module supports such tabular data types:
+Module supports such tabular data types as:
 
 * list of lists (in general case - iterable of iterables)
 * dictionary list (or any other iterable object with dictionaries). Keys are used as column names
