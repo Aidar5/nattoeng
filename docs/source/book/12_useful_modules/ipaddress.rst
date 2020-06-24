@@ -1,7 +1,7 @@
 Ipaddress
 ----------------
 
-Module **ipaddress** simplifies working with IP addresses.
+Module **ipaddress** simplifies work with IP addresses.
 
 .. note::
     Since Python 3.3, **ipaddress** module is part of the standard Python library.
@@ -90,7 +90,7 @@ Function ``ipaddress.ip_network()`` allows the creation of an object that descri
 
     In [20]: subnet1 = ipaddress.ip_network('80.0.1.0/28')
 
-As with an address, the network has various attributes and methods:
+As with an address the network has various attributes and methods:
 
 .. code:: python
 
