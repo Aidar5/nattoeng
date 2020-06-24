@@ -3,7 +3,7 @@ Pprint
 
 The **pprint** module allows you to display Python objects beautifully. This saves the structure of the object. You can use the result that produces **pprint** to create object. The **pprint** module is part of the standard Python library.
 
-The simplest use of the module is the ``pprint()`` function.
+The simplest use of module is the ``pprint()`` function.
 For example, a dictionary with nested dictionaries is displayed as follows:
 
 .. code:: python
