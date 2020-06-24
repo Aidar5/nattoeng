@@ -63,15 +63,15 @@ Adding arguments:
 
 * ``parser.add_argument('-a', action="store", dest="ip")``
 
-  * o	argument that is passed after ``-a`` option is saved to variable ``ip``
+  * rgument that is passed after ``-a`` option is saved to variable ``ip``
 
 * ``parser.add_argument('-c', action="store", dest="count", default=2, type=int)``
 
-  * o	argument that is passed after ``-c``, option will be saved to variable  ``count``, but will be converted to a number first. If no argument was specified, the default is 2
+  * argument that is passed after ``-c`` option will be saved to variable  ``count``, but will be converted to a number first. If no argument was specified, the default is 2
 
 String ``args = parser.parse_args()`` is specified after all arguments have been defined. After running it, variable ``args`` contains all the arguments that were passed to the script. They can be accessed using ``args.ip`` syntax.
 
-Let’s try a script with different arguments. If both arguments are transmitted:
+Let’s try a script with different arguments. If both arguments are passed:
 
 ::
 
@@ -127,7 +127,7 @@ Call script without arguments:
 
 If the function was called without arguments when **argparse** is not used, an error would occur that not all arguments are specified.
 
-Because of **argparse** the argument is actually passed, but it is ``None``.
+Because of **argparse** the argument is actually passed, but it has ``None`` value.
 You can see this in ``Namespace(count=2, ip=None)`` string.
 
 In such a script the IP address must be specified at all times. And in **argparse** you can specify that the argument is mandatory. To do this, change ``-a`` option: add ``required=True`` at the end:
@@ -163,7 +163,7 @@ Also, thanks to **argparse**, *help* is available:
 Note that in the message all options are in ``optional arguments`` section.
 **argparse** itself determines that options are specified because they start with ``-`` and only one letter in the name.
 
-Set the IP address as a position argument (ping_function_ver2.py file):
+Set the IP address as a positional argument (ping_function_ver2.py file):
 
 .. code:: python
 
@@ -205,7 +205,7 @@ Set the IP address as a position argument (ping_function_ver2.py file):
 
 Now instead of giving ``-a`` option you can simply pass the IP address. 
 It will be automatically saved in ``host`` variable.
-And it’s automatically considered as a mandatory. ТThat is, it is no longer necessary to specify ``required=True`` and ``dest="ip"``.
+And it’s automatically considered as a mandatory. Тhat is, it is no longer necessary to specify ``required=True`` and ``dest="ip"``.
 
 In addition, the script specifies messages that will be displayed when you call *help*. Now the script call looks like this:
 
@@ -323,7 +323,7 @@ File parse_dhcp_snooping.py:
 
 Now not only a parser is created as in the previous example, but also nested parsers. Nested parsers will be displayed as commands. In fact, they will be used as mandatory arguments.
 
-With help of nested parsers a hierarchy of arguments and options is created. The arguments that are added to the nested parser will be available as arguments for this parser. For example, this part creates a nested create_db parser and adds ``-n`` option:
+With help of nested parsers a hierarchy of arguments and options is created. The arguments that are added to the nested parser will be available as arguments for this parser. For example, this part creates a nested *create_db* parser and adds ``-n`` option:
 
 .. code:: python
 
@@ -428,7 +428,7 @@ Parser *add_parser* uses ``nargs``:
 
     add_parser.add_argument('filename', nargs='+', help='file(s) to add to db')
 
-Parameter ``nargs`` allows to specify a certain number of elements must be entered into this argument. In this case, all arguments that have been passed to the script after ``filename`` argument will be included in the **nargs** list, but at least one argument must be passed.
+Parameter ``nargs`` allows to specify a certain number of elements that must be entered into this argument. In this case, all arguments that have been passed to the script after ``filename`` argument will be included in the **nargs** list, but at least one argument must be passed.
 
 In this case the *help* message looks like:
 
@@ -518,7 +518,7 @@ In parse_dhcp_snooping.py, the last two lines will only be executed if the scrip
 
 Therefore, if you import a file these lines will not be called.
 
-Try to import the parser into another file (call\_pds.py file):
+Trying to import the parser into another file (call\_pds.py file):
 
 .. code:: python
 
