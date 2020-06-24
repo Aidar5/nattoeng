@@ -1,9 +1,9 @@
 Os
 ---------
 
-The ``os`` The os module allows working with the filesystem, environment and managing processes.
+The ``os`` module allows working with the filesystem, environment and managing processes.
 
-This subsection addresses only a few useful possibilities. For a more complete description of the capabilities of the module please refer to 
+This subsection addresses only several useful features. For a more complete description of the capabilities of the module please refer to 
 `documentation <https://docs.python.org/3/library/os.html>`__ or 
 `article on Pymotw <https://pymotw.com/3/os/>`__.
 
