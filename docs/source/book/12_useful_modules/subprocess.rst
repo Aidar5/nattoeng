@@ -1,4 +1,4 @@
-Subprocess module
+Subprocess
 -----------------
 
 Subprocess module allows you to create new processes. It can then connect to `standard input/output/error streams <http://xgu.ru/wiki/stdin>`__ and receive a return code.
