@@ -4,14 +4,14 @@
 
 .. _iterator_generator_index:
 
-13. Итераторы, итерируемые объекты и генераторы
+13. Iterator, iterable objects and generators
 ===============================================
 
-В этом разделе рассматриваются:
+This section discusses:
 
--  итерируемые объекты (iterable)
--  итераторы (iterator)
--  генераторные выражения (generator expression)
+-  iterable objects
+-  iterator
+-  generator expression
 
 
 .. toctree::
