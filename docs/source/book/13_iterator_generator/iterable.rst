@@ -11,7 +11,7 @@ An iterable object is an object that can return elements one at a time. It is al
 
 Examples of iterable objects:
 
-* all sequences: list, line, tuple
+* all sequences: list, string, tuple
 * dictionaries 
 * files
 
@@ -26,7 +26,7 @@ In Python the iter() function is responsible for iterator deriving.
 
 The ``iter()`` function will work on any object that has ``__iter__`` or  ``__getitem__`` method.
 
-The ``__iter__`` method returns the iterator. If this method is not available, the iter() function checks if there is ``__getitem__`` method that allow getting elements by index.
+The ``__iter__`` method returns the iterator. If this method is not available, the iter() function checks if there is ``__getitem__`` method that allows getting elements by index.
 
 If method ``__getitem__`` is present the iterator is returned, which iterates through the elements using index (starting with 0).
 
