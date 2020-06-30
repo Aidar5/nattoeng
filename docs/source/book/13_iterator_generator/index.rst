@@ -4,14 +4,14 @@
 
 .. _iterator_generator_index:
 
-13. Iterator, iterable objects and generators
+13. Iterators, iterable objects and generators
 ===============================================
 
 This section discusses:
 
 -  iterable objects
--  iterator
--  generator expression
+-  iterators
+-  generator expressions
 
 
 .. toctree::
