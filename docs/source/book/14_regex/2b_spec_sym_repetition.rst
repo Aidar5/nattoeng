@@ -61,7 +61,7 @@ Using it you can get VLAN and MAC address from string:
 
 The asterisk indicates that the previous expression can be repeated 0 or more times.
 
-For example, if an asterisk stands after a symbol, it means a repetition of that symbol.
+For example, if an asterisk stands after 'a' symbol, it means a repetition of that symbol.
 
 The expression ``ba*`` means ‘b’ and then zero or more repetitions of ‘a’:
 
