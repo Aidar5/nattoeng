@@ -6,7 +6,7 @@ A regular expression is a sequence of ordinary and special characters. This sequ
 When working with network equipment, regular expressions can be used, for example, to:
 
 * retrieve information from show command output
-* select a portion of the lines from the show output that matches the template
+* select a portion of the lines from the show command output that matches the template
 * check whether there are certain settings in configuration
 
 A few examples are:
@@ -15,7 +15,7 @@ A few examples are:
 * get from the log file the lines that correspond to the template.
 * get from the configuration those interfaces that do not have a description
 
-In addition, in the network hardware itself, regular expressions can be used to filter the output of any show commands.
+In addition, in network equipment the regular expressions can be used to filter the output of any show commands.
 
 In general, the use of regular expressions will involve getting part of the text out of a large output. But that’s not the only thing they can be used for. For example, regular expressions can be used to perform string replacements or for dividing a string.
 
