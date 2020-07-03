@@ -3,12 +3,12 @@ Character sets
 
 Python has special designations for character sets:
 
-*  ``\d`` - любая цифра
-*  ``\D`` - любое нечисловое значение
-*  ``\s`` - пробельные символы
-*  ``\S`` - все, кроме пробельные символы
-*  ``\w`` - любая буква, цифра или нижнее подчеркивание
-*  ``\W`` - все, кроме букв, цифр или нижнего подчеркивания
+*  ``\d`` - any digit
+*  ``\D`` - any non-numeric value
+*  ``\s`` - whitespace character
+*  ``\S`` - all except whitespace characters
+*  ``\w`` - any letter, digit or underline character
+*  ``\W`` - all except letter, digit or underline character
 
 .. note::
 
@@ -37,6 +37,6 @@ Getting MAC address from log message:
     In [4]: re.search('\w\w\w\w\.\w\w\w\w\.\w\w\w\w', log2).group()
     Out[4]: 'f03a.b216.7ad7'
 
-The expression ``\w\w\w\w\.\w\w\w\w\.\w\w\w\w`` describes 12 letters or digits that are divided into three groups of four characters by points. 
+The expression ``\w\w\w\w\.\w\w\w\w\.\w\w\w\w`` describes 12 letters or digits that are divided by points into three groups of four characters. 
 
 The symbol groups are very convenient, but for now it is necessary to manually specify the character repetition. The following subsection deals with repetition symbols which will simplify the description of expressions.
