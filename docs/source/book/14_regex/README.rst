@@ -1,7 +1,7 @@
 Regular expression syntax
 ------------------------------
 
-Python uses a **re** module to work with regular expressions. Accordingly, you have to  import it to start working with regular expressions.
+Python uses **re** module to work with regular expressions. Accordingly, you have to  import it to start working with regular expressions.
 
 This section will use the search() function for all examples. And in the next subsection, the rest of the functions of **re** will be considered.
 
