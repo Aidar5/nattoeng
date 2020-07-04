@@ -4,7 +4,7 @@ Special symbols
 *  ``.`` - any character except line feed character
 *  ``^`` - beginning of line
 *  ``$`` - end of line
-*  ``[abc]`` - - any symbol in brackets
+*  ``[abc]`` - any symbol in brackets
 *  ``[^abc]`` - any symbol except those in brackets
 *  ``a|b`` - element a or b
 *  ``(regex)`` - expression is treated as one element. In addition, the substring that matches the expression is memorized
@@ -12,9 +12,9 @@ Special symbols
 ``.``
 ~~~~~
 
-Point represents any symbol.
+Dot represents any symbol.
 
-Most often, a point is used with repetition symbols ``+`` and ``*`` to indicate that any character can be found between certain expressions.
+Most often, a dot is used with repetition symbols ``+`` and ``*`` to indicate that any character can be found between certain expressions.
 
 For example, using expression ``Interface.+Port ID.+`` you can describe a line with interfaces in the output "sh cdp neighbors detail":
 
@@ -34,12 +34,12 @@ For example, using expression ``Interface.+Port ID.+`` you can describe a line w
     In [2]: re.search('Interface.+Port ID.+', cdp).group()
     Out[2]: 'Interface: GigabitEthernet1/0/16,  Port ID (outgoing port): GigabitEthernet0/1'
 
-The result was only one string as the point represents any character except line feed character. In addition, repetition characters 
+The result was only one string as the dot represents any character except line feed character. In addition, repetition characters 
 ``+`` and ``*`` by default capture the longest string possible. This aspect is addressed in the subsection "Greed of repetition symbols".
 
 ``^``
 ~~~~~
-Character  ``^`` means the beginning of a line. The expression ``^\d+`` corresponds to the substring:
+Character  ``^`` means the beginning of line. The expression ``^\d+`` corresponds to the substring:
 
 .. code:: python
 
@@ -134,15 +134,15 @@ Several ranges may be indicated in square brackets:
     In [20]: re.search('[a-f0-9]+\.[a-f0-9]+\.[a-f0-9]+', line).group()
     Out[20]: 'aa12.35fe.a5d3'
 
-The expression ``[a-f0-9]+\.[a-f0-9]+\.[a-f0-9]+`` describes three groups of symbols separated by a point. The characters in each group can be letters a-f or digits 0-9. This expression describes MAC address.
+The expression ``[a-f0-9]+\.[a-f0-9]+\.[a-f0-9]+`` describes three groups of symbols separated by a dot. The characters in each group can be letters a-f or digits 0-9. This expression describes MAC address.
 
-Another feature of the square brackets is that the special symbols within the square brackets lose their special meaning and are simply a symbol. For example, a point inside the square brackets will denote a point, not any symbol.
+Another feature of the square brackets is that the special symbols within the square brackets lose their special meaning and are simply a symbol. For example, a dot inside the square brackets will denote a dot, not any symbol.
 
 The expression ``[a-f0-9]+[./][a-f0-9]+`` describes three groups of symbols:
 
-1. letters a-f or digits 0 to 9
-2. point or slash
-3. letters a-f or digits 0 to 9
+1. letters a-f or digits 0-9
+2. dot or slash
+3. letters a-f or digits 0-9
 
 For *line* string the match will be a such substring:
 
