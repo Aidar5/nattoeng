@@ -37,6 +37,6 @@ Getting MAC address from log message:
     In [4]: re.search('\w\w\w\w\.\w\w\w\w\.\w\w\w\w', log2).group()
     Out[4]: 'f03a.b216.7ad7'
 
-The expression ``\w\w\w\w\.\w\w\w\w\.\w\w\w\w`` describes 12 letters or digits that are divided by points into three groups of four characters. 
+The expression ``\w\w\w\w\.\w\w\w\w\.\w\w\w\w`` describes 12 letters or digits that are divided into three groups of four characters and separated by dot. 
 
 The symbol groups are very convenient, but for now it is necessary to manually specify the character repetition. The following subsection deals with repetition symbols which will simplify the description of expressions.
