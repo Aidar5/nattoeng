@@ -1,7 +1,7 @@
 Greedy symbols
 ----------------------------
 
-By default, repetition symbols in regular expressions are greedy. This means that the resulting substring which corresponds to the template, will have the longest match.
+By default, repetition symbols in regular expressions are greedy. This means that the resulting substring which corresponds to the template will have the longest match.
 
 An example of greedy behavior:
 
@@ -36,7 +36,7 @@ But greed is often useful. For example, without turning off the greed of the las
     In [9]: re.search('\d+\s+\S+', line).group()
     Out[9]: '1500     aab1.a1a1.a5d3'
 
-Symbol ``\S`` symbol denotes everything except whitespace characters. Therefore, the expression ``\S+`` with the greedy repetition symbol describes the maximal long string until the first whitespace character. In this case, up to the first space.
+Symbol ``\S`` denotes everything except whitespace characters. Therefore, the expression ``\S+`` with the greedy repetition symbol describes the maximal long string until the first whitespace character. In this case up to the first space.
 
 If greed is disabled, the result is:
 
