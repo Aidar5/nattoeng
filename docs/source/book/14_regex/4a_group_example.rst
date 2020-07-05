@@ -15,7 +15,7 @@ File dhcp_snooping.txt contains the output of command ‘show ip dhcp snooping b
     00:09:BC:3F:A6:50   10.1.10.6        76260       dhcp-snooping   10    FastEthernet0/3
     Total number of bindings: 4
 
-Let’s start with a one string:
+Let’s start with one string:
 
 .. code:: python
 
@@ -32,7 +32,7 @@ Comments on the regular expression:
 -  ``(?P<mac>\S+) +`` - group with name ‘mac’ matches any characters except whitespace characters. So the expression describes the sequence of any characters before the space
 -  ``(?P<ip>\S+) +`` - the same here: a sequence of any non-whitespace characters up to the space. Group name - ‘ip’
 -  ``\d+ +`` - numerical sequence (one or more digits) followed by one or more spaces. *Lease* value gets here
--  ``\S+ +``- sequence of any characters other than whitespace. •	This matches *Type* (in this case all of them ‘dhcp-snooping’)
+-  ``\S+ +``- sequence of any characters other than whitespace. This matches *Type* (in this case all of them ‘dhcp-snooping’)
 -  ``(?P<vlan>\d+) +`` - named group ‘vlan’. Only numerical sequences with one or more characters are included here
 -  ``(?P<port>.\S+)`` - named group 'port'. All characters except whitespace are included here
 
@@ -66,10 +66,10 @@ File parse_dhcp_snooping.py:
             if match:
                 result.append(match.groupdict())
 
-    print('К коммутатору подключено {} устройства'.format(len(result)))
+    print('{} devices connected to switch'.format(len(result)))
 
     for num, comp in enumerate(result, 1):
-        print('Параметры устройства {}:'.format(num))
+        print('Parameters of device {}:'.format(num))
         for key in comp:
             print('{:10}: {:10}'.format(key,comp[key]))
 
@@ -78,23 +78,23 @@ Result of implementation:
 ::
 
     $ python parse_dhcp_snooping.py
-    К коммутатору подключено 4 устройства
-    Параметры устройства 1:
+    4 devices connected to switch
+    Parameters of device 1:
         int:    FastEthernet0/1
         ip:    10.1.10.2
         mac:    00:09:BB:3D:D6:58
         vlan:    10
-    Параметры устройства 2:
+    Parameters of device 2:
         int:    FastEthernet0/10
         ip:    10.1.5.2
         mac:    00:04:A3:3E:5B:69
         vlan:    5
-    Параметры устройства 3:
+    Parameters of device 3:
         int:    FastEthernet0/9
         ip:    10.1.5.4
         mac:    00:05:B3:7E:9B:60
         vlan:    5
-    Параметры устройства 4:
+    Parameters of device 4:
         int:    FastEthernet0/3
         ip:    10.1.10.6
         mac:    00:09:BC:3F:A6:50
