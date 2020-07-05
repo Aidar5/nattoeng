@@ -35,7 +35,7 @@ For example, using expression ``Interface.+Port ID.+`` you can describe a line w
     Out[2]: 'Interface: GigabitEthernet1/0/16,  Port ID (outgoing port): GigabitEthernet0/1'
 
 The result was only one string as the dot represents any character except line feed character. In addition, repetition characters 
-``+`` and ``*`` by default capture the longest string possible. This aspect is addressed in the subsection "Greed of repetition symbols".
+``+`` and ``*`` by default capture the longest string possible. This aspect is addressed in the subsection "Greedy symbols".
 
 ``^``
 ~~~~~
