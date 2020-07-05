@@ -23,7 +23,7 @@ The expression consists of the following parts:
 * ``\w{4}\.`` - this part describes 4 letters or digits and a dot
 * ``(\w{4}\.){2}`` - here the brackets are used to indicate that 4 letters or digits and a dot are repeated twice
 * ``\w{4}`` - then 4 letters or numbers
-* ``.+vlan (\d+)`` - VLAN number fells into the group 
+* ``.+vlan (\d+)`` - VLAN number falls into the group 
 * ``.+port (\S+)`` - the first interface
 * ``.+port (\S+)`` - the second interface
 
@@ -45,7 +45,7 @@ Now the expression looks like this:
 
     In [4]: match = re.search('((?:\w{4}\.){2}\w{4}).+vlan (\d+).+port (\S+).+port (\S+)', log)
 
-Accordingly, the groups:
+Accordingly, the groups() method result:
 
 .. code:: python
 
