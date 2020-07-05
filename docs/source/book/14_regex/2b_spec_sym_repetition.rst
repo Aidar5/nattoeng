@@ -157,7 +157,7 @@ In this situation, it is more logical to use a question mark. It denotes zero or
 
 You can set how many times the previous expression should be repeated with the curly brackets.
 
-For example, the expression ``\w{4}\.\w{4}\.\w{4}`` describes 12 letters or digits that are divided into three groups of four characters by points. This way you can get a MAC address:
+For example, the expression ``\w{4}\.\w{4}\.\w{4}`` describes 12 letters or digits that are divided into three groups of four characters and separated by dot. This way you can get a MAC address:
 
 .. code:: py
 
