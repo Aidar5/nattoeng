@@ -56,7 +56,7 @@ In the resulting script, log.txt is processed line by line and port information 
   :language: python
   :linenos:
 
-Result of script execution:
+The result of script execution:
 
 ::
 
