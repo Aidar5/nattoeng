@@ -97,11 +97,11 @@ Example of output for one neighbor:
 The goal is to obtain such fields:
 
 * neighbor name (Device ID: SW2) 
-* IP-адрес of neighbor (IP address: 10.1.1.2) 
+* IP address of neighbor (IP address: 10.1.1.2) 
 * neighbor platform (Platform: cisco WS-C2960-8TC-L) 
 * IOS version (Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 12.2(55)SE9, RELEASE SOFTWARE (fc1))
 
-And for convenience, you need to get data in the form of a dictionary. Example of the resulting dictionary for SW2 switch:
+And for convenience you need to get data in the form of a dictionary. Example of the resulting dictionary for SW2 switch:
 
 .. code:: python
 
@@ -148,7 +148,7 @@ Explanations for the second option:
 * without checking a line the match is searched 
 * if a match is found, the lastgroup() method is checked
 * lastgroup() method returns name of the last named group in regular expression for which a match has been found
-* if a match was found for the *device* group, the value that fell into the group is written to *device* variable 
+* if a match was found for the *device* group, the value that fells into the group is written to *device* variable 
 * otherwise the mapping of ‘group name’: ‘corresponding value’ is written to dictionary
 
 Result will be the same:
