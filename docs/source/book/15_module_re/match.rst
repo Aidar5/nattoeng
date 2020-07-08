@@ -21,7 +21,7 @@ Match() function differs from search() in that match() always looks for a match 
        ...:                  r'(\S+) and port (\S+)', log)
        ...:
 
-Result will be None:
+The result will be None:
 
 .. code:: python
 
