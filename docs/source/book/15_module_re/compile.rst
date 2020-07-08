@@ -101,7 +101,7 @@ Options that are available only when using re.compile
 
 When using re.compile in search(), match(), findall(), finditer() and fullmatch() methods, additional parameters appear:
 
-* pos - allows you to specify an index in the string from which to start matching
+* pos - allows you to specify an index in the string from where to start looking for a match
 * endpos - specifies from which index the search should be started
 
 Their use is similar to the execution of a string slice.
@@ -119,7 +119,7 @@ For example, this is the result without specifying *pos*, *endpos* parameters:
     In [78]: match.group()
     Out[78]: '100    a1b2.ac10.7000    DYNAMIC     Gi0/1'
 
-In this case, the initial search position shall be indicated:
+In this case, the initial search position should be indicated:
 
 .. code:: python
 
