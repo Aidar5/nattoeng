@@ -113,7 +113,7 @@ Example is checked on file sh_cdp_neighbors_sw1.txt.
 
 The first solution (parse_sh_cdp_neighbors_detail_ver1.py file):
 
-.. literalinclude:: /pyneng-examples-exercises/examples/15_module_re/parse_sh_cdp_neighbors_detail_ver1.py
+.. literalinclude:: https://github.com/natenka/pyneng-examples-exercises/blob/master/examples/15_module_re/parse_sh_cdp_neighbors_detail_ver1.py
   :language: python
   :linenos:
 
@@ -138,7 +138,7 @@ It worked out well, but it can be done in a more compact way.
 
 The second version of solution (parse_sh_cdp_neighbors_detail_ver2.py file):
 
-.. literalinclude:: /pyneng-examples-exercises/examples/15_module_re/parse_sh_cdp_neighbors_detail_ver2.py
+.. literalinclude:: natenka/pyneng-examples-exercises/examples/15_module_re/parse_sh_cdp_neighbors_detail_ver2.py
   :language: python
   :linenos:
 
