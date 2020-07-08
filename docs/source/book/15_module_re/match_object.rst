@@ -7,9 +7,9 @@ In **re** module, several functions return Match object if a match is found:
 * match 
 * finditer - returns an iterator with Match objects
 
-This subsection deals with the methods of the Match object.
+This subsection deals with methods of Match object.
 
-Example of a Match object:
+Example of Match object:
 
 .. code:: python
 
@@ -20,7 +20,7 @@ Example of a Match object:
     In [3]: match
     Out[3]: <_sre.SRE_Match object; span=(47, 124), match='Host f03a.b216.7ad7 in vlan 10 is flapping betwee>'
 
-The 3rd line output simply displays information about the object. Therefore, it is not necessary to rely on what is displayed in the match part, as the displayed line is cut by a fixed number of characters.
+The 3rd line output simply displays information about the object. Therefore, it is not necessary to rely on what is displayed in the match part as the displayed line is cut by a fixed number of characters.
 
 group()
 ^^^^^^^
@@ -41,7 +41,7 @@ The same result returns group 0:
     In [5]: match.group(0)
     Out[5]: 'Host f03a.b216.7ad7 in vlan 10 is flapping between port Gi0/5 and port Gi0/15'
 
-Other numbers show only the contents of the relevant group:
+Other numbers show only the contents of relevant group:
 
 .. code:: python
 
@@ -98,7 +98,7 @@ If group describes a part of the template and there are more than one match, the
     In [17]: match.group(1)
     Out[17]: 'b216.'
 
-This is because the phrase in brackets describes four letters or numbers, dot and then there is a  plus. Accordingly, the first and the second part of the MAC address matched to expression in parentheses. But only the last expression is remembered and returned.
+This is because expression in brackets describes four letters or numbers, dot and then there is a  plus. Accordingly, the first and the second part of the MAC address matched to expression in parentheses. But only the last expression is remembered and returned.
 
 If named groups are used in the expression, the group name can be passed to group() method and the corresponding substring can be obtained:
 
@@ -150,7 +150,7 @@ The group() method returns a tuple with strings in which the elements are those 
 
 The group method has an optional parameter  - default. It works when anything that comes into the group is optional.
 
-For example, with this line, the match will be in both the first group and the second:
+For example, with this line the match will be in both the first group and the second:
 
 .. code:: python
 
@@ -172,7 +172,7 @@ If there is nothing in the line after the space, nothing will get into the group
     In [32]: match.groups()
     Out[32]: ('100', None)
 
-Accordingly, for the second group, the value is None.
+Accordingly, for the second group the value is None.
 
 If group() method is given a default value, it will be returned instead of None:
 
@@ -229,7 +229,7 @@ If the methods are called without arguments, they return indexes for whole match
     In [45]: line[match.start():match.end()]
     Out[45]: '10     aab1.a1a1.a5d3    FastEthernet0/1'
 
-You can transfer number or name of the group to methods. Then they return the indexes for this group:
+You can transfer number or name of the group to methods. Then they return indexes for this group:
 
 .. code:: python
 
