@@ -1,4 +1,4 @@
-Findall
+Findall function
 ----------------
 
 Function ``findall()``: 
