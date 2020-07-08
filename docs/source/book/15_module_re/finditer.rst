@@ -59,7 +59,7 @@ Iterator contains Match objects:
     <_sre.SRE_Match object; span=(379, 447), match='Loopback0             10.1.1.1        YES manual >
     <_sre.SRE_Match object; span=(448, 516), match='Loopback100           100.0.0.1       YES manual >'
 
-Now in *groups* list there are tuples with strings that have entered groups:
+Now in *groups* list there are tuples with strings that fallen into groups::
 
 .. code:: python
 
