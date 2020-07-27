@@ -17,7 +17,7 @@ For example, ASCII cannot convert to Cyrillic bytes:
 
     UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
 
-Similarly, if the string "привет" » is converted to bytes and you try to convert it into a string with ascii, we will also get an error:
+Similarly, if the string "привет" is converted to bytes and you try to convert it into a string with ascii, we will also get an error:
 
 .. code:: python
 
@@ -70,10 +70,10 @@ Error processing
 
 Encode and decode methods have error-processing modes that indicate how to respond to a conversion error.
 
-Parameter **errors** in encode
+Parameter 'errors' in encode
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default encode() uses ``strict`` mode - UnicodeError exception is generated when encoding errors occur. Examples of such behaviour are higher.
+By default encode() uses ``strict`` mode - UnicodeError exception is generated when encoding errors occur. Examples of such behaviour are above.
 
 Instead, you can use *replace* to substitute character with a question mark:
 
@@ -102,10 +102,10 @@ In addition, characters that cannot be encoded may be completely ignored:
     In [49]: de_hi_unicode.encode('ascii', 'ignore')
     Out[49]: b'grezi'
 
-Parameter **errors** in decode
+Parameter 'errors' in decode
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The decode() method also uses strict mode by default and generates a UnicodeDecodeerror exception.
+The decode() method also uses strict mode by default and generates a UnicodeDecodeError exception.
 
 If you change the mode to ignore, as in encode, the characters will simply be ignored:
 
