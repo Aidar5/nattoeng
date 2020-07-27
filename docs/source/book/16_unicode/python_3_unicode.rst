@@ -3,7 +3,7 @@ Unicode in Python 3
 
 Python 3 has:
 
-* strings  - an immutable sequence of Unicode characters. Type string (str) is used to store these characters
+* strings  - an immutable sequence of Unicode characters. Type *string* (str) is used to store these characters
 * bytes  - an immutable sequence of bytes. Type *bytes* is used for storage
 
 Strings
@@ -78,7 +78,7 @@ Bytes
 
 Bytes are an immutable sequence of bytes.
 
-Bytes are denoted in the same way as strings but with the addition of  letter "b" » before the string:
+Bytes are denoted in the same way as strings but with the addition of  letter "b" before the string:
 
 .. code:: python
 
