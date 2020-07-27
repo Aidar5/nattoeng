@@ -13,7 +13,7 @@ So it’s very important to understand the difference between how a computer sto
 
 Python 3, respectively, has two concepts:
 
-* text  - an immutable sequence of unicode characters. String type (str) is used to store these characters
+* text  - an immutable sequence of unicode characters. Type *string* (str) is used to store these characters
 * data - an immutable sequence of bytes. Type *bytes* is used for storage
 
 .. note::
