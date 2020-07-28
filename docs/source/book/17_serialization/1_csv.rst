@@ -40,7 +40,7 @@ The output is:
     ['sw3', 'Cisco', '3650', 'Liverpool']
     ['sw4', 'Cisco', '3650', 'London']
 
-The first list contains the column names and the remaining list contains the corresponding values.
+First list contains the column names and remaining list contains the corresponding values.
 
 Note that csv.reader returns the iterator:
 
@@ -100,7 +100,7 @@ Dictreader does not create standard Python dictionaries but ordered dictionaries
 
     Prior to Python 3.6 regular dictionaries were returned, not ordered dictionaries.
 
-Otherwise, it is possible to work with ordered dictionaries using the same methods as in ordinary dictionaries.
+Otherwise, it is possible to work with ordered dictionaries using the same methods as in regular dictionaries.
 
 Recording
 ~~~~~~
@@ -129,7 +129,7 @@ Note the interesting thing: strings in the last column are quoted and other valu
 
 This is because all strings in the last column have a comma. And the quotation marks indicate what is an entire string. When a comma is inside quotation marks the csv module does not perceive it as a separator.
 
-Sometimes it’s better to have all strings quoted. Of course, in this case an example is simple enough but when there are more values in the strings, the quotation marks indicate where the value begins and ends.
+Sometimes it’s better to have all strings quoted. Of course, in this case, example is simple enough but when there are more values in the strings, the quotation marks indicate where the value begins and ends.
 
 The csv module allows you to control this. For all strings to be written in a CSV file with quotation marks you should change the script this way (csv_write_quoting.py file):
 
