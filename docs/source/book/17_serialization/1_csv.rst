@@ -102,7 +102,7 @@ Dictreader does not create standard Python dictionaries but ordered dictionaries
 
 Otherwise, it is possible to work with ordered dictionaries using the same methods as in regular dictionaries.
 
-Recording
+Writing
 ~~~~~~
 
 Similarly, a csv module can be used to write data to file in CSV format (csv_write.py file):
