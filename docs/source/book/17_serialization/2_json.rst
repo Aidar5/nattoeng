@@ -3,9 +3,9 @@ Work with JSON files
 
 **JSON (JavaScript Object Notation)** - a text format for data storage and exchange.
 
-`JSON <https://ru.wikipedia.org/wiki/JSON>`__ syntax is very similar to Python and is quite user-friendly.
+`JSON <https://ru.wikipedia.org/wiki/JSON>`__ syntax is very similar to Python and is user-friendly.
 
-As with CSV, Python has a module that allows easy writing and reading of data in JSON format.
+As for CSV, Python has a module that allows easy writing and reading of data in JSON format.
 
 
 Reading
@@ -18,7 +18,7 @@ File sw_templates.json:
   :language: json
   :linenos:
 
-There are two methods for reading in the json module:
+There are two methods for reading in json module:
 
 * json.load() - method reads JSON file and returns Python objects
 * json.loads() - method reads string in JSON format and returns Python objects
@@ -26,7 +26,7 @@ There are two methods for reading in the json module:
 json.load()
 ^^^^^^^^^^^
 
-Read JSON file to Python object (json_read_load.py file):
+Reading JSON file to Python object (json_read_load.py file):
 
 
 .. literalinclude:: /pyneng-examples-exercises/examples/17_serialization/json/json_read_load.py
