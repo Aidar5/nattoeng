@@ -6,7 +6,7 @@ Sqlite is often used as an embedded DBMS in applications.
 
 .. note::
 
-    The word SQL server is not used here because the server is not needed there - all the functionality that is embedded in the SQL server is implemented inside the library (and therefore within the program that uses it).
+    The word SQL server is not used here because server is not needed there - all functionality that is embedded in SQL server is implemented inside the library (and therefore within program that uses it).
 
 
 SQLite CLI
@@ -16,7 +16,7 @@ SQLite package also includes a command line utility for working with SQLite. The
 
 With this utility it is very convenient to check the correctness of SQL commands as well as to get acquainted with SQL language in general.
 
-Try to use this utility to figure out basic SQL commands that will be needed to work with the database.
+Let's try to use this utility to figure out basic SQL commands that will be needed to work with the database.
 
 We’ll figure out how to build a database first.
 
@@ -35,7 +35,7 @@ To create a database (or open an already created database), you simply call sqli
 
 Inside sqlite3 you can execute SQL commands or so-called metacommands (or dot commands).
 
-Metacommands include several special commands to work with SQLite. They refer only to the sqlite3 utility, not to the SQL language. There is no need to put ``;`` at the end of command.
+Metacommands include several special commands to work with SQLite. They refer only to the sqlite3 utility, not to SQL language. There is no need to put ``;`` at the end of command.
 
 Examples of metacommands:
 
@@ -66,7 +66,7 @@ The standard Sqlite CLI interface has several disadvantages:
 
 * no autocomplete commands
 * no tips
-* •	all content of a column is not always displayed
+* all content of a column is not always displayed
 
 All these deficiencies are fixed in `litecli <https://github.com/dbcli/litecli>`__.
 So it’s best to use it.
