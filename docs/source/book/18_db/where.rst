@@ -1,9 +1,9 @@
 WHERE
 ~~~~~
 
-WHERE operator is used to specify the query. With the help of this operator, it is possible to specify certain conditions under which the data are selected. If condition is met, the corresponding value is returned from the table, if not - it is not returned.
+WHERE operator is used to specify the query. With the help of this operator it is possible to specify certain conditions under which the data are selected. If condition is met the corresponding value is returned from the table, if not - it is not returned.
 
-Now there are only two records in *switch* table:
+Now there are only two enties in *switch* table:
 
 .. code:: sql
 
@@ -91,7 +91,7 @@ Like with characters ``_`` and ``%`` indicates what the value should look like:
 * ``_`` - denotes one character or number
 * ``%`` - denotes zero, one or many characters
 
-For example, if  *model* field is written in different formats the previous query will not be able to extract the switches needed.
+For example, if  *model* field is written in different formats the previous query will not be able to extract needed switches.
 
 For example, for sw6 switch the model field is written in this format: C3750, but for sw1 and sw3 switches: Cisco 3750.
 
