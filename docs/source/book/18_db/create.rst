@@ -30,9 +30,9 @@ Additionally, *mac* field is the primary key. That automatically means that:
 * field must be unique
 * field cannot have null value (in SQLite this must be stated explicitly)
 
-In this example this is quite logical as the MAC address must be unique.
+In this example this is quite logical as MAC address must be unique.
 
-There are no records in the table at the moment, only a definition. You can view the definition with this command:
+There are no entries in the table at the moment, only a definition. You can view the definition with this command:
 
 .. code:: sql
 
