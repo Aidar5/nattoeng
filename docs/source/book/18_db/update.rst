@@ -111,7 +111,7 @@ After commands upload the table is as follows:
     7 rows in set
     Time: 0.038s
 
-Now suppose that sw1 was replaced from 3750 model to 3850. Accordingly, not only the model field but also MAC address field was changed.
+Now suppose that sw1 was replaced from 3750 model to 3850. Accordingly, not only model field but also MAC address field was changed.
 
 Making changes:
 
