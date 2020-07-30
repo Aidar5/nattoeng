@@ -1,7 +1,7 @@
 REPLACE
 ~~~~~~~
 
-REPLACE operator is used to add or replace data in a table.
+REPLACE operator is used to add or replace data in the table.
 
 .. note::
 
@@ -53,7 +53,7 @@ The result of any of these commands is to replace sw3 switch model:
     | 0030.A3AA.C1CC | sw3      | Cisco 3850 | London, Green Str | 10.255.1.3 | 255       |
     +----------------+----------+------------+-------------------+------------+-----------+
 
-In this case, MAC address in the new entry is the same as in existing one, so the replacement occurs.
+In this case, MAC address in new entry is the same as in existing one, so the replacement occurs.
 
 .. note::
 
