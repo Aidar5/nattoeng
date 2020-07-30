@@ -5,7 +5,7 @@ INSERT operator is used to add data to the table.
 
 .. note::
 
-    If the table was deleted in previous step, create it:
+    If table was deleted in previous step, create it:
     
     .. code:: sql
 
