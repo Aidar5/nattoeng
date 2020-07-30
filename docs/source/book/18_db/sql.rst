@@ -1,7 +1,7 @@
 SQL
 ---
 
-**SQL (structured query language)** - used to describe the database structure, manage data (add, edit, delete, receive), manage access rights to the database and its objects, and manage transactions.
+**SQL (structured query language)** - used to describe database structure, manage data (add, edit, delete, receive), manage access rights to the database and its objects, and manage transactions.
 
 SQL language is divided into the following categories:
 
@@ -16,7 +16,7 @@ Each category has its own operators (not all operators are listed):
 
   * CREATE - create new table, DBMS, schemas 
   * ALTER - change of existing table, columns 
-  * DROP - removing existing objects from the DBMS
+  * DROP - removing existing objects from DBMS
 
 * DML 
 
@@ -27,7 +27,7 @@ Each category has its own operators (not all operators are listed):
 
 * DCL 
 
-  * GRANT - Allow users to read/write certain objects to a DBMS
+  * GRANT - Allow users to read/write certain objects to DBMS
   * REVOKE - - withdrawal of prior authorizations
 
 * TCL 
