@@ -1,9 +1,9 @@
 DROP
 ~~~~
 
-DROP operator removes the table along with the schema and all data.
+DROP operator removes table along with schema and all data.
 
-You can delete a table like this:
+You can delete table like this:
 
 .. code:: sql
 
