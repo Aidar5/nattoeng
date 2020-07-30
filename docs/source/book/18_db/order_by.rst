@@ -1,7 +1,7 @@
 ORDER BY
 ~~~~~~~~
 
-ORDER BY operator is used to sort the output by a certain field, ascending or descending. To do this, it is added to SELECT operator.
+ORDER BY operator is used to sort the output by a certain field, ascending or descending. To do this it should be added to SELECT operator.
 
 If you perform a simple SELECT query, the output is:
 
