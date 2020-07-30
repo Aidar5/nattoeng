@@ -1,4 +1,4 @@
-SQL bases (in sqlite3 CLI)
+SQL basics (in sqlite3 CLI)
 --------------------------
 
 This section deals with the SQL syntax.
