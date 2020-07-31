@@ -1,11 +1,11 @@
 SQLite use example
 ---------------------------
 
-In section 15 there was an example of reviewing the output of command *show ip dhcp snooping binding*. On the output we received information about parameters of connected devices (interface, IP, MAC, VLAN).
+In section 15 there was an example of reviewing the output of command *show ip dhcp snooping binding*. In the output we received information about parameters of connected devices (interface, IP, MAC, VLAN).
 
 In this variant you can only see all devices connected to the switch. If you want to find out others based on one of the parameters, it’s not  convenient in this way.
 
-For example, if you want to get information from an IP address about which interface host is connected to, which MAC address it has and which VLAN it is in, then the script is not very simple and more importantly, not convenient.
+For example, if you want to get information based on IP address about to which interface the host is connected, which MAC address it has and in which VLAN it is, then the script is not very simple and more importantly, not convenient.
 
 Let’s write information obtained from the output *sh ip dhcp snooping binding* to SQLite. This will allow do queries based on any parameter and get missing ones. For this example, it is sufficient to create a single table where information will be stored.
 
@@ -40,7 +40,7 @@ Comments to file:
   * file dhcp_snooping.db is created if it does not exist
   * Connection object is created
 
-* •	table is created in database (if it does not exist) based on commands specified in dhcp_snooping_schema.sql file:
+* table is created in database (if it does not exist) based on commands specified in dhcp_snooping_schema.sql file:
 
   * dhcp_snooping_schema.sql file opens
   * ``schema = f.read()`` - whole file is read in one string
@@ -54,9 +54,9 @@ Execution of script:
     Creating schema...
     Done
 
-The result shold be a database file and a dhcp table.
+The result should be a database file and a dhcp table.
 
-You can check that a table has been created with sqlite3 utility which allows you to execute queries directly in command line.
+You can check that the table has been created with sqlite3 utility which allows you to execute queries directly in command line.
 
 The list of tables created is shown as follows:
 
@@ -99,10 +99,10 @@ Comments to the script:
   * this is necessary to enable them to be immediately written to  database
 
 * Scroll the elements in the received list of tuples
-* •	This script uses another version of database entry
+* This script uses another version of database entry
 
   * *query* string describes the query. But instead of values, question marks are given. This query type allows dynamicly substite field values.
-  * o	then execute() method is passed the query string and the *row* tuple where the values are
+  * then execute() method is passed the query string and the *row* tuple where the values are
 
 Execute the script:
 
@@ -140,7 +140,7 @@ Now let’s try to ask by a certain parameter:
 
 That is, it is now possible to get others parameters based on one parameter.
 
-ПLet’s modify the script to make it check for the presence of dhcp_snooping.db. If you have a database file you don’t need to create a table, we believe it has already been created.
+Let’s modify the script to make it check for the presence of dhcp_snooping.db. If you have a database file you don’t need to create a table, we believe it has already been created.
 
 File create_sqlite_ver3.py:
 
@@ -198,7 +198,7 @@ Now we make a separate script that deals with sending queries to database and di
 
 * provide normal output on request
 
-Файл get_data_ver1.py:
+File get_data_ver1.py:
 
 .. literalinclude:: /pyneng-examples-exercises/examples/18_db/get_data_ver1.py
   :language: python
@@ -216,10 +216,11 @@ Comments to the script:
 
 * Select rows from database where the key is equal to specified value
 
-  * in SQL values can be set by a question mark but you cannot give a column name. Therefore, the column name is substituted by the row formatting and the value by SQL tool.
+  * in SQL the values can be set by a question mark but you cannot give a column name. Therefore, the column name is substituted by the row formatting and the value by SQL tool.
   * Pay attention to ``(value,)`` - the tuple with one element is passed
 
 * The resulting information is displayed to standard output stream: 
+
   * iterate over the results obtained and display only those fields that are in the *keys* list
 
 Let’s check the script.
