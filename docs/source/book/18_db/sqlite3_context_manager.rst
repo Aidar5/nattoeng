@@ -52,7 +52,7 @@ File create_sw_inventory_ver3.py uses functions from create_sw_inventory_ver2_fu
   :language: python
   :linenos:
 
-In * data2* list the sw7 switch has the same MAC address as the sw3 switch already existing in database.
+In *data2* list the sw7 switch has the same MAC address as the sw3 switch already existing in database.
 
 Result of script execution:
 
@@ -79,7 +79,7 @@ Result of script execution:
      ('0000.AAAA.DDDD', 'sw3', 'Cisco 2960', 'London, Green Str'),
      ('0011.AAAA.CCCC', 'sw4', 'Cisco 3750', 'London, Green Str')]
 
-Note that the content of *switch* table before and after adding the information is the same. This means that no line from the *data2* list has been written.
+Note that the content of *switch* table before and after adding the information is the same. This means that no line from *data2* list has been written.
 
 This is because executemany() method is used and within the same transaction we try to write all four lines. If an error occurs with one of them, all changes are reversed.
 
