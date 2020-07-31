@@ -1,10 +1,10 @@
-Получение результатов запроса
+Fetching query results
 -----------------------------
 
 There are several ways to get query results in sqlite3:
 
-* •	using ``fetch...()`` depending on the method one, more or all rows are returned
-* •	using cursor as an iterator - iterator returns
+* using ``fetch...()`` - depending on the method one, more or all rows are returned
+* using cursor as an iterator - iterator returns
 
 Method fetchone
 ^^^^^^^^^^^^^^
@@ -29,14 +29,14 @@ Example of fetching information from sw_inventory.db database:
 
 Note that while the SQL query requests all table content, fetchone() returned only one row.
 
-If you re-call method, it returns the following row:
+If you re-call method, it returns the next row:
 
 .. code:: python
 
     In [21]: print(cursor.fetchone())
     ('0000.BBBB.CCCC', 'sw2', 'Cisco 3780', 'London, Green Str')
 
-Similarly, method will return the following rows. After processing all rows, method starts returning None.
+Similarly, method will return the next rows. After processing all rows, method starts returning None.
 
 In this way, method can be used in the loop, for example:
 
