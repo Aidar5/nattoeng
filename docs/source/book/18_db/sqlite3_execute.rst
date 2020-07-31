@@ -29,7 +29,7 @@ Creates a *switch* table using execute():
     In [4]: cursor.execute("create table switch (mac text not NULL primary key, hostname text, model text, location text)")
     Out[4]: <sqlite3.Cursor at 0x1085be880>
 
-SQL expressions can be parameterized - data can be substituted by special values. SQL expressions can be parameterized - data can be substituted by special values. Due to this you can use the same SQL command to transfer different data.
+SQL expressions can be parameterized - data can be substituted by special values. Due to this you can use the same SQL command to transfer different data.
 
 For example, *switch* table needs to be filled with data from *data* list:
 
