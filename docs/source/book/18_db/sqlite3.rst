@@ -5,7 +5,7 @@ Sqlite3 module
 
 Python uses sqlite3 module to work with SQLite.
 
-**Connection** object - This object can be said to represent a database.
+**Connection** object - this object can be said to represent a database.
 
 Example of creating a connection:
 
