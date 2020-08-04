@@ -1,63 +1,47 @@
-Модуль paramiko
+Module paramiko
 ---------------
 
-Paramiko - это реализация протокола SSHv2 на Python. Paramiko
-предоставляет функциональность клиента и сервера. Мы будем рассматривать
-только функциональность клиента.
+Paramiko is an implementation of the SSHv2 protocol on Python. Paramiko provides client-server functionality. We will consider only client functionality.
 
-Так как Paramiko не входит в стандартную библиотеку модулей Python, его
-нужно установить:
+Since Paramiko is not part of standard Python module library, it needs to be installed:
 
 ::
 
     pip install paramiko
 
-Пример использования Paramiko (файл 3_paramiko.py):
+Example of using Paramiko (3_paramiko.py file):
 
 .. literalinclude:: /pyneng-examples-exercises/examples/19_ssh_telnet/3_paramiko.py
   :language: python
   :linenos:
 
 
-Комментарии к скрипту: 
+Comments to the script:
 
-* ``client = paramiko.SSHClient()`` - этот класс представляет соединение к SSH-серверу. Он выполняет аутентификацию клиента. 
+* ``client = paramiko.SSHClient()`` - this class represents connection to SSH server. It performs client authentication. 
 * ``client.set_missing_host_key_policy(paramiko.AutoAddPolicy())`` 
 
-  * ``set_missing_host_key_policy`` - устанавливает, какую политику использовать, 
-    когда выполнятся подключение к серверу, ключ которого неизвестен. 
-  * ``paramiko.AutoAddPolicy()`` - политика, которая 
-    автоматически добавляет новое имя хоста и ключ в локальный объект HostKeys. 
+  * ``set_missing_host_key_policy`` - sets which policy to use when connecting to a server whose key is unknown. 
+  * ``paramiko.AutoAddPolicy()`` - policy that automatically adds new host name and key to the local HostKeys object.
 
 * ``client.connect(IP, username=USER, password=PASSWORD, look_for_keys=False, allow_agent=False)``
 
-  * ``client.connect`` - метод, который выполняет подключение к SSH-серверу 
-    и аутентифицирует подключение 
+  * ``client.connect`` - method that connects to SSH server and authenticates the connection 
 
-    * ``hostname`` - имя хоста или IP-адрес 
-    * ``username`` - имя пользователя 
-    * ``password`` - пароль
-    * ``look_for_keys`` - по умолчанию paramiko выполняет аутентификацию по
-      ключам. Чтобы отключить это, надо поставить флаг в False 
-    * ``allow_agent`` - paramiko может подключаться к локальному SSH агенту 
-      ОС. Это нужно при работе с ключами, а так как в данном случае 
-      аутентификация выполняется по логину/паролю, это нужно отключить. 
+    * ``hostname`` - host name or IP address
+    * ``username`` - username
+    * ``password`` - password
+    * ``look_for_keys`` - by default paramiko performs key authentication. To disable this, put the flag in False
+    * ``allow_agent`` - paramiko can connect to a local SSH agent. This is necessary when working with keys and since in this case authentication is done by login/password, it should be disabled. 
 
-  * ``with client.invoke_shell() as ssh`` - после выполнения предыдущей
-    команды уже есть подключение к серверу. Метод ``invoke_shell`` позволяет
-    установить интерактивную сессию SSH с сервером. 
-  * Внутри установленной сессии выполняются команды и получаются данные: 
+  * ``with client.invoke_shell() as ssh`` - after execution of previous command there is already a connection to the server. Method ``invoke_shell`` allows to set an interactive SSH session with server.
+  * o	Within the established session, commands are executed and data are obtained:
 
-    * ``ssh.send`` - отправляет указанную строку в сессию 
-    * ``ssh.recv`` - получает данные из сессии. В скобках 
-      указывается максимальное значение в байтах, которое
-      можно получить. Этот метод возвращает считанную строку 
-    * Кроме этого, между отправкой команды и считыванием кое-где 
-      стоит строка ``time.sleep``. С помощью неё указывается пауза - сколько времени
-      подождать, прежде чем скрипт продолжит выполняться. Это делается для того,
-      чтобы дождаться выполнения команды на оборудовании
+    * ``ssh.send`` - sends specified string to session
+    * ``ssh.recv`` - receives data from session. In brackets, the maximum value in bytes that can be obtained is indicated. This method returns a received string
+    * 	In addition, somewhere in between of sending and receiving commands, there is a ``time.sleep``. It specifies how long to wait before the script continues to run. This is done to await the execution of command on equipment
 
-Так выглядит результат выполнения скрипта:
+This is the script result:
 
 ::
 
@@ -121,15 +105,11 @@ Paramiko - это реализация протокола SSHv2 на Python. Par
     FastEthernet0/1.70     10.3.70.1       YES manual up                    up
     R3#
 
-Обратите внимание, что в вывод попал и процесс ввода пароля enable, и
-команда terminal length.
+Please note that the output includes both entering enable password and terminal length command.
 
-Это связано с тем, что paramiko собирает весь вывод в буфер. И, при
-вызове метода ``recv`` (например, ``ssh.recv(1000)``), paramiko
-возвращает всё, что есть в буфере. После выполнения ``recv`` буфер пуст.
+This is because paramiko collects the entire output to buffer. And when ``recv`` (for example, ``ssh.recv(1000)``), paramiko returns everything from buffer. After ``recv`` execution, buffer is empty.
 
-Поэтому, если нужно получить только вывод команды sh ip int br, то надо
-оставить ``recv``, но не делать print:
+Therefore, if you only need to get the output of *sh ip int br*, then you should leave ``recv``, but not apply *print*:
 
 .. code:: python
 
