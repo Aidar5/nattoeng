@@ -30,7 +30,7 @@ Python has several modules that allow you to connect to equipment and execute co
   
 * **netmiko** - module that simplifies the use of paramiko for network devices 
 
-  * o	netmiko is a "wrapper" which is oriented to work with network equipment
+  * netmiko is a "wrapper" which is oriented to work with network equipment
 
 This section deals with all four modules and describes how to connect to several devices in parallel. Three routers are used in section examples. There are no requirements for them, only configured SSH.
 
