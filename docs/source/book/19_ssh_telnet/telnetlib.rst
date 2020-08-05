@@ -7,7 +7,7 @@ Module telnetlib is part of standard Python library. This is the telnet client i
 
     It is also possible to connect via telnet using pexpect. Plus of telnetlib is that this module is part of standard Python library.
     
-Telnetlib resembles pexpect, but has several differences. The most notable difference is that telnetlib requires the transfer of a byte string, rather than normal one.
+Telnetlib resembles pexpect but has several differences. The most notable difference is that telnetlib requires the transfer of a byte string, rather than normal one.
 
 The connection is performed as follows:
 
@@ -18,14 +18,14 @@ The connection is performed as follows:
 Method read_until
 ~~~~~~~~~~~~~~~~
 
-Method read_until specifies till which line the output should be read. However, as an argument, it is necessary to pass bytes, not the usual string:
+Method read_until() specifies till which line the output should be read. However, as an argument, it is necessary to pass bytes, not the usual string:
 
 .. code:: python
 
     In [2]: telnet.read_until(b'Username')
     Out[2]: b'\r\n\r\nUser Access Verification\r\n\r\nUsername'
 
-Method read_until returns everything it has read before the specified string.
+Method read_until() returns everything it has read before the specified string.
 
 Method write
 ~~~~~~~~~~~
@@ -197,7 +197,7 @@ Accordingly, if necessary you can continue working with these elements:
     In [31]: output.decode('utf-8')
     Out[31]: 'sh clock\r\n*19:37:21.577 UTC Fri Nov 3 2017\r\nR1>'
 
-Метод close
+Method close
 ~~~~~~~~~~~
 
 Method close() closes connection but it's better to open and close connection using context manager:
