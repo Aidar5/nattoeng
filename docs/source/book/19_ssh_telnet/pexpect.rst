@@ -21,49 +21,16 @@ First, pexpect module needs to install:
 The logic of pexpect is:
 
 * some program is running
-* pexpect expects a certain output (invitation, password request, etc.) 
+* pexpect expects a certain output (prompt, password request, etc.) 
 * after receiving the output, it sends commands/data
 * last two actions are repeated as many as necessary
 
-Pexpect has two main tools:
-
-* function ``run()`` 
-* class ``spawn``
-
-``pexpect.run()``
-~~~~~~~~~~~~~~~~~
-
-Function  ``run()`` allows you to call a program and return its output.
-
-For example:
-
-.. code:: python
-
-    In [1]: import pexpect
-
-    In [2]: output = pexpect.run('ls -ls')
-
-    In [3]: print(output)
-    b'total 44\r\n4 -rw-r--r-- 1 vagrant vagrant 3203 Jul 14 07:15 1_pexpect.py\r\n4 -rw-r--r-- 1 vagrant vagrant 3393 Jul 14 07:15 2_telnetlib.py\r\n4 -rw-r--r-- 1 vagrant vagrant 3452 Jul 14 07:15 3_paramiko.py\r\n4 -rw-r--r-- 1 vagrant vagrant 3127 Jul 14 07:15 4_netmiko.py\r\n4 -rw-r--r-- 1 vagrant vagrant  718 Jul 14 07:15 4_netmiko_telnet.py\r\n4 -rw-r--r-- 1 vagrant vagrant  300 Jul  8 15:31 devices.yaml\r\n4 -rw-r--r-- 1 vagrant vagrant  413 Jul 14 07:15 netmiko_function.py\r\n4 -rw-r--r-- 1 vagrant vagrant  876 Jul 14 07:15 netmiko_multiprocessing.py\r\n4 -rw-r--r-- 1 vagrant vagrant 1147 Jul 14 07:15 netmiko_threading_data_list.py\r\n4 -rw-r--r-- 1 vagrant vagrant 1121 Jul 14 07:15 netmiko_threading_data.py\r\n4 -rw-r--r-- 1 vagrant vagrant  671 Jul 14 07:15 netmiko_threading.py\r\n'
-
-    In [4]: print(output.decode('utf-8'))
-    total 44
-    4 -rw-r--r-- 1 vagrant vagrant 3203 Jul 14 07:15 1_pexpect.py
-    4 -rw-r--r-- 1 vagrant vagrant 3393 Jul 14 07:15 2_telnetlib.py
-    4 -rw-r--r-- 1 vagrant vagrant 3452 Jul 14 07:15 3_paramiko.py
-    4 -rw-r--r-- 1 vagrant vagrant 3127 Jul 14 07:15 4_netmiko.py
-    4 -rw-r--r-- 1 vagrant vagrant  718 Jul 14 07:15 4_netmiko_telnet.py
-    4 -rw-r--r-- 1 vagrant vagrant  300 Jul  8 15:31 devices.yaml
-    4 -rw-r--r-- 1 vagrant vagrant  413 Jul 14 07:15 netmiko_function.py
-    4 -rw-r--r-- 1 vagrant vagrant  876 Jul 14 07:15 netmiko_multiprocessing.py
-    4 -rw-r--r-- 1 vagrant vagrant 1147 Jul 14 07:15 netmiko_threading_data_list.py
-    4 -rw-r--r-- 1 vagrant vagrant 1121 Jul 14 07:15 netmiko_threading_data.py
-    4 -rw-r--r-- 1 vagrant vagrant  671 Jul 14 07:15 netmiko_threading.py
+At the same time, pexpect does not implement utilities but uses ready-made ones.
 
 ``pexpect.spawn``
 ~~~~~~~~~~~~~~~~~
 
-Class ``spawn`` supports more features. It allows you to interact with the called program by sending data and waiting for a response.
+Class ``spawn`` allows you to interact with the called program by sending data and waiting for a response.
 
 For example, you can initiate SSH connecton:
 
@@ -205,7 +172,7 @@ This is a special value that allows you to react to the end of a command or sess
 
 When calling ``ls -ls`` command, pexpect does not receive an interactive session. Command is simply executed and that ends its work.
 
-Therefore, if you run this command and set invitation in *expect*, there is an error:
+Therefore, if you run this command and set prompt in *expect*, there is an error:
 
 .. code:: python
 
@@ -256,81 +223,193 @@ Example of pexpect use
 
 An example of using pexpect when connecting to equipment and passing show command (file 1_pexpect.py):
 
-.. literalinclude:: /pyneng-examples-exercises/examples/19_ssh_telnet/1_pexpect.py
-  :language: python
-  :linenos:
+.. code:: python
+
+    import pexpect
+    import re
+    from pprint import pprint
 
 
-Comments to the script:
+    def send_show_command(ip, username, password, enable, commands, prompt="#"):
+        with pexpect.spawn(f"ssh {username}@{ip}", timeout=10, encoding="utf-8") as ssh:
+            ssh.expect("[Pp]assword")
+            ssh.sendline(password)
+            enable_status = ssh.expect([">", "#"])
+            if enable_status == 0:
+                ssh.sendline("enable")
+                ssh.expect("[Pp]assword")
+                ssh.sendline(enable)
+                ssh.expect(prompt)
 
-* command to execute is passed as an argument
-* then login, password and password for enable mode are requested
+            ssh.sendline("terminal length 0")
+            ssh.expect(prompt)
 
-  * passwords are requested with getpass module
+            result = {}
+            for command in commands:
+                ssh.sendline(command)
+                match = ssh.expect([prompt, pexpect.TIMEOUT, pexpect.EOF])
+                if match == 1:
+                    print(
+                        f"Symbol {prompt} is not found in output. Resulting output is written to dictionary"
+                    )
+                if match == 2:
+                    print("Connection was terminated by server")
+                    return result
+                else:
+                    output = ssh.before
+                    result[command] = output.replace("\r\n", "\n")
+            return result
 
-* ``ip_list`` - list of IP addresses of devices to which the connection will be established
-* connection to devices from the list occurs in the loop
-* In spawn class, SSH connection establishes to current address using specified user name 
-* after that, the pairs of methods begin to alternate: expect and sendline
 
-  * ``expect`` - waits for substring
-  * ``sendline`` - when a line appears, a command is sent
+    if __name__ == "__main__":
+        devices = ["192.168.100.1", "192.168.100.2", "192.168.100.3"]
+        commands = ["sh clock", "sh int desc"]
+        for ip in devices:
+            result = send_show_command(ip, "cisco", "cisco", "cisco", commands)
+            pprint(result, width=120)
 
-* this happens until the end of the loop and only the last command is different:
+This part of the function is responsible for switching to enable mode:
 
-  * ``before`` lets you read everything that caught by pexpect before the previous substring in *expect*
+.. code:: python
 
-.. note::
+    enable_status = ssh.expect([">", "#"])
+    if enable_status == 0:
+        ssh.sendline("enable")
+        ssh.expect("[Pp]assword")
+        ssh.sendline(enable)
+        ssh.expect(prompt)
 
-    Note the line ``ssh.expect('[#>]')``. Method *expect* expects not just a string, but a regular expression.
+If ``ssh.expect([">", "#"])`` does not return index 0, it means that connection was not switched to enable mode automaticaly and it should be done separately. If index 1 is returned, then we are already in enable mode, for example, because device is configured with privilege 15.
 
-The script execution is as follows:
+Another interesting point about this function:
+
+.. code:: python
+
+    for command in commands:
+        ssh.sendline(command)
+        match = ssh.expect([prompt, pexpect.TIMEOUT, pexpect.EOF])
+        if match == 1:
+            print(
+                f"Symbol {prompt} is not found in output. Resulting output is written to dictionary"
+            )
+        if match == 2:
+            print("Connection was terminated by server")
+            return result
+        else:
+            output = ssh.before
+            result[command] = output.replace("\r\n", "\n")
+    return result
+
+Here commands are sent in turn and expect() waits for three options: prompt, timeout, or EOF.
+If expect() method didn't catch ``#``, the value 1 will be returned and in this case a message is displayed,
+that the symbol was not found. But in both cases, when a match is found or timeout the resulting output is written to dictionary. Thus, you can see what was received from the device, even
+if prompt is not found.
+
+Output after script execution:
 
 ::
 
-    $ python 1_pexpect.py "sh ip int br"
-    Username: nata
-    Password:
-    Enter enable secret:
-    Connection to device 192.168.100.1
-    sh ip int br
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.1   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.1.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.1.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.1.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.1.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.1.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.1.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.1.70.1       YES manual up                    up
-    R1
-    Connection to device 192.168.100.2
-    sh ip int br
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.2   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.2.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.2.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.2.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.2.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.2.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.2.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.2.70.1       YES manual up                    up
-    R2
-    Connection to device 192.168.100.3
-    sh ip int br
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.3   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.3.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.3.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.3.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.3.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.3.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.3.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.3.70.1       YES manual up                    up
-    R3
+    {'sh clock': 'sh clock\n*13:13:47.525 UTC Sun Jul 19 2020\n',
+     'sh int desc': 'sh int desc\n'
+                    'Interface                      Status         Protocol Description\n'
+                    'Et0/0                          up             up       \n'
+                    'Et0/1                          up             up       \n'
+                    'Et0/2                          up             up       \n'
+                    'Et0/3                          up             up       \n'
+                    'Lo22                           up             up       \n'
+                    'Lo33                           up             up       \n'
+                    'Lo45                           up             up       \n'
+                    'Lo55                           up             up       \n'}
+    {'sh clock': 'sh clock\n*13:13:50.450 UTC Sun Jul 19 2020\n',
+     'sh int desc': 'sh int desc\n'
+                    'Interface                      Status         Protocol Description\n'
+                    'Et0/0                          up             up       \n'
+                    'Et0/1                          up             up       \n'
+                    'Et0/2                          admin down     down     \n'
+                    'Et0/3                          admin down     down     \n'
+                    'Lo0                            up             up       \n'
+                    'Lo9                            up             up       \n'
+                    'Lo19                           up             up       \n'
+                    'Lo33                           up             up       \n'
+                    'Lo100                          up             up       \n'}
+    {'sh clock': 'sh clock\n*13:13:53.360 UTC Sun Jul 19 2020\n',
+     'sh int desc': 'sh int desc\n'
+                    'Interface                      Status         Protocol Description\n'
+                    'Et0/0                          up             up       \n'
+                    'Et0/1                          up             up       \n'
+                    'Et0/2                          admin down     down     \n'
+                    'Et0/3                          admin down     down     \n'
+                    'Lo33                           up             up       \n'}
 
-Note that since the last *expect* specifies that you should expect a substring ``#``, method *before* showed both the command and the host name.
+Working with pexpect without disabling commands pagination
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes the output of a command is very large and cannot be read completely or device is not
+makes it possible to disable pagination. In this case, a slightly different approach is needed.
+
+.. note::
+
+    The same task will be repeated for other modules in this section.
+
+
+An example of using pexpect to work with paginated output of show command (1_pexpect_more.py file):
+
+.. code:: python
+
+    import pexpect
+    import re
+    from pprint import pprint
+
+
+    def send_show_command(ip, username, password, enable, command, prompt="#"):
+        with pexpect.spawn(f"ssh {username}@{ip}", timeout=10, encoding="utf-8") as ssh:
+            ssh.expect("[Pp]assword")
+            ssh.sendline(password)
+            enable_status = ssh.expect([">", "#"])
+            if enable_status == 0:
+                ssh.sendline("enable")
+                ssh.expect("[Pp]assword")
+                ssh.sendline(enable)
+                ssh.expect(prompt)
+
+            ssh.sendline(command)
+            output = ""
+
+            while True:
+                match = ssh.expect([prompt, "--More--", pexpect.TIMEOUT])
+                page = ssh.before.replace("\r\n", "\n")
+                page = re.sub(" +\x08+ +\x08+", "\n", page)
+                output += page
+                if match == 0:
+                    break
+                elif match == 1:
+                    ssh.send(" ")
+                else:
+                    print("Ошибка: timeout")
+                    break
+            output = re.sub("\n +\n", "\n", output)
+            return output
+
+
+    if __name__ == "__main__":
+        devices = ["192.168.100.1", "192.168.100.2", "192.168.100.3"]
+        for ip in devices:
+            result = send_show_command(ip, "cisco", "cisco", "cisco", "sh run")
+            with open(f"{ip}_result.txt", "w") as f:
+                f.write(result)
+
+
+Now after sending the command, expect() method waits for another option ``--More--`` - sign,
+that there will be one more page further. Since it's not known in advance how many pages will be in the output,
+reading is performed in a loop ``while True``. Loop is interrupted if prompt is met ``#``
+or no prompt appears within 10 seconds or ``--More--``.
+
+If ``--More--`` is met, pages are not over yet and you have to scroll through the next one.
+In Cisco, you need to press space bar to do this (without line feed). Therefore, send() method is used here,
+not sendline - sendline automatically adds a line feed.
+
+This string ``page = re.sub(" +\x08+ +\x08+", "\n", page)`` removes backspace symbols which are around ``--More--`` so they don't end up in the final output.
+
+
+
 
