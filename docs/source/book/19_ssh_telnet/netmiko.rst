@@ -1,98 +1,19 @@
-Модуль netmiko
+Module netmiko
 --------------
 
-Netmiko - это модуль, который позволяет упростить использование paramiko
-для сетевых устройств. Netmiko использует paramiko, но при этом создает 
-интерфейс и методы, которые нужны для работы с сетевым оборудованием.
+Netmiko is a module that makes it easier to use paramiko for network devices. Netmiko uses paramiko but also creates interface and methods needed to work with network devices.
 
-Сначала netmiko нужно установить:
+Netmiko first needs to install:
 
 ::
 
     pip install netmiko
 
-Пример использования netmiko (файл 4_netmiko.py):
 
-.. literalinclude:: /pyneng-examples-exercises/examples/19_ssh_telnet/4_netmiko.py
-  :language: python
-  :linenos:
+Supported device types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Пример, который использовался с pexpect, telnetlib и paramiko выглядит значительно
-проще с netmiko. 
-
-Разберемся с содержимым скрипта: 
-
-* device_params - это словарь, в котором указываются параметры устройства. 
-  Параметр device_type - это предопределенные значения, которые понимает netmiko. 
-  В данном случае, так как подключение выполняется к устройству с Cisco IOS, 
-  используется значение ``cisco_ios``
-* ``with ConnectHandler(**device_params) as ssh`` - устанавливается соединение 
-  с устройством на основе параметров, которые находятся в словаре 
-
-  * две звездочки перед словарем - это распаковка словаря (подробнее в разделе :ref:`unpacking_args`)
-
-* ``ssh.enable()`` - переход в режим enable. Пароль передается автоматически - 
-  используется значение ключа secret, который указан в словаре device_params 
-* ``result = ssh.send_command(COMMAND)`` - отправка команды и получение вывода
-
-В этом примере не передается команда terminal length, так как netmiko по
-умолчанию выполняет эту команду.
-
-Так выглядит результат выполнения скрипта:
-
-::
-
-    $ python 4_netmiko.py "sh ip int br"
-    Username: cisco
-    Password:
-    Enter enable password:
-    Connection to device 192.168.100.1
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.1   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.1.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.1.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.1.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.1.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.1.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.1.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.1.70.1       YES manual up                    up
-    Connection to device 192.168.100.2
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.2   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.2.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.2.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.2.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.2.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.2.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.2.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.2.70.1       YES manual up                    up
-    Connection to device 192.168.100.3
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.3   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.3.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.3.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.3.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.3.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.3.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.3.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.3.70.1       YES manual up                    up
-
-В выводе нет никаких лишних приглашений, только вывод команды sh ip int
-br.
-
-Возможности netmiko
-~~~~~~~~~~~~~~~~~~~
-
-Так как netmiko наиболее удобный модуль для подключения к сетевому
-оборудованию, разберемся с ним подробней.
-
-Поддерживаемые типы устройств
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Netmiko поддерживает несколько типов устройств: 
+Netmiko supports several types of devices:
 
 * Arista vEOS 
 * Cisco ASA 
@@ -103,99 +24,95 @@ Netmiko поддерживает несколько типов устройст�
 * HP ProCurve 
 * Juniper Junos 
 * Linux 
-* и другие
+* and other
 
-Актуальный список можно посмотреть в
-`репозитории <https://github.com/ktbyers/netmiko>`__ модуля.
+The whole list can be viewed in module 
+`repository <https://github.com/ktbyers/netmiko>`__.
 
-Словарь, определяющий параметры устройств
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Dictionary defining device parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-В словаре могут указываться такие параметры:
+Dictionary may have the next parameters:
 
 .. code:: python
 
-    cisco_router = {'device_type': 'cisco_ios', # предопределенный тип устройства
-                    'ip': '192.168.1.1', # адрес устройства
-                    'username': 'user', # имя пользователя
-                    'password': 'userpass', # пароль пользователя
-                    'secret': 'enablepass', # пароль режима enable
-                    'port': 20022, # порт SSH, по умолчанию 22
+    cisco_router = {'device_type': 'cisco_ios', # predefined device type
+                    'ip': '192.168.1.1', # device IP address
+                    'username': 'user', # username
+                    'password': 'userpass', # user password
+                    'secret': 'enablepass', # enable password
+                    'port': 20022, # port SSH, by default 22
                      }
 
-Подключение по SSH
-^^^^^^^^^^^^^^^^^^
+Connect via SSH
+~~~~~~~~~~~~~~~~~~
 
 .. code:: python
 
     ssh = ConnectHandler(**cisco_router)
 
-Режим enable
-^^^^^^^^^^^^
+Enable mode
+~~~~~~~~~~~~
 
-Перейти в режим enable:
+Switch to enable mode:
 
 .. code:: python
 
     ssh.enable()
 
-Выйти из режима enable:
+Exit enable mode:
 
 .. code:: python
 
     ssh.exit_enable_mode()
 
-Отправка команд
-^^^^^^^^^^^^^^^
+Sending commands
+~~~~~~~~~~~~~~~
 
-В netmiko есть несколько способов отправки команд: 
+Netmiko has several ways to send commands:
 
-* ``send_command`` - отправить одну команду 
-* ``send_config_set`` - отправить список команд или команду в конфигурационном режиме 
-* ``send_config_from_file`` - отправить команды из файла (использует внутри метод ``send_config_set``)
-* ``send_command_timing`` - отправить команду и подождать вывод на основании таймера
+* ``send_command`` - send one command
+* ``send_config_set`` - send list of commands or command in configuration mode 
+* ``send_config_from_file`` - send commands from the file (uses  ``send_config_set``  method inside)
+* ``send_command_timing`` - send command and wait for the output based on timer
 
 ``send_command``
-****************
+^^^^^^^^^^^^^^^^
 
-Метод send_command позволяет отправить одну команду на устройство.
+Method send_command позволяет allows you to send one command to device.
 
-Например:
+For example:
 
 .. code:: python
 
     result = ssh.send_command('show ip int br')
 
-Метод работает таким образом: 
+The method works as follows:
 
-* отправляет команду на устройство и получает вывод до строки 
-  с приглашением или до указанной строки 
+* sends command to device and gets the output until the string with prompt or until the specified string
 
-  * приглашение определяется автоматически 
-  * если на вашем устройстве оно не определилось, можно просто указать строку, до которой считывать вывод
-  * ранее так работал метод ``send_command_expect``, но с версии 1.0.0
-    так работает ``send_command``, а метод ``send_command_expect`` оставлен для совместимости 
+  * prompt is automatically determined
+  * if your device does not determine it, you can simply specify a string till which to read the output
+  * ``send_command_expect`` method previously worked this way, but since version 1.0.0 this is how send_command works and send_command_expect method is left for compatibility
 
-* метод возвращает вывод команды 
-* методу можно передавать такие параметры: 
+* method returns command output 
+* the following parameters can be passed to method:
 
-  * ``command_string`` - команда 
-  * ``expect_string`` - до какой строки считывать вывод 
-  * ``delay_factor`` - параметр позволяет увеличить задержку до начала поиска строки 
-  * ``max_loops`` - количество итераций, до того как метод выдаст ошибку 
-    (исключение). По умолчанию 500 
-  * ``strip_prompt`` - удалить приглашение из вывода. По умолчанию удаляется 
-  * ``strip_command`` - удалить саму команду из вывода
+  * ``command_string`` - command 
+  * ``expect_string`` - till which string read output
+  * ``delay_factor`` - option allows to increase delay before the start of string search
+  * ``max_loops`` - number of iterations before method gives out an error (exception). By default 500 
+  * ``strip_prompt`` - remove prompt from the output. By default deleted
+  * ``strip_command`` - remove command from output
 
-В большинстве случаев достаточно будет указать только команду.
+In most cases, only command will be sufficient to specify.
 
 ``send_config_set``
 *******************
 
-Метод ``send_config_set`` позволяет отправить команду или несколько
-команд конфигурационного режима.
+Method ``send_config_set`` allows you to send command or multiple commands in configuration mode.
 
-Пример использования:
+Example of use:
 
 .. code:: python
 
@@ -205,80 +122,103 @@ Netmiko поддерживает несколько типов устройст�
 
     result = ssh.send_config_set(commands)
 
-Метод работает таким образом: 
+Method works as follows:
 
-* заходит в конфигурационный режим, 
-* затем передает все команды 
-* и выходит из конфигурационного режима 
-* в зависимости от типа устройства, выхода из конфигурационного режима может
-  и не быть. Например, для IOS-XR выхода не будет, так как сначала надо
-  закоммитить изменения
+* goes into configuration mode, 
+* then passes all commands
+* and exits configuration mode
+* •	depending on device type, there may be no exit from configuration mode. For example, there will be no exit for IOS-XR because you first have to commit changes
 
 ``send_config_from_file``
-*************************
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Метод ``send_config_from_file`` отправляет команды из указанного файла в
-конфигурационный режим.
+Method ``send_config_from_file`` оsends commands from specified file to configuration mode.
 
-Пример использования:
+Example of use:
 
 .. code:: python
 
     result = ssh.send_config_from_file('config_ospf.txt')
 
-Метод открывает файл, считывает команды и передает их методу
-``send_config_set``.
+Method opens a file, reads commands and passes them to 
+``send_config_set`` method.
 
-Дополнительные методы
-^^^^^^^^^^^^^^^^^^^^^
+Additional methods
+~~~~~~~~~~~~~~~~~~~~~
 
-Кроме перечисленных методов для отправки команд, netmiko поддерживает
-такие методы: 
+Besides the above methods for sending commands, netmiko supports such methods:
 
-* ``config_mode`` - перейти в режим конфигурации: ``ssh.config_mode()`` 
-* ``exit_config_mode`` - выйти из режима конфигурации: ``ssh.exit_config_mode()`` 
-* ``check_config_mode`` - проверить, находится ли netmiko в режиме конфигурации (возвращает True,
-  если в режиме конфигурации, и False - если нет): ``ssh.check_config_mode()`` 
-* ``find_prompt`` - возвращает текущее приглашение устройства: ``ssh.find_prompt()`` 
-* ``commit`` - выполнить commit на IOS-XR и Juniper: ``ssh.commit()`` 
-* ``disconnect`` - завершить соединение SSH
+* ``config_mode`` - switch to configuration mode: ``ssh.config_mode()`` 
+* ``exit_config_mode`` - exit configuration mode: ``ssh.exit_config_mode()`` 
+* ``check_config_mode`` - check whether netmiko is in configuration mode (returns True if in configuration mode, and False if not): ``ssh.check_config_mode()`` 
+* ``find_prompt`` - returns the current prompt of device: ``ssh.find_prompt()`` 
+* ``commit`` - commit on IOS-XR and Juniper: ``ssh.commit()`` 
+* ``disconnect`` - terminate SSH connection
 
 .. note::
 
-    Выше ssh - это созданное предварительно соединение SSH:
+    Above ssh is a pre-created SSH connection:
     ``ssh = ConnectHandler(**cisco_router)``
 
-Поддержка Telnet
+Telnet support
 ~~~~~~~~~~~~~~~~
 
-С версии 1.0.0 netmiko поддерживает подключения по Telnet, пока что
-только для Cisco IOS устройств.
+Since version 1.0.0 netmiko supports Telnet connections, so far only for Cisco IOS devices.
 
-Внутри netmiko использует telnetlib для подключения по Telnet. Но, при
-этом, предоставляет тот же интерфейс для работы, что и подключение по
-SSH.
+Inside netmiko uses telnetlib to connect via Telnet. But, at the same time, it provides the same interface for work as for SSH connection.
 
-Для того, чтобы подключиться по Telnet, достаточно в словаре, который
-определяет параметры подключения, указать тип устройства
-'cisco_ios_telnet':
+In order to connect via Telnet, it is sufficient in the dictionary that defines connection parameters specify device type 'cisco_ios_telnet':
 
 .. code:: python
 
-    DEVICE_PARAMS = {'device_type': 'cisco_ios_telnet',
-                     'ip': IP,
-                     'username':USER,
-                     'password':PASSWORD,
-                     'secret':ENABLE_PASS }
+    device = {
+        "device_type": "cisco_ios_telnet",
+        "ip": "192.168.100.1",
+        "username": "cisco",
+        "password": "cisco",
+        "secret": "cisco",
+    }
 
-В остальном, методы, которые применимы к SSH, применимы и к Telnet.
-Пример, аналогичный примеру с SSH (файл 4_netmiko_telnet.py):
+Otherwise, methods that apply to SSH apply to Telnet. An example similar to SSH (4_netmiko_telnet.py file):
 
-.. literalinclude:: /pyneng-examples-exercises/examples/19_ssh_telnet/4_netmiko_telnet.py
-  :language: python
-  :emphasize-lines: 17
-  :linenos:
+.. code:: python
 
-Аналогично работают и методы: 
+    from pprint import pprint
+    import yaml
+    from netmiko import (
+        ConnectHandler,
+        NetmikoTimeoutException,
+        NetmikoAuthenticationException,
+    )
+
+
+    def send_show_command(device, commands):
+        result = {}
+        try:
+            with ConnectHandler(**device) as ssh:
+                ssh.enable()
+                for command in commands:
+                    output = ssh.send_command(command)
+                    result[command] = output
+            return result
+        except (NetmikoTimeoutException, NetmikoAuthenticationException) as error:
+            print(error)
+
+
+    if __name__ == "__main__":
+        device = {
+            "device_type": "cisco_ios_telnet",
+            "ip": "192.168.100.1",
+            "username": "cisco",
+            "password": "cisco",
+            "secret": "cisco",
+        }
+        result = send_show_command(device, ["sh clock", "sh ip int br"])
+        pprint(result, width=120)
+
+
+
+Similarly, other methods works: 
 
 * ``send_command_timing()`` 
 * ``find_prompt()`` 
@@ -286,3 +226,106 @@ SSH.
 * ``send_config_from_file()`` 
 * ``check_enable_mode()`` 
 * ``disconnect()``
+
+
+Example of netmiko use
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example of netmiko use (4_netmiko.py file):
+
+.. code:: python
+
+    from pprint import pprint
+    import yaml
+    from netmiko import (
+        ConnectHandler,
+        NetmikoTimeoutException,
+        NetmikoAuthenticationException,
+    )
+
+
+    def send_show_command(device, commands):
+        result = {}
+        try:
+            with ConnectHandler(**device) as ssh:
+                ssh.enable()
+                for command in commands:
+                    output = ssh.send_command(command)
+                    result[command] = output
+            return result
+        except (NetmikoTimeoutException, NetmikoAuthenticationException) as error:
+            print(error)
+
+
+    if __name__ == "__main__":
+        with open("devices.yaml") as f:
+            devices = yaml.safe_load(f)
+        for device in devices:
+            result = send_show_command(device, ["sh clock", "sh ip int br"])
+            pprint(result, width=120)
+
+
+
+In this example *terminal length* command is not passed becasue netmiko executes this command by deffault.
+
+The result of script execution:
+
+::
+
+    {'sh clock': '*09:12:15.210 UTC Mon Jul 20 2020',
+     'sh ip int br': 'Interface     IP-Address      OK? Method Status                Protocol\n'
+                     'Ethernet0/0   192.168.100.1   YES NVRAM  up                    up      \n'
+                     'Ethernet0/1   192.168.200.1   YES NVRAM  up                    up      \n'
+                     'Ethernet0/2   unassigned      YES NVRAM  up                    up      \n'
+                     'Ethernet0/3   192.168.130.1   YES NVRAM  up                    up      \n'}
+    {'sh clock': '*09:12:24.507 UTC Mon Jul 20 2020',
+     'sh ip int br': 'Interface     IP-Address      OK? Method Status                Protocol\n'
+                     'Ethernet0/0   192.168.100.2   YES NVRAM  up                    up      \n'
+                     'Ethernet0/1   unassigned      YES NVRAM  up                    up      \n'
+                     'Ethernet0/2   unassigned      YES NVRAM  administratively down down    \n'
+                     'Ethernet0/3   unassigned      YES NVRAM  administratively down down    \n'}
+    {'sh clock': '*09:12:33.573 UTC Mon Jul 20 2020',
+     'sh ip int br': 'Interface     IP-Address      OK? Method Status                Protocol\n'
+                     'Ethernet0/0   192.168.100.3   YES NVRAM  up                    up      \n'
+                     'Ethernet0/1   unassigned      YES NVRAM  up                    up      \n'
+                     'Ethernet0/2   unassigned      YES NVRAM  administratively down down    \n'
+                     'Ethernet0/3   unassigned      YES NVRAM  administratively down down    \n'}
+
+
+Paginated command output
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example of using netmiko with paginated *show* commands output
+(4_netmiko_more.py file):
+
+.. code:: python
+
+    from netmiko import ConnectHandler, NetmikoTimeoutException
+    import yaml
+
+
+    def send_show_command(device_params, command):
+        with ConnectHandler(**device_params) as ssh:
+            ssh.enable()
+            prompt = ssh.find_prompt()
+            ssh.send_command("terminal length 100")
+            ssh.write_channel(f"{command}\n")
+            output = ""
+            while True:
+                try:
+                    page = ssh.read_until_pattern(f"More|{prompt}")
+                    output += page
+                    if "More" in page:
+                        ssh.write_channel(" ")
+                    elif prompt in output:
+                        break
+                except NetmikoTimeoutException:
+                    break
+        return output
+
+
+    if __name__ == "__main__":
+        with open("devices.yaml") as f:
+            devices = yaml.safe_load(f)
+        print(send_show_command(devices[0], "sh run"))
+
