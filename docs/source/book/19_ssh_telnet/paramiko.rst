@@ -9,121 +9,222 @@ Since Paramiko is not part of standard Python module library, it needs to be ins
 
     pip install paramiko
 
-Example of using Paramiko (3_paramiko.py file):
-
-.. literalinclude:: /pyneng-examples-exercises/examples/19_ssh_telnet/3_paramiko.py
-  :language: python
-  :linenos:
-
-
-Comments to the script:
-
-* ``client = paramiko.SSHClient()`` - this class represents connection to SSH server. It performs client authentication. 
-* ``client.set_missing_host_key_policy(paramiko.AutoAddPolicy())`` 
-
-  * ``set_missing_host_key_policy`` - sets which policy to use when connecting to a server whose key is unknown. 
-  * ``paramiko.AutoAddPolicy()`` - policy that automatically adds new host name and key to the local HostKeys object.
-
-* ``client.connect(IP, username=USER, password=PASSWORD, look_for_keys=False, allow_agent=False)``
-
-  * ``client.connect`` - method that connects to SSH server and authenticates the connection 
-
-    * ``hostname`` - host name or IP address
-    * ``username`` - username
-    * ``password`` - password
-    * ``look_for_keys`` - by default paramiko performs key authentication. To disable this, put the flag in False
-    * ``allow_agent`` - paramiko can connect to a local SSH agent. This is necessary when working with keys and since in this case authentication is done by login/password, it should be disabled. 
-
-  * ``with client.invoke_shell() as ssh`` - after execution of previous command there is already a connection to the server. Method ``invoke_shell`` allows to set an interactive SSH session with server.
-  * o	Within the established session, commands are executed and data are obtained:
-
-    * ``ssh.send`` - sends specified string to session
-    * ``ssh.recv`` - receives data from session. In brackets, the maximum value in bytes that can be obtained is indicated. This method returns a received string
-    * 	In addition, somewhere in between of sending and receiving commands, there is a ``time.sleep``. It specifies how long to wait before the script continues to run. This is done to await the execution of command on equipment
-
-This is the script result:
-
-::
-
-    $ python 3_paramiko.py "sh ip int br"
-    Username: cisco
-    Password:
-    Enter enable secret:
-    Connection to device 192.168.100.1
-
-    R1>enable
-    Password:
-    R1#terminal length 0
-
-
-    R1#
-    sh ip int br
-    Interface              IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.1   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.1.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.1.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.1.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.1.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.1.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.1.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.1.70.1       YES manual up                    up
-    R1#
-    Connection to device 192.168.100.2
-
-    R2>enable
-    Password:
-    R2#terminal length 0
-    R2#
-    sh ip int br
-    FastEthernet0/0        192.168.100.2   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.2.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.2.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.2.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.2.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.2.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.2.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.2.70.1       YES manual up                    up
-    R2#
-    Connection to device 192.168.100.3
-
-    R3>enable
-    Password:
-    R3#terminal length 0
-    R3#
-    sh ip int br
-    Interface                  IP-Address      OK? Method Status                Protocol
-    FastEthernet0/0        192.168.100.3   YES NVRAM  up                    up
-    FastEthernet0/1        unassigned      YES NVRAM  up                    up
-    FastEthernet0/1.10     10.3.10.1       YES manual up                    up
-    FastEthernet0/1.20     10.3.20.1       YES manual up                    up
-    FastEthernet0/1.30     10.3.30.1       YES manual up                    up
-    FastEthernet0/1.40     10.3.40.1       YES manual up                    up
-    FastEthernet0/1.50     10.3.50.1       YES manual up                    up
-    FastEthernet0/1.60     10.3.60.1       YES manual up                    up
-    FastEthernet0/1.70     10.3.70.1       YES manual up                    up
-    R3#
-
-Please note that the output includes both entering enable password and terminal length command.
-
-This is because paramiko collects the entire output to buffer. And when ``recv`` (for example, ``ssh.recv(1000)``), paramiko returns everything from buffer. After ``recv`` execution, buffer is empty.
-
-Therefore, if you only need to get the output of *sh ip int br*, then you should leave ``recv``, but not apply *print*:
+The connection is established in this way: first, client is created and client configuration is set, then connection is initiated and an interactive session is received:
 
 .. code:: python
 
-        ssh.send('enable\n')
-        ssh.send(ENABLE_PASS + '\n')
-        time.sleep(1)
+    In [2]: client = paramiko.SSHClient()
 
-        ssh.send('terminal length 0\n')
-        time.sleep(1)
-        #Тут мы вызываем recv, но не выводим содержимое буфера
-        ssh.recv(1000)
+    In [3]: client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-        ssh.send(COMMAND + '\n')
-        time.sleep(3)
-        result = ssh.recv(5000).decode('utf-8')
-        print(result)
+    In [4]: client.connect(hostname="192.168.100.1", username="cisco", password="cisco",
+       ...: look_for_keys=False, allow_agent=False)
+
+    In [5]: ssh = client.invoke_shell()
+
+SSHClient is a class that represents a connection to SSH server. It performs client authentication.
+String ``set_missing_host_key_policy`` is optional, it indicates
+which policy to use when connecting to a server whose key is unknown.
+Policy ``paramiko.AutoAddPolicy()`` automatically add new hostname and key to local HostKeys object.
+
+Method ``connect`` connects to SSH server and authenticates the connection. Parameters:
+
+* ``look_for_keys`` - by default paramiko performs key authentication. To disable this, put the flag in False
+* ``allow_agent`` - paramiko can connect to a local SSH agent. This is necessary when working with keys and since in this case authentication is done by login/password, it should be disabled.  
+
+After execution of previous command there is already a connection to the server. Method ``invoke_shell`` allows to set an interactive SSH session with server.
+
+Method send
+~~~~~~~~~~
+
+Method ``send`` - sends specified string to session and returns amount of sent bytes.
+
+.. code:: python
+
+    In [7]: ssh.send("enable\n")
+    Out[7]: 7
+
+    In [8]: ssh.send("cisco\n")
+    Out[8]: 6
+
+    In [9]: ssh.send("sh ip int br\n")
+    Out[9]: 13
+
+
+.. warning::
+
+    In the code, after send() you will need to put time.sleep, especially between send and recv.
+     Since this is an interactive session and commands are slow to type, everything works without pauses.
+
+Method recv
+~~~~~~~~~~
+
+Method ``recv`` receives data from session. In brackets, the maximum value in bytes that can be obtained is indicated. This method returns a received string
+
+.. code:: python
+
+    In [10]: ssh.recv(3000)
+    Out[10]: b'\r\nR1>enable\r\nPassword: \r\nR1#sh ip int br\r\nInterface                  IP-Address      OK? Method Status                Protocol\r\nEthernet0/0                192.168.100.1   YES NVRAM  up                    up      \r\nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \r\nEthernet0/2                unassigned      YES NVRAM  up                    up      \r\nEthernet0/3                192.168.130.1   YES NVRAM  up                    up      \r\nLoopback22                 10.2.2.2        YES manual up                    up      \r\nLoopback33                 unassigned      YES unset  up                    up      \r\nLoopback45                 unassigned      YES unset  up                    up      \r\nLoopback55                 5.5.5.5         YES manual up                    up      \r\nR1#'
+
+Method close
+~~~~~~~~~~~
+
+Method close closes session:
+
+.. code:: python
+
+    In [11]: ssh.close()
+
+
+Example of paramiko use
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Example of paramiko use (3_paramiko.py file):
+
+.. code:: python
+
+    import paramiko
+    import time
+    import socket
+    from pprint import pprint
+
+
+    def send_show_command(
+        ip,
+        username,
+        password,
+        enable,
+        command,
+        max_bytes=60000,
+        short_pause=1,
+        long_pause=5,
+    ):
+        cl = paramiko.SSHClient()
+        cl.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        cl.connect(
+            hostname=ip,
+            username=username,
+            password=password,
+            look_for_keys=False,
+            allow_agent=False,
+        )
+        with cl.invoke_shell() as ssh:
+            ssh.send("enable\n")
+            ssh.send(f"{enable}\n")
+            time.sleep(short_pause)
+            ssh.send("terminal length 0\n")
+            time.sleep(short_pause)
+            ssh.recv(max_bytes)
+
+            result = {}
+            for command in commands:
+                ssh.send(f"{command}\n")
+                ssh.settimeout(5)
+
+                output = ""
+                while True:
+                    try:
+                        part = ssh.recv(max_bytes).decode("utf-8")
+                        output += part
+                        time.sleep(0.5)
+                    except socket.timeout:
+                        break
+                result[command] = output
+
+            return result
+
+
+    if __name__ == "__main__":
+        devices = ["192.168.100.1", "192.168.100.2", "192.168.100.3"]
+        commands = ["sh clock", "sh arp"]
+        result = send_show_command("192.168.100.1", "cisco", "cisco", "cisco", commands)
+        pprint(result, width=120)
+
+
+
+Result of script execution:
+
+::
+
+    {'sh arp': 'sh arp\r\n'
+               'Protocol  Address          Age (min)  Hardware Addr   Type   Interface\r\n'
+               'Internet  192.168.100.1           -   aabb.cc00.6500  ARPA   Ethernet0/0\r\n'
+               'Internet  192.168.100.2         124   aabb.cc00.6600  ARPA   Ethernet0/0\r\n'
+               'Internet  192.168.100.3         183   aabb.cc00.6700  ARPA   Ethernet0/0\r\n'
+               'Internet  192.168.100.100       208   aabb.cc80.c900  ARPA   Ethernet0/0\r\n'
+               'Internet  192.168.101.1           -   aabb.cc00.6500  ARPA   Ethernet0/0\r\n'
+               'Internet  192.168.102.1           -   aabb.cc00.6500  ARPA   Ethernet0/0\r\n'
+               'Internet  192.168.130.1           -   aabb.cc00.6530  ARPA   Ethernet0/3\r\n'
+               'Internet  192.168.200.1           -   0203.e800.6510  ARPA   Ethernet0/1\r\n'
+               'Internet  192.168.200.100        18   6ee2.6d8c.e75d  ARPA   Ethernet0/1\r\n'
+               'R1#',
+     'sh clock': 'sh clock\r\n*08:25:22.435 UTC Mon Jul 20 2020\r\nR1#'}
+
+
+Paginated command output
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example of using paramiko to work with paginated output of *show* command (файл 3_paramiko_more.py):
+
+.. code:: python
+
+    import paramiko
+    import time
+    import socket
+    from pprint import pprint
+    import re
+
+
+    def send_show_command(
+        ip,
+        username,
+        password,
+        enable,
+        command,
+        max_bytes=60000,
+        short_pause=1,
+        long_pause=5,
+    ):
+        cl = paramiko.SSHClient()
+        cl.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        cl.connect(
+            hostname=ip,
+            username=username,
+            password=password,
+            look_for_keys=False,
+            allow_agent=False,
+        )
+        with cl.invoke_shell() as ssh:
+            ssh.send("enable\n")
+            ssh.send(enable + "\n")
+            time.sleep(short_pause)
+            ssh.recv(max_bytes)
+
+            result = {}
+            for command in commands:
+                ssh.send(f"{command}\n")
+                ssh.settimeout(5)
+
+                output = ""
+                while True:
+                    try:
+                        page = ssh.recv(max_bytes).decode("utf-8")
+                        output += page
+                        time.sleep(0.5)
+                    except socket.timeout:
+                        break
+                    if "More" in page:
+                        ssh.send(" ")
+                output = re.sub(" +--More--| +\x08+ +\x08+", "\n", output)
+                result[command] = output
+
+            return result
+
+
+    if __name__ == "__main__":
+        devices = ["192.168.100.1", "192.168.100.2", "192.168.100.3"]
+        commands = ["sh run"]
+        result = send_show_command("192.168.100.1", "cisco", "cisco", "cisco", commands)
+        pprint(result, width=120)
 
