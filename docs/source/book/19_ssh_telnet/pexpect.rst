@@ -221,7 +221,7 @@ Here are some important points:
 Example of pexpect use
 ----------------------------
 
-An example of using pexpect when connecting to equipment and passing show command (file 1_pexpect.py):
+Example of using pexpect when connecting to equipment and passing show command (file 1_pexpect.py):
 
 .. code:: python
 
@@ -250,8 +250,8 @@ An example of using pexpect when connecting to equipment and passing show comman
                 match = ssh.expect([prompt, pexpect.TIMEOUT, pexpect.EOF])
                 if match == 1:
                     print(
-                        f"Symbol {prompt} is not found in output. Resulting output is written to dictionary"
-                    )
+                        f"Symbol {prompt} is not found in output. Resulting output is written to 
+                        dictionary")
                 if match == 2:
                     print("Connection was terminated by server")
                     return result
@@ -300,7 +300,7 @@ Another interesting point about this function:
             result[command] = output.replace("\r\n", "\n")
     return result
 
-Here commands are sent in turn and expect() waits for three options: prompt, timeout, or EOF.
+Here commands are sent in turn and expect() waits for three options: prompt, timeout or EOF.
 If expect() method didn't catch ``#``, the value 1 will be returned and in this case a message is displayed,
 that the symbol was not found. But in both cases, when a match is found or timeout the resulting output is written to dictionary. Thus, you can see what was received from the device, even
 if prompt is not found.
@@ -352,7 +352,7 @@ makes it possible to disable pagination. In this case, a slightly different appr
     The same task will be repeated for other modules in this section.
 
 
-An example of using pexpect to work with paginated output of show command (1_pexpect_more.py file):
+Example of using pexpect to work with paginated output of *show* command (1_pexpect_more.py file):
 
 .. code:: python
 
@@ -385,7 +385,7 @@ An example of using pexpect to work with paginated output of show command (1_pex
                 elif match == 1:
                     ssh.send(" ")
                 else:
-                    print("Ошибка: timeout")
+                    print("Error: timeout")
                     break
             output = re.sub("\n +\n", "\n", output)
             return output
