@@ -1,7 +1,7 @@
 Module paramiko
 ---------------
 
-Paramiko is an implementation of the SSHv2 protocol on Python. Paramiko provides client-server functionality. We will consider only client functionality.
+Paramiko is an implementation of SSHv2 protocol on Python. Paramiko provides client-server functionality. We will consider only client functionality.
 
 Since Paramiko is not part of standard Python module library, it needs to be installed:
 
@@ -53,8 +53,7 @@ Method ``send`` - sends specified string to session and returns amount of sent b
 
 .. warning::
 
-    In the code, after send() you will need to put time.sleep, especially between send and recv.
-     Since this is an interactive session and commands are slow to type, everything works without pauses.
+     In the code, after send() you will need to put time.sleep, especially between send and recv. Since this is an interactive session and commands are slow to type, everything works without pauses.
 
 Method recv
 ~~~~~~~~~~
@@ -69,7 +68,7 @@ Method ``recv`` receives data from session. In brackets, the maximum value in by
 Method close
 ~~~~~~~~~~~
 
-Method close closes session:
+Method close() closes session:
 
 .. code:: python
 
@@ -165,7 +164,7 @@ Result of script execution:
 Paginated command output
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Example of using paramiko to work with paginated output of *show* command (файл 3_paramiko_more.py):
+Example of using paramiko to work with paginated output of *show* command (3_paramiko_more.py file):
 
 .. code:: python
 
