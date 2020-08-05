@@ -29,7 +29,7 @@ Netmiko supports several types of devices:
 The whole list can be viewed in module 
 `repository <https://github.com/ktbyers/netmiko>`__.
 
-Dictionary defining device parameters
+Dictionary for defining device parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Dictionary may have the next parameters:
@@ -79,7 +79,7 @@ Netmiko has several ways to send commands:
 ``send_command``
 ^^^^^^^^^^^^^^^^
 
-Method send_command позволяет allows you to send one command to device.
+Method send_command allows you to send one command to device.
 
 For example:
 
@@ -102,7 +102,7 @@ The method works as follows:
   * ``expect_string`` - till which string read output
   * ``delay_factor`` - option allows to increase delay before the start of string search
   * ``max_loops`` - number of iterations before method gives out an error (exception). By default 500 
-  * ``strip_prompt`` - remove prompt from the output. By default deleted
+  * ``strip_prompt`` - remove prompt from the output. Removed by default
   * ``strip_command`` - remove command from output
 
 In most cases, only command will be sufficient to specify.
@@ -127,12 +127,12 @@ Method works as follows:
 * goes into configuration mode, 
 * then passes all commands
 * and exits configuration mode
-* •	depending on device type, there may be no exit from configuration mode. For example, there will be no exit for IOS-XR because you first have to commit changes
+* depending on device type, there may be no exit from configuration mode. For example, there will be no exit for IOS-XR because you first have to commit changes
 
 ``send_config_from_file``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Method ``send_config_from_file`` оsends commands from specified file to configuration mode.
+Method ``send_config_from_file`` sends commands from specified file to configuration mode.
 
 Example of use:
 
@@ -150,7 +150,7 @@ Besides the above methods for sending commands, netmiko supports such methods:
 
 * ``config_mode`` - switch to configuration mode: ``ssh.config_mode()`` 
 * ``exit_config_mode`` - exit configuration mode: ``ssh.exit_config_mode()`` 
-* ``check_config_mode`` - check whether netmiko is in configuration mode (returns True if in configuration mode, and False if not): ``ssh.check_config_mode()`` 
+* ``check_config_mode`` - check whether netmiko is in configuration mode (returns True if in configuration mode and False if not): ``ssh.check_config_mode()`` 
 * ``find_prompt`` - returns the current prompt of device: ``ssh.find_prompt()`` 
 * ``commit`` - commit on IOS-XR and Juniper: ``ssh.commit()`` 
 * ``disconnect`` - terminate SSH connection
@@ -218,7 +218,7 @@ Otherwise, methods that apply to SSH apply to Telnet. An example similar to SSH 
 
 
 
-Similarly, other methods works: 
+Other methods works similarly: 
 
 * ``send_command_timing()`` 
 * ``find_prompt()`` 
@@ -266,7 +266,7 @@ Example of netmiko use (4_netmiko.py file):
 
 
 
-In this example *terminal length* command is not passed becasue netmiko executes this command by deffault.
+In this example *terminal length* command is not passed because netmiko executes this command by default.
 
 The result of script execution:
 
@@ -295,8 +295,7 @@ The result of script execution:
 Paginated command output
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Example of using netmiko with paginated *show* commands output
-(4_netmiko_more.py file):
+Example of using netmiko with paginated output of *show* command (4_netmiko_more.py file):
 
 .. code:: python
 
