@@ -23,9 +23,7 @@ The logic of pexpect is:
 * some program is running
 * pexpect expects a certain output (invitation, password request, etc.) 
 * after receiving the output, it sends commands/data
-* последние два действия повторяются столько, сколько нужно
-
-Last two actions are repeated as many as necessary
+* last two actions are repeated as many as necessary
 
 Pexpect has two main tools:
 
@@ -81,7 +79,7 @@ After executing this line, the connection is established. Now you must specify w
     Out[6]: 0
 
 Note how the line that pexpect expects is described:
-``[Pp]assword``. This is a regular expression that describes a *password* string or *Password*. That is, the expect() method can be used to pass a regular expression as an argument.
+``[Pp]assword``. This is a regular expression that describes a *password* or *Password* string. That is, the expect() method can be used to pass a regular expression as an argument.
 
 Method expect() returned number 0 as a result of the work. This number indicates that a match has been found and that this element with index zero. The index appears here because you can transfer a list of strings. For example, you can transfer a list with two elements:
 
@@ -133,7 +131,7 @@ Now we can send a command:
     In [15]: ssh.sendline('sh ip int br')
     Out[15]: 13
 
-After sending the command, pexpect must be pointed till which momenr it should read the output. We specify that it should read till #:
+After sending the command, pexpect must be pointed till which moment it should read the output. We specify that it should read untill #:
 
 .. code:: python
 
@@ -201,7 +199,7 @@ In the previous example we met pexpect.EOF.
 
 .. note::
 
-    EOF (end of file) — end of file
+    EOF — end of file
 
 This is a special value that allows you to react to the end of a command or session that has been run in spawn.
 
@@ -270,17 +268,17 @@ Comments to the script:
 
   * passwords are requested with getpass module
 
-* ``ip_list`` - list of IP addresses of devices to which the connected will established
-* connection to devices from the list is occurs in the loop
+* ``ip_list`` - list of IP addresses of devices to which the connection will be established
+* connection to devices from the list occurs in the loop
 * In spawn class, SSH connection establishes to current address using specified user name 
 * after that, the pairs of methods begin to alternate: expect and sendline
 
   * ``expect`` - waits for substring
   * ``sendline`` - when a line appears, a command is sent
 
-* •	this happens until the end of the loop and only the last command is different:
+* this happens until the end of the loop and only the last command is different:
 
-  * ``before`` lets you count everything that caught pexpect before the previous substring in *expect*
+  * ``before`` lets you read everything that caught by pexpect before the previous substring in *expect*
 
 .. note::
 
