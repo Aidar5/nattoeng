@@ -7,19 +7,18 @@ Method syntax:
 
     map(func, *iterables, timeout=None)
 
-Method map() is similar to the built-in map function: applying the func() function to one or more iterated objects. Each call to a function is then started in a separate thread/process. Method map() returns the iterator with function results for each element of the object being iterated. The results are arranged in the same order as elements in iterated object.
+Method map() is similar to the built-in map function: applying the func() function to one or more iterable objects. Each call to a function is then started in a separate thread/process. Method map() returns the iterator with function results for each element of the object being iterated. The results are arranged in the same order as elements in iterable object.
 
 When working with thread/process pools, a certain number of threads/processes are created and the code is executed in these threads. For example, if the pool is created with 5 threads and function has to be started for 10 different devices, the connection will be performed first to the first five devices and then, as they liberated, to the others.
 
-An example of using a map() function with ThreadPoolExecutor (файл
-netmiko_threads_map_basics.py):
+An example of using a map() function with ThreadPoolExecutor (netmiko_threads_map_basics.py file):
 
 .. literalinclude:: /pyneng-examples-exercises/examples/20_concurrent_connections/netmiko_threads_map_basics.py
   :language: python
   :linenos:
 
 
-Since map() method should be passed a function, the send_show() function is created which connects to devices, passes specified show command and returns the result with command output.
+Since function should be passed to map() method, the send_show() function is created which connects to devices, passes specified show command and returns the result with command output.
 
 .. code:: python
 
@@ -49,7 +48,7 @@ Last 4 lines of code are responsible for connecting to devices in separate threa
             print(device['ip'], output)
 
 * ``with ThreadPoolExecutor(max_workers=3) as executor:`` - ThreadPoolExecutor class is initiated in *with* block with the indicated number of threads.
-* ``result = executor.map(send_show, devices, repeat('sh clock'))`` - map() method is similar to map() map() function, but here the send_show() function is called in different threads. However, in different threads the function will be called with different arguments:
+* ``result = executor.map(send_show, devices, repeat('sh clock'))`` - map() method is similar to map() function, but here the send_show() function is called in different threads. However, in different threads the function will be called with different arguments:
 
   * elements of iterable object *devices* and the same command *sh clock*.
   * since instead of a list of commands only one command is used, it must be repeated in some way, so that map() method will set this command to different devices. It uses repeat() function - it repeats the command exactly as many times as map() requests
