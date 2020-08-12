@@ -8,12 +8,12 @@ Method submit() differs from the map() method:
 * submit() immediately returns the result without having to wait for function execution
 * submit() returns special Future object that represents execution of function.
 
-  * submit() returns Future in order that the call of submit() does not block the code. Once submit has returned Future, the code can be executed further. And once all functions in threads are running, you can start requesting Future if the results are ready. Or take advantage of special function as_completed(), which requests the result itself and the code gets it when it’s ready
+  * submit() returns Future in order that the call of submit() does not block the code. Once submit() has returned Future, the code can be executed further. And once all functions in threads are running, you can start requesting Future if the results are ready. Or take advantage of special function as_completed(), which requests the result itself and the code gets it when it’s ready
 
 * submit() returns results in readiness order, not in argument order
 * submit() can pass key arguments when map() only position arguments
 
-Method submit uses `Future <https://en.wikipedia.org/wiki/Futures_and_promises>`__ object - an object that represents a delayed computation. This object can be resquested for status (completed or not), and results or exceptions can be obtained from the work. Future does not need to create manually, these objects are created by submitting.
+Method submit() uses `Future <https://en.wikipedia.org/wiki/Futures_and_promises>`__ object - an object that represents a delayed computation. This object can be resquested for status (completed or not), and results or exceptions can be obtained from the work. Future does not need to create manually, these objects are created by submit().
 
 
 Example of running a function in threads using submit() (netmiko_threads_submit_basics.py file)
@@ -71,7 +71,7 @@ Please note that the order is not preserved and depends on which function was pr
 Future
 ~~~~~~
 
-An example of running *send_show* function with submit() and displaying information about Future (note the status of the Future at different points in time):
+An example of running send_show() function with submit() and displaying information about Future (note the status of the Future at different points in time):
 
 .. code:: python
 
@@ -186,5 +186,5 @@ The result is:
      '192.168.100.3': '*07:21:28.930 UTC Fri Jul 26 2019'}
 
 
-Of course, exception handling can be performed within the send_show() function, but it is just an example of how you can work with exceptions when using a Future.
+Of course, exception handling can be performed within send_show() function, but it is just an example of how you can work with exceptions when using a Future.
 
