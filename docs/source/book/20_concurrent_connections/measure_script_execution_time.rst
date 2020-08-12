@@ -38,7 +38,7 @@ Example of use:
 
     start_time = datetime.now()
 
-    #Тут выполняются действия
+    #Code is running here
     time.sleep(5)
 
     print(datetime.now() - start_time)
