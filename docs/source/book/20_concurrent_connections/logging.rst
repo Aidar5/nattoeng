@@ -1,7 +1,7 @@
 Module logging
 --------------
 
-Module logging - is a module from the standard Python library that allows you to configure logging from the script. Module logging has a lot of features and a lot of configuration options. Only the basic configuration option is discussed in this section.
+Module logging - a module from the standard Python library that allows you to configure logging from the script. Module logging has a lot of features and a lot of configuration options. Only basic configuration option is discussed in this section.
 
 The easiest way to configure logging in script, use logging.basicConfig:
 
@@ -22,7 +22,7 @@ In this variant, the settings are:
 
 Now, to output a log message in this script, you should write  ``logging.info("test")``.
 
-Example of script with login settings: (logging_basics.py file)
+Example of script with logging settings: (logging_basics.py file)
 
 .. literalinclude:: /pyneng-examples-exercises/examples/20_concurrent_connections/logging_basics.py
   :language: python
