@@ -3,10 +3,10 @@ Processes and threads in Python (CPython)
 
 First, we need to work out the terms:
 
--  process - roughly speaking, it's a launched program. . Separate resources are allocated to the process: memory, processor time
+-  process - roughly speaking, it's a launched program. Separate resources are allocated to the process: memory, processor time
 -  thread - execution unit in the process. Thread share resources of the process to which they relate.
 
-Python (or, more precisely, Cpython, the implementation used in the book)
+Python (or, more precisely, Cpython - the implementation used in the book)
 is optimized to work in single-threaded mode. This is good if program uses only one thread. And, at the same time, Python has certain nuances of running in multithreaded mode. This is because Cpython uses GIL (global interpreter lock).
 
 GIL does not allow multiple threads to execute Python code at the same time. If you don’t go into detail, GIL can be visualized as a sort of flag that carried over from thread to thread. Whoever has the flag can do the job. The flag is transmitted either every Python instruction or, for example, when some type of input-output operation is performed.
