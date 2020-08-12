@@ -3,7 +3,7 @@ Module concurrent.futures
 
 The concurrent.futures module provides a high-level interface for working with processes and threads. For both threads and processes the same interface is used which makes it easy to switch between them.
 
-If you compare this module with threading or multiprocessing, it has fewer features but with concurrent.futures work easier and interface more understandable.
+If you compare this module with threading or multiprocessing, it has fewer features but with concurrent.futures it's easier to work and interface more understandable.
 
 Concurrent.futures module allows to solve the problem of starting multiple threads/processes and getting data from them. For this purpose, the module uses two classes:
 
@@ -18,12 +18,12 @@ Create an Executor object using ThreadPoolExecutor:
 
     executor = ThreadPoolExecutor(max_workers=5)
 
-After creating an Executor object, it has three methods: shutdown, map, and submit. Shutdown is responsible for the completion of threads/processes, and map and submit methods are responsible for starting functions in different threads/processes.
+After creating an Executor object, it has three methods: shutdown, map, and submit. Shutdown is responsible for the completion of threads/processes, when map and submit methods are responsible for starting functions in different threads/processes.
 
 .. note::
     In fact, map and submit can run not only functions but any called object. However, only functions will be considered further.
 
-The shutdown method indicates that the Executor object must be finished. However, if to shutdown() method pass ``wait=True`` (default value),
+The shutdown() method indicates that the Executor object must be finished. However, if to shutdown() method pass ``wait=True`` (default value),
 it will not return the result until all functions running in threads have been completed.
 If ``wait=False``, shutdown() method returns instantly but the script itself will not exit until all the functions have been completed.
 
