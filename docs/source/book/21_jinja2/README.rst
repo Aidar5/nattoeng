@@ -1,7 +1,7 @@
-Начало работы с Jinja2
+Getting Started with Jinja2
 ======================
 
-Установить Jinja2 можно с помощью pip:
+You can install Jinja2 using pip:
 
 .. code:: python
 
@@ -9,15 +9,13 @@
 
 .. note::
 
-    Далее термины Jinja и Jinja2 используются взаимозаменяемо.
+    Further, terms Jinja and Jinja2 are used interchangeably.
 
-Главная идея Jinja: разделение данных и шаблона. Это позволяет
-использовать один и тот же шаблон, но подставлять в него разные данные.
+The main idea of Jinja is to separate data and template. This allows you to use the same template but not the same data.
 
-В самом простом случае шаблон - это просто текстовый файл, в котором
-указаны места подстановки значений с помощью переменных Jinja.
+In the simplest case, template is simply a text file that specifies locations of Jinja variables.
 
-Пример шаблона Jinja:
+Example of Jinja template:
 
 .. code:: jinja
 
@@ -36,16 +34,14 @@
      auto-cost reference-bandwidth 10000
      network 10.0.0.0 0.255.255.255 area 0
 
-Комментарии к шаблону: 
+Comments to template:
 
-* В Jinja переменные записываются в двойных фигурных скобках. 
-* При выполнении скрипта эти переменные заменяются нужными значениями.
+* In Jinja, variables are written in double curly brackets.
+* When script is executed, these variables are replaced with desired values.
 
-Этот шаблон может использоваться для генерации конфигурации разных
-устройств с помощью подстановки других наборов переменных.
+This template can be used to generate configuration of different devices by substituting other sets of variables.
 
-Пример скрипта с генерацией файла на основе шаблона Jinja (файл
-basic_generator.py):
+Example script with file generation based on Jinja template (basic_generator.py file):
 
 .. code:: python
 
@@ -72,18 +68,16 @@ basic_generator.py):
 
     print(template.render(liverpool))
 
-Комментарии к файлу basic_generator.py: 
+Comments to basic_generator.py file:
 
-* в первой строке из Jinja2 импортируется класс Template 
-* создается объект template, которому передается шаблон 
-* в шаблоне используются переменные в синтаксисе Jinja 
-* в словаре liverpool ключи должны быть такими же, как имена переменных в шаблоне 
-* значения, которые соответствуют ключам - это те данные,
-  которые будут подставлены на место переменных 
-* последняя строка рендерит шаблон, используя словарь liverpool, то есть,
-  подставляет значения в переменные.
+* in the first line the Template class is imported from Jinja2 
+* creates **template** object to which template is passed
+* template uses variables in Jinja syntax
+* in *Liverpool* dictionary the keys must be the same as variable names in template 
+* values that correspond to the keys - data that will be substituted instead of variables
+* the last line is rendering template using *liverpool* dictionary, that is, sets values in variables.
 
-Если запустить скрипт basic_generator.py, то вывод будет таким:
+If you run basic_generator.py script, the output is:
 
 ::
 
