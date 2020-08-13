@@ -4,22 +4,18 @@
 
 .. _jinja2_index:
 
-21. Шаблоны конфигураций с Jinja2
+21. Jinja2 configuration templates
 ============================
 
-Jinja2 - это язык шаблонов, который
-используется в Python. Jinja - это не единственный язык шаблонов
-(шаблонизатор) для Python и не единственный язык шаблонов в
-целом.
+Jinja2 is a template language used in Python. Jinja is not the only template language (template engine) for Python, and not the only template language in general.
 
-Jinja2 используется для генерации документов на основе одного или
-нескольких шаблонов.
+Jinja2 is used to generate documents based on one or more templates.
 
-Примеры использования: 
+Examples of use:
 
-* шаблоны для генерации HTML-страниц 
-* шаблоны для генерации конфигурационных файлов в Unix/Linux 
-* шаблоны для генерации конфигурационных файлов сетевых устройств
+* templates for generating HTML pages
+* templates for generating configuration files in Unix/Linux
+* templates for generating network device configuration files
 
 .. toctree::
    :maxdepth: 1
