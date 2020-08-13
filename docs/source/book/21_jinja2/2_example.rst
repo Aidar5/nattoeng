@@ -7,7 +7,7 @@ To deal with Jinja2, it is better to use previous examples. This section describ
 
     The term "software interface" refers to the way Jinja works with input data and a template for generating output files.
     
-Modified example of previous script, template and data file (all files are in 2_example):
+Modified example of previous script, template and data file (all files are in 2_example directory):
 
 Template templates/router_template.txt is a plain text file:
 
