@@ -1,4 +1,4 @@
-Getting Started with Jinja2
+Getting started with Jinja2
 ======================
 
 You can install Jinja2 using pip:
@@ -75,7 +75,7 @@ Comments to basic_generator.py file:
 * template uses variables in Jinja syntax
 * in *Liverpool* dictionary the keys must be the same as variable names in template 
 * values that correspond to the keys - data that will be substituted instead of variables
-* the last line is rendering template using *liverpool* dictionary, that is, sets values in variables.
+* the last line renders template using *liverpool* dictionary, that is, sets values in variables.
 
 If you run basic_generator.py script, the output is:
 
