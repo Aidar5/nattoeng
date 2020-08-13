@@ -1,7 +1,7 @@
 Usage example of Jinja2
 ---------------------------
 
-In this example, logic is divided into 3 different files (all files are in the 1_example directory):
+In this example, logic is divided into 3 different files (all files are in 1_example directory):
 
 * router_template.py - template 
 * routers_info.yml - this file contains a list of dictionaries (in YAML format) with information about routers for which you need to generate a configuration file
@@ -109,7 +109,7 @@ Then the objects (dictionaries) in *routers* list are iterated in the loop:
 * construction *with* closes the file
 * control returns to the beginning of the loop (until all dictionaries are iterated)
 
-Run файл router_config_generator.py:
+Run file router_config_generator.py:
 
 ::
 
