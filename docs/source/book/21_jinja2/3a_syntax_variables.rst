@@ -1,7 +1,7 @@
-Переменные
+Variables
 ----------
 
-Переменные в шаблоне указываются в двойных фигурных скобках:
+Variables in template are given in double curly brackets:
 
 ::
 
@@ -10,15 +10,11 @@
     interface Loopback0
      ip address 10.0.0.{{ id }} 255.255.255.255
 
-Значения переменных подставляются на основе словаря, который передается
-шаблону.
+Variable values are set based on dictionary that is passed to template.
 
-Переменная, которая передается в словаре, может быть не только числом
-или строкой, но и, например, списком или словарем. Внутри шаблона можно,
-соответственно, обращаться к элементу по номеру или по ключу.
+Variable that is passed on in a dictionary may not only be a number or a string, but also, for example, a list or a dictionary. Inside the template, you can refer to the item by number or key.
 
-Пример шаблона templates/variables.txt с использованием разных вариантов
-переменных:
+Example template templates templates/variables.txt with usage of different variable variants:
 
 ::
 
@@ -34,7 +30,7 @@
      auto-cost reference-bandwidth 10000
      network {{ ospf.network }} area {{ ospf['area'] }}
 
-И соответствующий файл data_files/vars.yml с переменными:
+And corresponding data_files/vars.yml file with variables:
 
 ::
 
@@ -48,15 +44,11 @@
       network: 10.0.1.0 0.0.0.255
       area: 0
 
-Обратите внимание на использование переменной vlans в шаблоне:  так
-как переменная vlans это список, можно указывать, какой именно элемент
-из списка нам нужен
+Note the use of *vlans* variable in template: since *vlans* variable is a list, you can specify which item from the list we need
 
-Если передается словарь (как в случае с переменной ospf), то внутри
-шаблона можно обращаться к объектам словаря, используя один из
-вариантов: ``ospf.network или ospf['network']``
+If a dictionary is passed (as in case of  *ospf* variable), you can refer to dictionary objects inside template using one of the variants:  ``ospf.network or ospf['network']``
 
-Результат запуска скрипта будет таким:
+The result of the script will be:
 
 ::
 
