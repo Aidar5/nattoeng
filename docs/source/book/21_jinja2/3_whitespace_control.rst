@@ -189,7 +189,7 @@ Template templates/env_flags3.txt:
      neighbor {{ ibgp }} update-source {{ bgp.loopback }}
      {% endfor %}
 
-Note the minus at the beginning of block two. Minus removes all whitespace characters, in this case, at the beginning of the block.
+Note the minus at the beginning of second block. Minus removes all whitespace characters, in this case, at the beginning of the block.
 
 The result will be:
 
