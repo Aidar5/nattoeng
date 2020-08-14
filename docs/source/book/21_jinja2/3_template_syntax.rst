@@ -1,32 +1,24 @@
-Синтаксис шаблонов Jinja2
+Jinja2 template syntax
 -------------------------
 
-До сих пор в примерах шаблонов Jinja2 использовалась только подстановка
-переменных. Это самый простой и понятный пример использования шаблонов.
-Но синтаксис шаблонов Jinja на этом не ограничивается.
+So far, only variable substitution has been used in Jinja2 template examples. This is the simplest and most understandable example of using templates. But syntax of Jinja templates is not limited to this.
 
-В шаблонах Jinja2 можно использовать: 
+You can use in Jinja2 templates:
 
-* переменные 
-* условия (if/else)
-* циклы (for) 
-* фильтры - специальные встроенные методы, которые
-  позволяют делать преобразования переменных 
-* тесты - используются для проверки, 
-  соответствует ли переменная какому-то условию
+* variables 
+* conditions  (if/else)
+* loops (for) 
+* ilters - special built-in methods that allow to convert variables
+* tests - are used to check whether a variable meets a condition
 
-Кроме того, Jinja поддерживает наследование между шаблонами, а также
-позволяет добавлять содержимое одного шаблона в другой.
-
-В этом разделе рассматриваются только основы этих возможностей. Подробнее о шаблонах Jinja2
-можно почитать в `документации <http://jinja.pocoo.org/docs/dev/templates/>`__.
+In addition, Jinja supports inheritance between templates and also allows adding the contents of one template to another.
+This section deals only with the basis of these possibilities. More information about Jinja2 templates can be found in `documentation <http://jinja.pocoo.org/docs/dev/templates/>`__.
 
 .. note::
 
-    Все файлы, которые используются как примеры в этом подразделе,
-    находятся в каталоге 3_template_syntax/
+    All files used as examples in this subsection are in  3_template_syntax/ directory
 
-Для генерации шаблонов будет использоваться скрипт cfg_gen.py
+Script cfg_gen.py will be used to generate templates.
 
 .. code:: python
 
@@ -52,22 +44,20 @@
 
     print(template.render(vars_dict))
 
-Для того, чтобы посмотреть на результат, нужно вызвать скрипт и передать
-ему два аргумента: 
+In order to see the result, you have to call the script and give it two arguments:
 
-* шаблон 
-* файл с переменными в формате YAML
+* template 
+* file with variables in YAML format
 
-Результат будет выведен на стандартный поток вывода.
+The result will be displayed on standard output stream.
 
-Пример запуска скрипта:
+Example of a script run:
 
 ::
 
     $ python cfg_gen.py templates/variables.txt data_files/vars.yml
 
-Параметры trim_blocks и lstrip_blocks описаны в следующем
-подразделе.
+Parameterts trim_blocks and lstrip_blocks are described in the following subsection.
 
 .. toctree::
    :maxdepth: 1
