@@ -57,7 +57,7 @@ Example of a script run:
 
     $ python cfg_gen.py templates/variables.txt data_files/vars.yml
 
-Parameterts trim_blocks and lstrip_blocks are described in the following subsection.
+Parameters trim_blocks and lstrip_blocks are described in the following subsection.
 
 .. toctree::
    :maxdepth: 1
