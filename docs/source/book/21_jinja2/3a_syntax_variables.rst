@@ -14,7 +14,7 @@ Variable values are set based on dictionary that is passed to template.
 
 Variable that is passed on in a dictionary may not only be a number or a string, but also, for example, a list or a dictionary. Inside the template, you can refer to the item by number or key.
 
-Example template templates templates/variables.txt with usage of different variable variants:
+Template example templates/variables.txt with usage of different variable variants:
 
 ::
 
