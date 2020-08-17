@@ -3,7 +3,7 @@ Jinja2 template syntax
 
 So far, only variable substitution has been used in Jinja2 template examples. This is the simplest and most understandable example of using templates. But syntax of Jinja templates is not limited to this.
 
-You can use in Jinja2 templates:
+In Jinja2 templates you can use :
 
 * variables 
 * conditions  (if/else)
@@ -51,7 +51,7 @@ In order to see the result, you have to call the script and give it two argument
 
 The result will be displayed on standard output stream.
 
-Example of a script run:
+Example of script run:
 
 ::
 
