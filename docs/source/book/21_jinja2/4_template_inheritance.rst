@@ -1,20 +1,16 @@
-Наследование шаблонов
+Template inheritance
 ---------------------
 
-Наследование шаблонов - это очень мощный функционал, который позволяет
-избежать повторения одного и того же в разных шаблонах.
+Template inheritance is a very powerful functionality that avoids repetition of the same in different templates.
 
-При использовании наследования различают: 
+When using inheritance, there are:
 
-* **базовый шаблон** - это шаблон, в котором описывается каркас шаблона. 
-* в этом шаблоне могут находиться любые обычные выражения или текст. 
-  Кроме того, в этом шаблоне определяются специальные **блоки (block)**. 
-* **дочерний шаблон** - шаблон, который расширяет базовый шаблон, заполняя
-  обозначенные блоки. 
-* дочерние шаблоны могут переписывать или дополнять
-  блоки, определенные в базовом шаблоне.
+* **base template** - template that describes template skeleton. 
+* this template may contain any ordinary expressions or text. In addition, special **blocks** are defined in this template.
+* **child template** - template that extends base template by filling in specified blocks.
+* child templates can overwrite or supplement blocks defined in base template.
 
-Пример базового шаблона templates/base_router.txt:
+Example of base template templates/base_router.txt:
 
 ::
 
@@ -50,7 +46,7 @@
      transport input ssh
     !
 
-Обратите внимание на четыре блока, которые созданы в шаблоне:
+Note four blocks that are created in template:
 
 ::
 
@@ -72,11 +68,9 @@
     {% block alias %}
     {% endblock %}
 
-Это заготовки для соответствующих разделов конфигурации. Дочерний
-шаблон, который будет использовать этот базовый шаблон как основу, может
-заполнять все блоки или только какие-то из них.
+These are blanks for the corresponding configuration sections. A child template that uses this base template as a base can fill all or only some of the blocks.
 
-Дочерний шаблон templates/hq_router.txt:
+Child template templates/hq_router.txt:
 
 ::
 
@@ -100,31 +94,24 @@
     alias exec desc sh int desc | ex down
     {% endblock %}
 
-Первая строка в шаблоне templates/hq_router.txt очень важна:
+The first line in template templates/hq_router.txt is very important:
 
 ::
 
     {% extends "base_router.txt" %}
 
-Именно она говорит о том, что шаблон hq_router.txt будет построен на
-основе шаблона base_router.txt.
+It is said that template hq_router.txt will be constructed on the basis of template base_router.txt.
 
-Внутри дочернего шаблона всё происходит внутри блоков. За счет блоков,
-которые были определены в базовом шаблоне, дочерний шаблон может
-расширять родительский шаблон.
+Inside child template, everything happens inside blocks. Due to the blocks that have been defined in base template, child template can extend the parent template.
 
 .. note::
 
-    Обратите внимание, что те строки, которые описаны в дочернем шаблоне
-    за пределами блоков, игнорируются.
+    Note that lines described in child template outside the blocks are ignored.
 
-В базовом шаблоне четыре блока: services, ospf, bgp, alias. В дочернем
-шаблоне заполнены только два из них: ospf и alias.
-В этом удобство наследования. Не обязательно заполнять все блоки в
-каждом дочернем шаблоне.
+There are four blocks in base template: services, ospf, bgp, alias. . In child template only two of them are filled: ospf and alias.
+That's the convenience of inheritance. You don’t have to fill all blocks in every child template.
 
-При этом блоки ospf и alias используются по-разному. В базовом шаблоне в
-блоке ospf уже была часть конфигурации:
+In this way *ospf* and *alias* blocks are used differently. In base template, *ospf* block already has part of configuration:
 
 ::
 
@@ -133,11 +120,9 @@
      auto-cost reference-bandwidth 10000
     {% endblock %}
 
-Поэтому, в дочернем шаблоне есть выбор: использовать эту конфигурацию и
-дополнить её, или полностью переписать всё в дочернем шаблоне.
+Therefore, child template has a choice: use this configuration and supplement it or completely rewrite everything in child template.
 
-В данном случае конфигурация дополняется. Именно поэтому в дочернем
-шаблоне templates/hq_router.txt блок ospf начинается с выражения
+In this case the configuration is supplemented. That is why in child template templates/hq_router.txt the *ospf* block starts with expression 
 ``{{ super() }}``:
 
 ::
@@ -149,37 +134,24 @@
      {% endfor %}
     {% endblock %}
 
-``{{ super() }}`` переносит в дочерний шаблон содержимое этого блока из
-родительского шаблона. За счет этого в дочерний шаблон перенесутся
-строки из родительского.
+``{{ super() }}`` transfers content of this block from parent template to child template. Because of this, lines from parent are moved to child template.
 
 .. note::
 
-    Выражение super не обязательно должно находиться в самом начале
-    блока. Оно может быть в любом месте блока. Содержимое базового
-    шаблона перенесется в то место, где находится выражение super.
+    Expression **super** doesn't have to be at the beginning of the block. It could be anywhere in the block. Content of base template are moved to where **super** expression is located.
 
-В блоке alias просто описаны нужные alias. И, даже если бы в
-родительском шаблоне были какие-то настройки, они были бы затерты
-содержимым дочернего шаблона.
+**alias** block simply describes the alias. And even if there were some settings in parent template, they would be erased by content of child template.
 
-Подытожим правила работы с блоками. Если в родительском шаблоне создан
-блок: 
+Let’s recap the rules for working with blocks. If block is created in parent template:
 
-* без содержимого - в дочернем шаблоне можно заполнить этот блок
-  или игнорировать. Если блок заполнен, в нём будет только то, что было
-  написано в дочернем шаблоне (пример - блок alias) 
-* с содержимым - то в дочернем шаблоне можно выполнить такие действия: 
+* no content - in child template you can fill this block or ignore it. If block is filled, it will contain only what was written in child template (example - *alias* block)
+* with content - in child template you can perform such actions:
 
-  * игнорировать блок - в таком случае в дочерний шаблон попадет содержимое, 
-    которое находилось в этом блоке в родительском шаблоне (пример - блок services) 
-  * переписать блок - тогда в дочернем шаблоне будет только то, что указано в нём 
-  * перенести содержимое блока из родительского шаблона и дополнить 
-    его - тогда в дочернем шаблоне будет и содержимое блока из родительского
-    шаблона, и содержимое из дочернего шаблона. Для переноса содержимого из
-    родительского шаблона используется выражение ``{{ super() }}`` (пример - блок ospf)
+  * ignore block - in this case, child template will get content from parent template (example - *services* block)
+  * rewrite block - then child template will contain only what it has 
+  * move content of the block from parent template and supplement it - then child template will contain both the content of the block from parent template and the content from child template. To transfer content from  parent template the expression ``{{ super() }}`` is used (example - *ospf* block)
 
-Файл с данными для генерации конфигурации по шаблону
+Data file for template configuration generation 
 (data_files/hq_router.yml):
 
 .. code:: json
@@ -192,7 +164,7 @@
       - network: 10.1.1.0 0.0.0.255
         area: 0
 
-Результат выполнения будет таким:
+The result will be:
 
 ::
 
@@ -233,6 +205,5 @@
      transport input ssh
     !
 
-Обратите внимание, что в блоке ospf есть и команды из базового шаблона,
-и команды из дочернего шаблона.
+Note that in *ospf* block there are commands from base template and commands from child template.
 
