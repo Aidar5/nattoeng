@@ -3,7 +3,7 @@ Tests
 
 Besides filters, Jinja also supports tests. Tests allow variables to be tested for a certain condition.
 
-Jinja supports a large number of built-in tests. We will look at only a few of them. The rest of the tests you can find in `documentation <http://jinja.pocoo.org/docs/dev/templates/#builtin-tests>`__.
+Jinja supports a large number of built-in tests. We will look at only a few of them. The rest of tests you can find in `documentation <http://jinja.pocoo.org/docs/dev/templates/#builtin-tests>`__.
 
 Tests, like filters, can be created by yourself.
 
@@ -56,9 +56,9 @@ iterable
 
 Test **iterable** checks whether the object is an iterator.
 
-Due to these checks, it is possible to make forks in template which will take into account the type of the variable.
+Due to these checks, it is possible to make branches in template which will take into account the type of variable.
 
-Template templates/test_iterable.txt (indented to make branches easier to understand):
+Template templates/test_iterable.txt (indents made to make an idea of branches more clear):
 
 ::
 
