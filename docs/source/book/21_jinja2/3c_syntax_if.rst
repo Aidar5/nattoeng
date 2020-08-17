@@ -147,7 +147,7 @@ Data file data_files/if_vlans.yml:
 
 In this example, different commands are generated depending on the value of *action* parameter.
 
-In the template you could also use this option to refer to nested dictionaries:
+In template you could also use this option to refer to nested dictionaries:
 
 ::
 
@@ -174,7 +174,7 @@ This will result in the following configuration:
     interface Fa0/2
      switchport trunk allowed vlan 10,30
 
-Using **if** you can also filter which elements of the sequence will be iterated by **for** loop.
+Using **if** you can also filter which elements of the sequence will be iterated in **for** loop.
 
 Template example templates/if_for.txt with filter in **for** loop:
 
