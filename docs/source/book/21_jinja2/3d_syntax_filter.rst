@@ -12,10 +12,7 @@ You can also easily create your own filters. We will not consider this possibili
 default
 ~~~~~~~
 
-Фильтр default позволяет указать для переменной значение по умолчанию.
-Если переменная определена, будет выводиться переменная, если переменная
-не определена, будет выводиться значение, которое указано в фильтре
-default.
+Filter **default** allows you to set default value for variable. If variable is defined, it will be displayed, if variable is not defined, the value specified in default filter will be displayed.
 
 Template example templates/filter_default.txt:
 
@@ -41,7 +38,7 @@ Data file (data_files/filter_default.yml):
       - network: 10.1.1.0 0.0.0.255
         area: 0
 
-Result of execution:
+The result of execution:
 
 ::
 
@@ -52,9 +49,9 @@ Result of execution:
      network 10.0.2.0 0.0.0.255 area 2
      network 10.1.1.0 0.0.0.255 area 0
 
-By default, if variable is defined and its value is empty, it will be assumed that the variable and its value exist.
+By default, if variable is defined and its value is empty, it will be assumed that variable and its value exist.
 
-If you want the default value to be set also when variable is empty (i.e., treated as False in Python), you need to specify additional parameter ``boolean=true``.
+If you want default value to be set also when variable is empty (i.e., treated as False in Python), you need to specify additional parameter ``boolean=true``.
 
 For example, if data file is:
 
@@ -167,7 +164,7 @@ join
 
 Filter **join** works just like join() method in Python.
 
-With the **join** filter you can combine sequence of elements into a string with an optional separator between elements.
+With **join** filter you can combine sequence of elements into a string with an optional separator between elements.
 
 Template example templates/filter_join.txt using **join** filter:
 
