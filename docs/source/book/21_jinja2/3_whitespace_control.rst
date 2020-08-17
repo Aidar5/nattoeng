@@ -6,7 +6,7 @@ trim_blocks, lstrip_blocks
 
 Parameter ``trim_blocks`` removes the first empty line after construction block if its value is True (default False).
 
-Effect of using the flag is considered by example template templates/env_flags.txt:
+Effect of using the flag is considered by template example templates/env_flags.txt:
 
 ::
 
@@ -69,7 +69,7 @@ In front of ``neighbor ... remote-as`` lines two spaces appeared. This is becaus
 This does not affect the next lines. Therefore, lines with 
 ``neighbor ... update-source`` are displayed with one space.
 
-Parameter ``lstrip_blocks`` controls whether spaces and tabs will be removed from the beginning of the line to the beginning of the block (untill the opening curly bracket).
+Parameter ``lstrip_blocks`` controls whether spaces and tabs will be removed from the beginning of the line to the beginning of the block (untill opening curly bracket).
 
 If add ``lstrip_blocks=True``:
 
@@ -127,7 +127,7 @@ The result will be:
      neighbor 10.0.0.3 remote-as 100
      neighbor 10.0.0.3 update-source lo100
 
-Plus after percent sign disables lstrip_blocks for the block, in this case, only in the beginning.
+Plus sign after percent sign disables lstrip_blocks for the block, in this case, only in the beginning.
 
 If done this way (plus is added in the end block expression):
 
@@ -228,7 +228,7 @@ If you add minus to the end of the block:
      neighbor {{ ibgp }} update-source {{ bgp.loopback }}
      {%- endfor %}
 
-Empty string and at the end of the block will be deleted:
+Empty string at the end of the block will be deleted:
 
 ::
 
