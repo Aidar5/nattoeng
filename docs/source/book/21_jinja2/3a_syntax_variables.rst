@@ -12,7 +12,7 @@ Variables in template are given in double curly brackets:
 
 Variable values are set based on dictionary that is passed to template.
 
-Variable that is passed on in a dictionary may not only be a number or a string, but also, for example, a list or a dictionary. Inside the template, you can refer to the item by number or key.
+Variable that is passed on in a dictionary may not only be a number or a string, but also for example, a list or a dictionary. Inside the template, you can refer to the item by number or key.
 
 Template example templates/variables.txt with usage of different variable variants:
 
@@ -48,7 +48,7 @@ Note the use of *vlans* variable in template: since *vlans* variable is a list, 
 
 If a dictionary is passed (as in case of  *ospf* variable), you can refer to dictionary objects inside template using one of the variants:  ``ospf.network or ospf['network']``
 
-The result of the script will be:
+The result will be:
 
 ::
 
