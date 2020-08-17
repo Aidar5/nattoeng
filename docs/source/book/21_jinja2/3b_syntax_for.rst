@@ -12,7 +12,7 @@ Furthermore, the end of the loop must be explicitly indicated:
       vlan {{ vlan }}
     {% endfor %}
 
-Template example using a loop (templates/for.txt):
+Template example templates/for.txt using a loop:
 
 ::
 
