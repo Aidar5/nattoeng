@@ -1,21 +1,18 @@
-Тесты
+Tests
 -----
 
-Кроме фильтров, Jinja также поддерживает тесты. Тесты позволяют
-проверять переменные на какое-то условие.
+Besides filters, Jinja also supports tests. Tests allow variables to be tested for a certain condition.
 
-Jinja поддерживает большое количество встроенных тестов. Мы рассмотрим
-лишь несколько из них. Остальные тесты вы можете найти в
-`документации <http://jinja.pocoo.org/docs/dev/templates/#builtin-tests>`__.
+Jinja supports a large number of built-in tests. We will look at only a few of them. The rest of the tests you can find in `documentation <http://jinja.pocoo.org/docs/dev/templates/#builtin-tests>`__.
 
-Тесты, как и фильтры, можно создавать самостоятельно.
+Tests, like filters, can be created by yourself.
 
 defined
 ~~~~~~~
 
-Тест defined позволяет проверить, есть ли переменная в словаре данных.
+Test **defined** allows you to check if variable is present in the data dictionary.
 
-Пример шаблона templates/test_defined.txt:
+Template example templates/test_defined.txt:
 
 ::
 
@@ -29,12 +26,9 @@ defined
      network {{ networks.network }} area {{ networks.area }}
     {% endfor %}
 
-Этот пример более громоздкий, чем вариант с использованием фильтра
-default, но этот тест может быть полезен в том случае, если, в
-зависимости от того, определена переменная или нет, нужно выполнять
-разные команды.
+This example is more cumbersome than **default** filter option, but this test may be useful if depending on whether a variable is defined or not, different commands need to be executed.
 
-Файл с данными (data_files/test_defined.yml):
+Data file (data_files/test_defined.yml):
 
 .. code:: yaml
 
@@ -46,7 +40,7 @@ default, но этот тест может быть полезен в том с�
       - network: 10.1.1.0 0.0.0.255
         area: 0
 
-Результат выполнения:
+The result of execution:
 
 ::
 
@@ -60,13 +54,11 @@ default, но этот тест может быть полезен в том с�
 iterable
 ~~~~~~~~
 
-Тест iterable проверяет, является ли объект итератором.
+Test **iterable** checks whether the object is an iterator.
 
-Благодаря таким проверкам, можно делать ответвления в шаблоне, которые
-будут учитывать тип переменной.
+Due to these checks, it is possible to make forks in template which will take into account the type of the variable.
 
-Шаблон templates/test_iterable.txt (сделаны отступы, чтобы были
-понятней ответвления):
+Template templates/test_iterable.txt (indented to make branches easier to understand):
 
 ::
 
@@ -91,7 +83,7 @@ iterable
      {% endif %}
     {% endfor %}
 
-Файл с данными (data_files/test_iterable.yml):
+Data file (data_files/test_iterable.yml):
 
 .. code:: yaml
 
@@ -110,12 +102,9 @@ iterable
         action: delete
         vlans: 10
 
-Обратите внимание на последнюю строку: ``vlans: 10``. В данном случае 10
-уже не находится в списке, и фильтр join в таком случае не работает. Но,
-за счет теста ``is iterable`` (в этом случае результат будет false), в
-этом случае шаблон уходит в ветку else.
+Note the last line: ``vlans: 10``. In this case, 10 is no longer in the list and **join** filter does not work. But, due to ``is iterable`` test (in this case the result will be false), in this case template goes into *else* branch.
 
-Результат выполнения:
+The result of execution:
 
 ::
 
@@ -128,7 +117,5 @@ iterable
      switchport trunk allowed vlan remove 10
 
 
-Такие отступы получились из-за того, что в шаблоне используются
-отступы, но не установлено lstrip_blocks=True (он удаляет пробелы и
-табы в начале строки).
+Such indents appeared because the template uses indents but does not have *lstrip_blocks=True* installed (it removes spaces and tabs at the beginning of the line).
 
