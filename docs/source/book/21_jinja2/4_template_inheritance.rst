@@ -6,9 +6,9 @@ Template inheritance is a very powerful functionality that avoids repetition of 
 When using inheritance, there are:
 
 * **base template** - template that describes template skeleton. 
-* this template may contain any ordinary expressions or text. In addition, special **blocks** are defined in this template.
+    * this template may contain any ordinary expressions or text. In addition, special **blocks** are defined in this template.
 * **child template** - template that extends base template by filling in specified blocks.
-* child templates can overwrite or supplement blocks defined in base template.
+    * child templates can overwrite or supplement blocks defined in base template.
 
 Example of base template templates/base_router.txt:
 
@@ -106,7 +106,7 @@ Inside child template, everything happens inside blocks. Due to the blocks that 
 
 .. note::
 
-    Note that lines described in child template outside the blocks are ignored.
+    Note that lines described in child template outside blocks are ignored.
 
 There are four blocks in base template: services, ospf, bgp, alias. . In child template only two of them are filled: ospf and alias.
 That's the convenience of inheritance. You don’t have to fill all blocks in every child template.
@@ -140,7 +140,7 @@ In this case the configuration is supplemented. That is why in child template te
 
     Expression **super** doesn't have to be at the beginning of the block. It could be anywhere in the block. Content of base template are moved to where **super** expression is located.
 
-**alias** block simply describes the alias. And even if there were some settings in parent template, they would be erased by content of child template.
+**alias** block simply describes the alias. And even if there were some settings in parent template, they would be substituted by content of child template.
 
 Let’s recap the rules for working with blocks. If block is created in parent template:
 
