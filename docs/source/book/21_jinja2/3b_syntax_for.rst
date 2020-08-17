@@ -1,7 +1,7 @@
 Loop for
 --------
 
-Loop **for** allows you to walk through the sequence elements.
+Loop **for** allows you to walk through sequence of elements.
 
 Loop **for** must be inside ``{% %}``.
 Furthermore, the end of the loop must be explicitly indicated:
@@ -12,7 +12,7 @@ Furthermore, the end of the loop must be explicitly indicated:
       vlan {{ vlan }}
     {% endfor %}
 
-Template example templates/for.txt using a loop:
+Template example using a loop (templates/for.txt):
 
 ::
 
