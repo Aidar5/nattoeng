@@ -1,21 +1,13 @@
-Фильтры
+Filters
 -------
 
-В Jinja переменные можно изменять с помощью фильтров. Фильтры отделяются
-от переменной вертикальной чертой (pipe ``|``) и могут содержать
-дополнительные аргументы.
+In Jinja, variables can be changed by filters. Filters are separated from variable by a vertical line (pipe ``|``) and may contain additional arguments.
 
-Кроме того, к переменной могут быть применены несколько фильтров. В
-таком случае фильтры просто пишутся последовательно, и каждый из них
-отделен вертикальной чертой.
+In addition, several filters can be applied to variable. In this case, filters are simply written consecutively and each of them is separated by a vertical line.
 
-Jinja поддерживает большое количество встроенных фильтров. Мы рассмотрим
-лишь несколько из них. Остальные фильтры можно найти в
-`документации <http://jinja.pocoo.org/docs/dev/templates/#builtin-filters>`__.
+Jinja supports a large number of built-in filters. We will look at only a few of them. Other filters can be found in `documentation <http://jinja.pocoo.org/docs/dev/templates/#builtin-filters>`__.
 
-Также достаточно легко можно создавать и свои собственные фильтры. Мы не
-будем рассматривать эту возможность, но это хорошо описано в
-`документации <http://jinja.pocoo.org/docs/2.9/api/#custom-filters>`__.
+You can also easily create your own filters. We will not consider this possibility but it is `well documented <http://jinja.pocoo.org/docs/2.9/api/#custom-filters>`__.
 
 default
 ~~~~~~~
@@ -25,7 +17,7 @@ default
 не определена, будет выводиться значение, которое указано в фильтре
 default.
 
-Пример шаблона templates/filter_default.txt:
+Template example templates/filter_default.txt:
 
 ::
 
@@ -35,10 +27,9 @@ default.
      network {{ networks.network }} area {{ networks.area }}
      {% endfor %}
 
-Если переменная ref_bw определена в словаре, будет подставлено её
-значение. Если же переменной нет, будет подставлено значение 10000.
+If variable ref_bw is defined in dictionary, its value will be set. If there is no variable, the value of 10000 will be substituted.
 
-Файл с данными (data_files/filter_default.yml):
+Data file (data_files/filter_default.yml):
 
 .. code:: yaml
 
@@ -50,7 +41,7 @@ default.
       - network: 10.1.1.0 0.0.0.255
         area: 0
 
-Результат выполнения:
+Result of execution:
 
 ::
 
@@ -61,14 +52,11 @@ default.
      network 10.0.2.0 0.0.0.255 area 2
      network 10.1.1.0 0.0.0.255 area 0
 
-По умолчанию, если переменная определена и её значение пустой объект,
-будет считаться, что переменная и её значение есть.
+By default, if variable is defined and its value is empty, it will be assumed that the variable and its value exist.
 
-Если нужно сделать так, чтобы значение по умолчанию подставлялось и в
-том случае, когда переменная пустая (то есть, обрабатывается как False в
-Python), надо указать дополнительный параметр ``boolean=true``.
+If you want the default value to be set also when variable is empty (i.e., treated as False in Python), you need to specify additional parameter ``boolean=true``.
 
-Например, если файл данных был бы таким:
+For example, if data file is:
 
 ::
 
@@ -81,7 +69,7 @@ Python), надо указать дополнительный параметр `
       - network: 10.1.1.0 0.0.0.255
         area: 0
 
-То в итоге сгенерировался такой результат:
+The result will be:
 
 ::
 
@@ -92,7 +80,7 @@ Python), надо указать дополнительный параметр `
      network 10.0.2.0 0.0.0.255 area 2
      network 10.1.1.0 0.0.0.255 area 0
 
-Если же при таком же файле данных изменить шаблон таким образом:
+If with the same data file the template will be changed as follows:
 
 ::
 
@@ -103,10 +91,10 @@ Python), надо указать дополнительный параметр `
     {% endfor %}
 
 .. note::
-    Вместо ``default(10000, boolean=true)`` можно написать
+    Instead of ``default(10000, boolean=true)`` you can write
     default(10000, true)
 
-Результат уже будет таким (значение по умолчанию подставится):
+The result will be (default value is set):
 
 ::
 
@@ -120,21 +108,17 @@ Python), надо указать дополнительный параметр `
 dictsort
 ~~~~~~~~
 
-Фильтр dictsort позволяет сортировать словарь. По умолчанию сортировка
-выполняется по ключам, но, изменив параметры фильтра, можно выполнять
-сортировку по значениям.
+Filter **dictsort** allows you to sort the dictionary. By default, sorting is done by keys but by changing filter parameters you can sort by values.
 
-Синтаксис фильтра:
+Filter syntax:
 
 ::
 
     dictsort(value, case_sensitive=False, by='key')
 
-После того, как dictsort отсортировал словарь, он возвращает список
-кортежей, а не словарь.
+After **dictsort** sorts the dictionary, it returns a list of tuples, not a dictionary.
 
-Пример шаблона templates/filter_dictsort.txt с использованием фильтра
-dictsort:
+Template example templates/filter_dictsort.txt using **dictsort** filter:
 
 ::
 
@@ -149,10 +133,9 @@ dictsort:
      {% endif %}
     {% endfor %}
 
-Обратите внимание, что фильтр ожидает словарь, а не список кортежей
-или итератор.
+Note that filter awaits a dictionary, not a list of tuples or iterator.
 
-Файл с данными (data_files/filter_dictsort.yml):
+Data file (data_files/filter_dictsort.yml):
 
 .. code:: yaml
 
@@ -167,7 +150,7 @@ dictsort:
         action: add
         vlans: 10,20
 
-Результат выполнения будет таким (интерфейсы упорядочены):
+The result of execution will be (interfaces are ordered):
 
 ::
 
@@ -182,12 +165,11 @@ dictsort:
 join
 ~~~~
 
-Фильтр join работает так же, как и метод join в Python.
+Filter **join** works just like join() method in Python.
 
-С помощью фильтра join можно объединять элементы последовательности в
-строку с опциональным разделителем между элементами.
+With the **join** filter you can combine sequence of elements into a string with an optional separator between elements.
 
-Пример шаблона templates/filter_join.txt с использованием фильтра join:
+Template example templates/filter_join.txt using **join** filter:
 
 ::
 
@@ -202,7 +184,7 @@ join
      {% endif %}
     {% endfor %}
 
-Файл с данными (data_files/filter_join.yml):
+Data file (data_files/filter_join.yml):
 
 .. code:: yaml
 
@@ -222,7 +204,7 @@ join
         vlans:
           - 10
 
-Результат выполнения:
+The result of execution:
 
 ::
 
