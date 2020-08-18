@@ -38,7 +38,7 @@ In this case TextFSM template will look like this (traceroute.template file):
 First two lines define variables:
 
 * ``Value ID (\d+)`` - this line defines an *ID* variable that describes a regular expression: ``(\d+)`` - one or more digits, here are the hop numbers
-* ``Value Hop (\d+(\.\d+){3})`` - line that defines a *Hop* variable that describes an IP address by such a regular expression: ``(\d+(\.\d+){3})``
+* ``Value Hop (\d+(\.\d+){3})`` - line that defines a *Hop* variable that describes an IP address by such regular expression: ``(\d+(\.\d+){3})``
 
 After *Start* line, the template itself begins. In this case, it’s very simple:
 
@@ -88,7 +88,7 @@ Let’s sort out the content of script:
 * ``template = open('traceroute.template')`` - content of TextFSM template file is read into a *template* variable
 * ``fsm = textfsm.TextFSM(template)`` - class that processes a template and creates an object from it in TextFSM
 * ``result = fsm.ParseText(traceroute)`` - method that handles output according to a template and returns a list of lists in which each element is a processed string 
-* •	At the end, ``print(fsm.header)`` header is displayed which contains variable names and processing result
+* At the end, ``print(fsm.header)`` header is displayed which contains variable names and processing result
 
 We can work with that output further. For example, periodically execute traceroute command and compare whether the number of hops and their order has changed.
 
