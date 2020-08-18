@@ -27,7 +27,7 @@ Example of traceroute command examination:
 Value definition
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Only value definitions should be used in variable section. The only exception there may be comments in this section.
+Only value definitions should be used in value section. The only exception there may be comments in this section.
 
 This section should not contain empty strings. For TextFSM, an empty string means the end of value definition section.
 
@@ -54,13 +54,13 @@ Syntax of value description (for each option below we will consider examples):
 State definition
 ~~~~~~~~~~~~~~~~~~~~~
 
-After defining the variables, we need to describe the states:
+After defining values, we need to describe the states:
 
 * each state definition must be separated by an empty line (at least one)
 * first line - state name 
 * then follows the lines that describe rules. Rules must start with two spaces and caret symbol ``^``
 
-Initial state is always **Start**. Input data is compared to the current state but line with rule can specify that you want to go to a different state.
+Initial state is always **Start**. Input data is compared to the current state but rule line can specify that you want to go to a different state.
 
 Checking is done line-by-line until **EOF** (end of file) is reached or the current state goes to **End** state.
 
@@ -90,7 +90,7 @@ State rules
 Each state consists of one or more rules: 
 
 * TextFSM handles incoming strings and compares them to rules 
-* if rule (regular expression) matches the string the actions described in rule are executed and for the next string the process is repeated from the beginning of state.
+* if rule (regular expression) matches the string, actions described in rule are executed and for the next string the process is repeated from the beginning of state.
 
 Rules should be described in this format:
 
@@ -98,22 +98,22 @@ Rules should be described in this format:
 
       ^regex [-> action]
 
-В правиле: 
+In rule: 
 
-* •	each rule must start with two spaces and caret symbol ``^``. Caret symbol ``^`` means the beginning of a line and must always be clearly indicated
+* each rule must start with two spaces and caret symbol ``^``. Caret symbol ``^`` means the beginning of a line and must always be clearly indicated
 * regex - regular expression in which variables can be used
 
   * to specify variable you can use syntax like ``$ValueName`` or ``${ValueName}``\ (preferred format) 
   * in rule, variables are substituted by regular expressions 
-  * if you want to explicitly specify end of line, the value is used ``$$``
+  * if you want to explicitly specify end of line, use ``$$``
 
 Action in rules
 ~~~~~~~~~~~~~~~~~~~
 
-After regular expression, the rule may indicate actions: 
+After regular expression, rule may indicate actions: 
 
 * there must be ``->`` character between regular expression and action  
-* ctions can consist of three parts in such format:  **L.R S** 
+* actions can consist of three parts in such format:  **L.R S** 
 
   * **L - Line Action** - actions that apply to an input string
   * **R - Record Action** - actions that apply to collected values
@@ -135,7 +135,7 @@ Record Action
 **Record Action** - optional action that can be specified after Line Action. They must be separated by a dot. Types of actions:
 
 * **NoRecord** - do nothing. This is default action when no other is specified
-* **Record** - All variables except those with Filldown option are reset.
+* **Record** - all variables except those with Filldown option are reset.
 * **Clear** - reset all variables except those where Filldown option is specified.
 * **Clearall** - reset all variables.
 
