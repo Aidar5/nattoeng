@@ -40,10 +40,10 @@ This means that TextFSM will be able to determine which template to use even if 
 * sh ip int br 
 * show ip inter bri
 
-How to use the CLI table
+How to use CLI table
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ПLet’s see how to use *clitable* class and index file.
+Let’s see how to use *clitable* class and index file.
 
 *templates* directory contains such templates and index file:
 
@@ -72,7 +72,7 @@ First, we import *clitable* class:
 
     See textfsm version: ``pip show textfsm``.
 
-We will check *clitable* on the last example from previous section - *show ip route ospf command*. Read the output that is stored in output/sh_ip_route_ospf.txt file to string:
+We will check *clitable* on the last example from previous section - *show ip route ospf* command. Read the output that is stored in output/sh_ip_route_ospf.txt file to string:
 
 .. code:: python
 
@@ -194,7 +194,7 @@ Assemble everything into one script (textfsm_clitable.py file):
     for row in data_rows:
         print(row)
 
-In exercises to this section there will be a task to combine described procedure into a function, and task to obtain a list of dictionaries.
+In exercises to this section there will be a task to combine described procedure into a function and task to obtain a list of dictionaries.
 
 The output will be:
 
