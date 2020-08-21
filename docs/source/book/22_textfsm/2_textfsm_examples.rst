@@ -30,11 +30,11 @@ Example of script run:
 
 .. note::
 
-    Module **tabulate** is used to display data in tabular form (it must be installed if you want to use this script). A similar output could be received with string formatting, but with tabulate it is easier to do.
+    Module **tabulate** is used to display data in tabular form (it must be installed if you want to use this script). A similar output could be received with string formatting but with tabulate it is easier to do.
 
-Data processing by template is always done in the same way. Therefore, script will be the same, only template and data will be different.
+Data processing by template is always done in the same way. Therefore, script will be the same only template and data will be different.
 
-Starting with a simple example, we’ll figure out how to use TextFSM.
+Starting with a simple example we’ll figure out how to use TextFSM.
 
 show clock
 ~~~~~~~~~~
@@ -71,7 +71,7 @@ Tips on special symbols:
 * ``\w`` - any letter or number
 * ``\d`` - any number
 
-Once variables are defined, an empty line and **Start** state must follow, and then the rule follows starting with the space and ``^`` symbol (templates/sh_clock.template file):
+Once variables are defined, an empty line and **Start** state must follow, and then the rule follows starting with space and ``^`` symbol (templates/sh_clock.template file):
 
 ::
 
@@ -87,7 +87,7 @@ Once variables are defined, an empty line and **Start** state must follow, and t
 
 Because in this case only one line in the output, it is not necessary to write Record action in template. But it is better to use it in situations where you have to write values and get used to this syntax and not make mistakes when you need to process multiple lines.
 
-When TextFSM handles output strings, it substitutes variable by its values. In the end, the rule will look like:
+When TextFSM handles output strings it substitutes variable by its values. In the end, the rule will look like:
 
 ::
 
@@ -102,7 +102,7 @@ When this regular expression applies to *show clock* output, each regular expres
 * 5 group: 13 
 * 6 group: 2016
 
-In the rule, in addition to the explicit Record action, which specifies that the record should be placed in the final table, the Next rule is also used by default. It specifies that you want to go to the next line of text. Since there is only one line in of *sh clock* command output, processing is completed.
+In the rule, in addition to the explicit Record action which specifies that record should be placed in final table, the Next rule is also used by default. It specifies that you want to go to the next line of text. Since there is only one line in *sh clock* command output, the processing is completed.
 
 The result of script is:
 
@@ -116,7 +116,7 @@ The result of script is:
     show ip interface brief
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In case when you need to process data displayed in columns,, TextFSM template is the most convenient.
+In case when you need to process data displayed in columns, TextFSM template is the most convenient.
 
 Template for *show ip interface brief* output (templates/sh_ip_int_br.template file):
 
@@ -566,7 +566,7 @@ In fact, incomplete route entry should really be written when the next full rout
 
       ^O -> Continue.Record
 
-Here, **Record ** action tells you to write down the current value of variables. Since there are no variables in this rule, what was in the previous values is written.
+Here, **Record** action tells you to write down the current value of variables. Since there are no variables in this rule, what was in the previous values is written.
 
 **Continue** action says to continue working with the current line as if there was no match. So, the next line of template will work. The resulting template looks like (templates/sh_ip_route_ospf.template):
 
@@ -601,7 +601,7 @@ The result is:
 show etherchannel summary
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TextFSM is convenient to use to parse output that is displayed by columns, or to process output that is in different lines. Templates are less convenient when it is necessary to get several identical elements from one line.
+TextFSM is convenient to use to parse output that is displayed by columns or to process output that is in different lines. Templates are less convenient when it is necessary to get several identical elements from one line.
 
 Example of *show etherchannel summary* output (output/sh_etherchannel_summary.txt file):
 
@@ -659,7 +659,7 @@ The result is:
     Po1        ['Fa0/1']
     Po3        ['Fa0/11']
 
-So far, only the first port is in output but we need all ports to hit. In this case after the found match, you should continue processing string with ports. That is, use Continue action and describe the following expression.
+So far, only the first port is in output but we need all ports to hit. In this case after match is found, you should continue processing string with ports. That is, use Continue action and describe the following expression.
 
 The only line in template describes the first port. Add a line that describes the next port.
 
@@ -687,7 +687,7 @@ The result is:
 
 Similarly, lines that describe the third and fourth ports should be written to template. But, because the output can have a different number of ports, you have to move Record rule to separate line so that it is not tied to a specific number of ports in string.
 
-For example, if Record is located after the line that describes four ports, for a situation there are fewer ports in the line the entry will not be executed.я.
+For example, if Record is located after the line that describes four ports, for a situation with fewer ports in the line the entry will not be executed.
 
 The resulting template (templates/sh_ether_channelsummary.txt file):
 
