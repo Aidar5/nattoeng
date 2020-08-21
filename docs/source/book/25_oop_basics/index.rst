@@ -4,7 +4,7 @@
 
 .. _oop_basics_index:
 
-25. Основы ООП
+25. OOP basics
 ============================
 
 .. toctree::
