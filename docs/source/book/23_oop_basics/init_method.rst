@@ -40,7 +40,7 @@ In Python these initial object data are specified in ``__init__``. Method ``__in
         ...:         print('Hostname: {}\nModel: {}'.format(self.hostname, self.model))
         ...:
 
-Note that each instance created from this class will have variables: ``self.model`` и ``self.hostname``.
+Note that each instance created from this class will have variables: ``self.model`` and ``self.hostname``.
 
 Now, when creating an instance of Switch class you have to specify *hostname* and *model*:
 
@@ -58,7 +58,7 @@ Accordingly, info() method works without error:
 
 .. note::
 
-    ``__init__`` method is sometimes called a class constructor, although technically in Python the ``__new__``, is executed first and then ``__init__``. In most cases there is no necessety to use ``__new__`` method.
+    ``__init__`` method is sometimes called a class constructor, although technically in Python ``__new__`` method is executed first and then ``__init__``. In most cases there is no necessety to use ``__new__`` method.
 
 An important feature of ``__init__`` method is that it should not return anything. Python will generate an exception if it tries to do this.
 
