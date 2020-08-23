@@ -3,7 +3,7 @@ OOP basics
 
 -  Class - an element of a program that describes some data type. Class describes a template for creating objects, typically specifies variables of object and actions that can be performed on object.
 -  Instance - an object that is a representative of a class.
--  Method - a function that is defined within a class and describes an action that supports a class
+-  Method - a function that is defined within a class and describes an action that class supports
 -  Instance variable (sometimes instance
    attribute) - data that refer to an object
 -  Class variable - data that refer to class and shared by all class instances
@@ -84,7 +84,7 @@ For example, in an class instance **str**, all methods refer to working with thi
 
 .. note::
 
-    By example with a string, it is clear that class does not have to store a state - string is unchanged data type and all methods return new strings and do not change the original string.
+    By example with a string, it is clear that class does not have to store a state - string is immutable data type and all methods return new strings and do not change the original string.
 
 Above, the following syntax is used when referring to instance attributes (variables and methods): ``objectname.attribute``. This entry 
 ``s.lower()`` means: invoke lower() method on **s** object. Invoking methods and variables is the same, but to call a method you have to add brackets and pass all necessary arguments.
