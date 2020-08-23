@@ -1,9 +1,9 @@
 Parameter self
 ~~~~~~~~~~~~~
 
-Parameter **self** was specified before in method definition, as well as when using instance variables in the method. Parameter **self** is a reference to a particular instance of the class. **self** is not a special name but an arrangement. Instead of **self** you can use a different name but you shouldn't do that.
+Parameter **self** was specified before in method definition, as well as when using instance variables in the method. Parameter **self** is a reference to a particular instance of the class. Parameter **self** is not a special name but an arrangement. Instead of **self** you can use a different name but you shouldn't do that.
 
-Example using a different name instead of **self**:
+Example of using a different name instead of **self**:
 
 .. code:: python
 
@@ -57,7 +57,7 @@ In this case, class instances will not have *interfaces* variable:
 
     AttributeError: 'Switch' object has no attribute 'interfaces'
 
-This variable does not exist because it exists only within method and the area of visibility of method is the same as function. Even other methods of the same class do not see variables in other methods.
+This variable does not exist because it exists only within method and visibility area of method is the same as function. Even other methods of the same class do not see variables in other methods.
 
 For list with interfaces to be available as a variable in instances, you have to assign value in self.interfaces:
 
