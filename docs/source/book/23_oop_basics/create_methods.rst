@@ -1,7 +1,7 @@
 Method creation
 ~~~~~~~~~~~~~~~
 
-Before we start dealing with class methods, let’s see an example of a function that waits as an argument an instance variable of Switch class and displays information about it using instance variables *hostname* and *mode*:
+Before we start dealing with class methods, let’s see an example of a function that waits as an argument an instance variable of Switch class and displays information about it using instance variables *hostname* and *model*:
 
 .. code:: python
 
@@ -33,7 +33,7 @@ To add a method you have to create a function within class:
         ...:         print('Hostname: {}\nModel: {}'.format(self.hostname, self.model))
         ...:
 
-If you look closely, info() method looks exactly like info() function, only instead of sw_obj name, *self* is used. Why there is a strange *self* name here will be explained later and in the meantime we will see how to call info() method:
+If you look closely, info() method looks exactly like info() function, only instead of sw_obj name the *self* is used. Why there is a strange *self* name here will be explained later and in the meantime we will see how to call info() method:
 
 .. code:: python
 
