@@ -134,4 +134,4 @@ Check for summation with decimal number and error generation:
 
     TypeError: unsupported operand type(s) for +: 'IPAddress' and 'str'
 
-.. seealso:: Manual of special techniques `Numeric magic methods <https://rszalski.github.io/magicmethods/#numeric>`__
+.. seealso:: Manual of special methods `Numeric magic methods <https://rszalski.github.io/magicmethods/#numeric>`__
