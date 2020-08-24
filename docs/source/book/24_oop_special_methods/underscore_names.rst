@@ -43,7 +43,7 @@ For example, CiscoSSH class uses paramiko to connect to equipment:
             return result
 
 
-After creating an instance of the class, not only send_show_command method is available but also *client* and *ssh* attributes(3rd line is tab tips in ipython)::
+After creating an instance of the class, not only send_show_command method is available but also *client* and *ssh* attributes (3rd line is tab tips in ipython)::
 
 .. code:: python
 
@@ -115,7 +115,7 @@ This conversion is only performed if less than two underscores endings or no und
 
 Although methods were created without ``_Switch``, it was added.
 
-If you create a subclass than ``__configure`` method will not rewrite parent class method Switch:
+If you create a subclass then ``__configure`` method will not rewrite parent class method Switch:
 
 .. code:: python
 
@@ -137,7 +137,7 @@ Thus, special variables and methods are denoted.
 For example, Python module has such special variables:
 
 * ``__name__`` - this variable is equal to ``__main__`` when the script runs directly and is equal to module name when imported
-* ``__file__`` - this variable is equal  to name of the script that was run directly and equals complete path to module when it is imported
+* ``__file__`` - this variable is equal  to name of the script that was run directly and equals to complete path to module when it is imported
 
 Variable ``__name__`` is most commonly used to indicate that a certain part of code must be executed only when module is called directly:
 
