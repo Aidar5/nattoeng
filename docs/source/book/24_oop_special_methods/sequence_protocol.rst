@@ -106,7 +106,7 @@ In this case, because __getitem__ method uses a list, errors are processed corre
     TypeError: list indices must be integers or slices, not str
 
 
-Реализация остальных методов протокола последовательности вынесена в задания раздела:
+You will find implementation of remaining methods of sequence protocol in tasks to this section:
 
 * __contains__ - this method is responsible for checking the presence of element in sequence ``'10.1.1.198' in net1``. If object does not define this method, the presence of element is checked by iteration of elements using __iter__ and if this method is also unavailable, then by index iteration with __getitem__.
 * __reversed__ - is used by built-in reversed() function. This method is usually best not to create and rely on the fact that reversed() function in absence of __reversed__ method will use methods __len__ and __getitem__.
