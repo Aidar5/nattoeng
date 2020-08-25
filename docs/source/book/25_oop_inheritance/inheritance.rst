@@ -100,7 +100,7 @@ After inheriting all methods of parent class, child class can:
 * supplement method
 * add your methods
 
-In CiscoSSH class you have to create the __init__ method and add parameters to it:
+In CiscoSSH class you have to create __init__ method and add parameters to it:
 
 * enable_password - enable password
 * disable_paging - is responsible for paging turning on/off
