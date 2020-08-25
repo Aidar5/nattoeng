@@ -93,7 +93,7 @@ Now IPAddress class looks like:
         ...:         return IPAddress(sum_ip_str)
         ...:
 
-If the second operand is not an instanse of **int** class, a TypeError exception is generated. In exception, information is displayed that summation is not supported between IPAddress class instances and operand class instance. Class name is derived from class itself, after calling to : ``type(other).__name__``.
+If the second operand is not an instanse of **int** class, a TypeError exception is generated. In exception, information is displayed that summation is not supported between IPAddress class instances and operand class instance. Class name is derived from class itself, after calling type: ``type(other).__name__``.
 
 Check for summation with decimal number and error generation:
 
