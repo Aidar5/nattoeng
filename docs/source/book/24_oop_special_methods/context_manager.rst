@@ -56,7 +56,7 @@ Example of class usage:
     Out[11]: 'sh ip int br\r\nInterface                  IP-Address      OK? Method Status                Protocol\r\nEthernet0/0                192.168.100.1   YES NVRAM  up                    up      \r\nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \r\nEthernet0/2                19.1.1.1        YES NVRAM  up                    up      \r\nEthernet0/3                192.168.230.1   YES NVRAM  up                    up      \r\nLoopback0                  4.4.4.4         YES NVRAM  up                    up      \r\nLoopback90                 90.1.1.1        YES manual up                    up      \r\nR1#'
 
 
-In order for the class to support work in the context manager, it is necessary to add methods __enter__ and __exit__:
+In order for the class to support work in context manager, it is necessary to add methods __enter__ and __exit__:
 
 .. code:: python
 
