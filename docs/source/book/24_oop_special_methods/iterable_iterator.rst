@@ -4,7 +4,7 @@ Iteration protocol
 
 **iterable object (iterable)** - object that can return elements one at a time. 
 For Python, it is any object that has ``__iter__`` or ``__getitem__`` method.
-If an object has __iter__ method, the iterated object becomes an iterator by calling ``iter(name)``, where *name* - name of iterable object. If   __iter__ method, Python iterates elements using __getitem__.
+If an object has __iter__ method, the iterated object becomes an iterator by calling ``iter(name)`` where *name* - name of iterable object. If __iter__ method is not present, Python iterates elements using __getitem__.
 
 
 .. code:: python
@@ -21,31 +21,31 @@ If an object has __iter__ method, the iterated object becomes an iterator by cal
     In [2]: iterable_1 = Items([1, 2, 3, 4])
 
     In [3]: iterable_1[0]
-    Вызываю __getitem__
+    Calling __getitem__
     Out[3]: 1
 
     In [4]: for i in iterable_1:
        ...:     print('>>>>', i)
        ...:
-    Вызываю __getitem__
+    Calling __getitem__
     >>>> 1
-    Вызываю __getitem__
+    Calling __getitem__
     >>>> 2
-    Вызываю __getitem__
+    Calling __getitem__
     >>>> 3
-    Вызываю __getitem__
+    Calling __getitem__
     >>>> 4
-    Вызываю __getitem__
+    Calling __getitem__
 
     In [5]: list(map(str, iterable_1))
-    Вызываю __getitem__
-    Вызываю __getitem__
-    Вызываю __getitem__
-    Вызываю __getitem__
-    Вызываю __getitem__
+    Calling __getitem__
+    Calling __getitem__
+    Calling __getitem__
+    Calling __getitem__
+    Calling __getitem__
     Out[5]: ['1', '2', '3', '4']
 
-If object has __iter__ method (which must return iterator), it should be used values iteration:
+If object has __iter__ method (which must return iterator), it is used for values iteration:
 
 .. code:: python
 
@@ -67,14 +67,14 @@ If object has __iter__ method (which must return iterator), it should be used va
     In [13]: for i in iterable_1:
          ...:     print('>>>>', i)
          ...:
-    Вызываю __iter__
+    Calling __iter__
     >>>> 1
     >>>> 2
     >>>> 3
     >>>> 4
 
     In [14]: list(map(str, iterable_1))
-    Вызываю __iter__
+    Calling __iter__
     Out[14]: ['1', '2', '3', '4']
 
 In Python, iter() function is responsible for getting an iterator :
@@ -87,11 +87,11 @@ In Python, iter() function is responsible for getting an iterator :
     Out[2]: <list_iterator at 0xb4ede28c>
 
 ``iter`` function will work on any object that has __iter__ or __getitem__ method.
-Method __iter__ returns the iterator. If this method is not available, iter() function checks availability of __getitem__ method that can get elements by index. If __getitem__ method exists, the elements will be searched through index (starting with 0).
+Method __iter__ returns the iterator. If this method is not available, iter() function checks availability of __getitem__ method that can get elements by index. If __getitem__ method exists, the elements will be iterated through index (starting with 0).
 
 
 **iterator** - object that returns its elements one at a time.
-From Python point of view, it is any object that has __next__method. This method returns the next item if any, or returns Stopiteration exception when items are ended. In addition, iterator remembers which object it stopped at in the last iteration. Each iterator also has __iter__ method - that is, every iterator is an iterable object. This method returns iterator itself.
+From Python point of view, it is any object that has __next__method. This method returns the next item if any or returns Stopiteration exception when items are ended. In addition, iterator remembers which object it stopped at in the last iteration. Each iterator also has __iter__ method - that is, every iterator is an iterable object. This method returns iterator itself.
 
 An example of creating iterator from list:
 
@@ -122,7 +122,7 @@ Now you can use next() function that calls __next__method to take the next eleme
 
     StopIteration:
 
-After elements are ended, Stopiteration exception is returned. In order for iterator to return elements again, it has to be re-created. Similar actions are performed when **for** loop is iterates items in the list:
+After elements are ended, Stopiteration exception is returned. In order for iterator to return elements again, it has to be re-created. Similar actions are performed when **for** loop iterates items in the list:
 
 .. code:: python
 
@@ -186,17 +186,17 @@ Check function on object that does not have __iter__ but has __getitem__:
 
     In [21]: my_for(iterable_1)
     Нет __iter__, но есть __getitem__
-    Вызываю __getitem__
+    Calling __getitem__
     1
-    Вызываю __getitem__
+    Calling __getitem__
     2
-    Вызываю __getitem__
+    Calling __getitem__
     3
-    Вызываю __getitem__
+    Calling __getitem__
     4
-    Вызываю __getitem__
+    Calling __getitem__
     5
-    Вызываю __getitem__
+    Calling __getitem__
 
 
 Iterator creation
@@ -264,12 +264,12 @@ Method __iter__ in iterator must return object itself, therefore  ``return self`
     In [15]: for ip in net1:
         ...:     print(ip)
         ...:
-    Вызываю __iter__
-    Вызываю __next__
+    Calling __iter__
+    Calling __next__
     10.1.1.193
-    Вызываю __next__
+    Calling __next__
     10.1.1.194
-    Вызываю __next__
+    Calling __next__
 
 Most of the time, iterator is a disposable object and once we’ve iterated elements, we can’t do it again:
 
@@ -278,8 +278,8 @@ Most of the time, iterator is a disposable object and once we’ve iterated elem
     In [16]: for ip in net1:
         ...:     print(ip)
         ...:
-    Вызываю __iter__
-    Вызываю __next__
+    Calling __iter__
+    Calling __next__
 
 
 Creation of iterable object
