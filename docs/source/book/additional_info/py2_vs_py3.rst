@@ -1,10 +1,10 @@
-Отличия Python 2.7 и Python 3.6
+Python 2.7 and Python 3.6 distinctions
 -------------------------------
 
 `Unicode <../16_unicode/>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-В Python 2.7 было два типа строк: str и unicode:
+Python 2.7 has two string types: **str** and **unicode**:
 
 .. code:: python
 
@@ -12,8 +12,7 @@
 
     In [2]: line2 = u'тест'
 
-В Python 3 строка - это тип str, но, кроме этого, в Python 3 появился
-тип bytes:
+In Python 3, string is **str** type, but in addition **bytes** type appeared in Python 3:
 
 .. code:: python
 
@@ -24,33 +23,31 @@
 
     In [5]: byte_str = b'test'
 
-`Функция print <../10_useful_functions/print.html>`__
+`print() fucntion <../10_useful_functions/print.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-В Python 2.7 print был оператором:
+In Python 2.7 *print* was an operator:
 
 .. code:: python
 
     In [6]: print 1, 'test'
     1 test
 
-В Python 3 `print - функция <../10_useful_functions/print.md>`__:
+In Python 3 `print() - function <../10_useful_functions/print.md>`__:
 
 .. code:: python
 
     In [7]: print(1, 'test')
     1 test
 
-В Python 2.7 можно брать аргументы в скобки, но от этого print не
-становится функцией и, кроме того, print возвращает другой результат
-(кортеж):
+In Python 2.7 it is possible to put arguments in brackets, but it doesn’t make *print* a function and *print* returns another result (tuple):
 
 .. code:: python
 
     In [8]: print(1, 'test')
     (1, 'test')
 
-В Python 3, использование синтаксиса Python 2.7 приведет к ошибке:
+In Python 3, using Python 2.7 syntax will result in an error:
 
 .. code:: python
 
