@@ -158,6 +158,7 @@ Two underscores before and after name
 Thus, special variables and methods are denoted.
 
 For example, Python module has such special variables:
+
 * ``__name__`` - this variable is equal to ``__main__`` when script runs directly, and it is equal to module name when imported
 * ``__file__`` - this variable is equal to script name that was run directly, and equals to complete path to the module when it is imported
 
@@ -222,5 +223,6 @@ Another special method ``__str__`` is called when print() operator is used or st
     Out[14]: 'Switch sw1'
 
 There are many such special methods in Python. Some useful links where you can read about a particular method:
+
 * `documentation <https://docs.python.org/3.6/reference/datamodel.html#specialnames>`__
-* `Dive Into Python3 <http://www.diveintopython3.net/special-method-names.html>`__
+* `Dive Into Python 3 <http://www.diveintopython3.net/special-method-names.html>`__
