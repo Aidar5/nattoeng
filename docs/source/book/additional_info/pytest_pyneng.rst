@@ -102,7 +102,7 @@ The most important thing is where to run tests: all tests must be run from a dir
         ├── test_task_9_3.py
         └── test_task_9_4.py
 
-In this case, you have to run tests from the 09_functions directory:
+In this case, you have to run tests from 09_functions directory:
 
 ::
 
@@ -122,7 +122,7 @@ In this case, you have to run tests from the 09_functions directory:
 conftest.py
 ~~~~~~~~~~~
 
-In addition to test directory there is a conftest.py file - special file in which you can write functions (more precisely fixtures) common to different tests. For example, this file contains functions that connect via SSH/Telnet to euipment.
+In addition to test directory there is a conftest.py file - special file in which you can write functions (more precisely fixtures) common to different tests. For example, this file contains functions that connect via SSH/Telnet to equipment.
 
 Useful commands
 ~~~~~~~~~~~~~~~~
@@ -139,7 +139,7 @@ Run one test with more detailed output (shows *diff* between data in test and wh
 
     $ pytest tests/test_task_9_1.py -vv
 
-Start all tests of one partition:
+Start all tests of one section:
 
 ::
 
