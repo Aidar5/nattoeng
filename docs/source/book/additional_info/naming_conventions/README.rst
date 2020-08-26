@@ -3,7 +3,7 @@ Naming convention
 
 Python has certain objects naming convention
 
-In general, it is better to adhere to these agreements. However, if a particular library or module uses different convention, it is worth following the style used in them.
+In general, it is better to adhere to this convention. However, if a particular library or module uses different convention, it is worth following the style used in them.
 
     Not all rules are described in this section. More information can be found in PEP8 in 
     `English <https://www.python.org/dev/peps/pep-0008/>`__ or
@@ -23,7 +23,7 @@ If variables are constants for module, it is better to use names written in capi
     DB_NAME = 'dhcp_snooping.db'
     TESTING = True
 
-For ordinary variables, it is better to use lower case names:
+For ordinary variables it is better to use lower case names:
 
 .. code:: python
 
