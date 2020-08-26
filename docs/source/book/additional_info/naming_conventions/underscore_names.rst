@@ -158,7 +158,7 @@ Two underscores before and after name
 Thus, special variables and methods are denoted.
 
 For example, Python module has such special variables:
-* ``__name__`` - this variable is equal to ``__main__`` when script runs directly, and it is equal to module name when imported \*
+* ``__name__`` - this variable is equal to ``__main__`` when script runs directly, and it is equal to module name when imported
 * ``__file__`` - this variable is equal to script name that was run directly, and equals to complete path to the module when it is imported
 
 ``__name__`` variable is most commonly used to indicate that a certain part of the code must be executed only when module is executed directly:
