@@ -54,14 +54,14 @@ Function check_ip() checks whether the argument given to it is an IP address. An
     In [5]: check_ip('500.1.1.1')
     Out[5]: False
 
-Now it is necessary to write a test for check_ip() function. Ttest must check that the function returns True when correct address is passed and False when wrong argument is passed.
+Now it is necessary to write a test for check_ip() function. Test must check that function returns True when correct address is passed and False when wrong argument is passed.
 
-To simplify the task, test can be written in the same file. In pytest, test can be a normal function with a name that starts with *test_*. Inside function you have to write conditions that are checked. In pytest this is done with *assert*.
+To simplify task, test can be written in the same file. In pytest, test can be a normal function with a name that starts with *test_*. Inside function you have to write conditions that are checked. In pytest this is done with *assert*.
 
 assert
 ~~~~~~
 
-*assert* does nothing if expression that is written after it is True and generates an exception if expression is False:
+*assert* does nothing if expression is True and generates an exception if expression is False:
 
 .. code:: python
 
@@ -128,7 +128,7 @@ In pytest, you can write test as a normal function but function name must start 
         result = check_ip('10.1.1.1')
         print('Function result:', result)
 
-Code is written in check_ip_functions.py. Now you have to figure out how to call tests. The easiest option is to write *pytest* word. In this case, pytest will automatically detect tests in the current directory. However, pytest has certain rules, not only by name of function but also by name of test files - file names should also start with *test_*. If rules are respected, pytest will automatically find tests, if not - you have to specify specify a test file.
+Code is written in check_ip_functions.py. Now you have to figure out how to call tests. The easiest option is to write *pytest* word. In this case, pytest will automatically detect tests in the current directory. However, pytest has certain rules, not only by name of function but also by name of test files - file names should also start with *test_*. If rules are respected, pytest will automatically find tests, if not - you have to specify a test file.
 
 In the case of example above, you have to call a command:
 
