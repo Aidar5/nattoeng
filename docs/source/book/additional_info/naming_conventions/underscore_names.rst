@@ -1,12 +1,12 @@
-Underlining in names
+Underscore in names
 ----------------------
 
 In Python, underscores at the beginning or at the end of a name indicates special names. Most often it’s just an arrangement but sometimes it actually affects object behavior.
 
-Underscore as a name
+Underscore in name
 ~~~~~~~~~~~~~~~~~~~~~
 
-In Python, one underscore is used to indicate that data is simply discarded.
+In Python, one underscore is used to simply indicate that data is discarded.
 
 For example, if you want to get MAC address, IP address, VLAN and interface from *line* string and discard the rest of fields, you can use this option:
 
@@ -120,7 +120,7 @@ Two underscores
 Two underscores before name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ДTwo underscores before method name are not used simply as an agreement. Such names are transformed into format "class name + method name". This allows the creation of unique methods and attributes of classes.
+Two underscores before method name are not used simply as an agreement. Such names are transformed into format "class name + method name". This allows the creation of unique methods and attributes of classes.
 
     This transformation is only performed if less than two underscore endings or no underscores.
 
@@ -152,14 +152,14 @@ If you create a subclass, then ``__configure`` method will not rewrite method of
     Out[17]:
     ['_CiscoSwitch__configure', '_CiscoSwitch__quantity', '_Switch__configure', '_Switch__quantity', ...]
 
-Two underscores before and after the name
+Two underscores before and after name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Thus, special variables and methods are denoted.
 
-For example, Python module has such special variables: \*
-``__name__`` - this variable is equal to ``__main__``, when script runs directly, and it is equal to module name when imported \*
-``__file__`` - this variable is equal to script name that was run directly, and equals to complete path to the module when it is imported
+For example, Python module has such special variables:
+* ``__name__`` - this variable is equal to ``__main__`` when script runs directly, and it is equal to module name when imported \*
+* ``__file__`` - this variable is equal to script name that was run directly, and equals to complete path to the module when it is imported
 
 ``__name__`` variable is most commonly used to indicate that a certain part of the code must be executed only when module is executed directly:
 
@@ -189,7 +189,7 @@ The output will be:
     __file__ example2.py
     /home/vagrant/repos/tests/example2.py
 
-Python also denotes special methods in this way. These techniques are called when using Python functions and operators and allow for implementation of a certain functionality.
+Python also denotes special methods in this way. These methods are called when using Python functions and operators and allow for implementation of a certain functionality.
 
 As a rule, such methods need not be called directly. But for example, when creating your own class it may be necessary to describe such method in order to make object support some operations in Python.
 
@@ -221,7 +221,6 @@ Another special method ``__str__`` is called when print() operator is used or st
     In [14]: str(sw1)
     Out[14]: 'Switch sw1'
 
-There are many such special methods in Python. Some useful links where you can read about a particular method: \*
-`documentation <https://docs.python.org/3.6/reference/datamodel.html#specialnames>`__
-\* `Dive Into Python
-3 <http://www.diveintopython3.net/special-method-names.html>`__
+There are many such special methods in Python. Some useful links where you can read about a particular method:
+* `documentation <https://docs.python.org/3.6/reference/datamodel.html#specialnames>`__
+* `Dive Into Python3 <http://www.diveintopython3.net/special-method-names.html>`__
