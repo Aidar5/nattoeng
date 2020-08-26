@@ -9,6 +9,7 @@ Example of % operator use:
     Out[2]: 'interface FastEthernet0/1'
 
 Old string format syntax uses these symbols:
+
 * ``%s`` - string or any other object with a string type
 * ``%d`` - integer
 * ``%f`` - float
