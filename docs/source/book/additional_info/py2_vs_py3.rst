@@ -10,13 +10,13 @@ Python 2.7 has two string types: **str** and **unicode**:
 
     In [1]: line = 'test'
 
-    In [2]: line2 = u'тест'
+    In [2]: line2 = u'test'
 
-In Python 3, string is **str** type, but in addition **bytes** type appeared in Python 3:
+In Python 3, string is **str** type but in addition **bytes** type appeared in Python 3:
 
 .. code:: python
 
-    In [3]: line = 'тест'
+    In [3]: line = 'test'
 
     In [4]: line.encode('utf-8')
     Out[4]: b'\xd1\x82\xd0\xb5\xd1\x81\xd1\x82'
@@ -225,7 +225,7 @@ In Jinja2 module it is no longer necessary to use such code, since the default e
 
 In the templates themselves as in Python, dictionary methods have changed. Here, you should use items() instead of iteritems().
 
-Модули pexpect, telnetlib, paramiko
+Modules pexpect, telnetlib, paramiko
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Modules pexpect, telnetlib, paramiko send and receive bytes, so you have to make encode/decode accordingly.
@@ -236,8 +236,7 @@ Trivia
 ~~~~~~
 
 -  Name of Queue module changed to queue
--  Starting from Python 3.6. csv.DictReader returns OrderedDict
-   Redordedict instead of a regular dictionary.
+-  Starting from Python 3.6, csv.DictReader returns OrderedDict instead of a regular dictionary.
 
 Additional information
 ~~~~~~~~~~~~~~~~~~~~~~~~~
