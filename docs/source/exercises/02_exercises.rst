@@ -2,33 +2,19 @@
 
    \newpage
 
-Exercises
+Задания
 ~~~~~~~
 
 .. include:: ./exercises_intro.rst
 
 
-Task 2.1
+Задание 2.1
 ^^^^^^^^^^^
 
-Create a 
-`repository <https://github.com/natenka/pyneng-examples-exercises/>`__
-clone with jobs and examples and then update it with the “git pull” command
-– the "Already up-to-date" message should be displayed. This repository does not allow you to make changes, so it will only be used to get tasks and examples. To work with tasks, you need to create your own repository and copy tasks to it.
+Создайте свой репозиторий на основании шаблона
+`репозитория <https://github.com/natenka/pyneng-examples-exercises/>`__
+с заданиями и примерами. Для этого надо нажать "Use this template".
 
-Task 2.2
-^^^^^^^^^^^
-
-This task requires:
-
--  Create a repository on Github to perform tasks;
--  Clone it to your virtual machine.
-
-You can create any directory structure in your repository. Since tasks are sometimes updated, it is better to choose the following approach to work:
-
--  Update 
-   `repository <https://github.com/natenka/pyneng-examples-exercises/>`__
-   with tasks and examples;
--  Copy the tasks of one section from the pyneng-examples-exercises repository to your repository;
--  When move to the next section, repeat everything from the beginning.
-
+Созданный репозиторий будет копией репозитория pyneng-examples-exercises,
+но при этом никак не привязан к нему. Задания лучше выполнять в подготовленных файлах в 
+каталоге exercises, так как тесты для заданий зависят от созданной структуры каталогов.

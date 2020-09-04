@@ -23,39 +23,39 @@
 
     $ python task_5_1.py
     Введите имя устройства: r1
-    {'location': '21 New Globe Walk', 'vendor': 'Cisco', 'model': '4451', 'ios': '15.4', 'ip': '10.255.0.1'}
+    {"location": "21 New Globe Walk", "vendor": "Cisco", "model": "4451", "ios": "15.4", "ip": "10.255.0.1"}
 
 Ограничение: нельзя изменять словарь london_co.
 
 Все задания надо выполнять используя только пройденные темы.
-То есть эту задачу можно решить без использования условия if.
+То есть эту задачу можно решить без использования условия if и других тем, которые рассматриваются позже.
 
 
 .. code:: python
 
     london_co = {
-        'r1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.1'
+        "r1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.1"
         },
-        'r2': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.2'
+        "r2": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.2"
         },
-        'sw1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '3850',
-            'ios': '3.6.XE',
-            'ip': '10.255.0.101',
-            'vlans': '10,20,30',
-            'routing': True
+        "sw1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "3850",
+            "ios": "3.6.XE",
+            "ip": "10.255.0.101",
+            "vlans": "10,20,30",
+            "routing": True
         }
     }
 
@@ -80,33 +80,33 @@
 Ограничение: нельзя изменять словарь london_co.
 
 Все задания надо выполнять используя только пройденные темы.
-То есть эту задачу можно решить без использования условия if.
+То есть эту задачу можно решить без использования условия if и других тем, которые рассматриваются позже.
 
 .. code:: python
 
     london_co = {
-        'r1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.1'
+        "r1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.1"
         },
-        'r2': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.2'
+        "r2": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.2"
         },
-        'sw1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '3850',
-            'ios': '3.6.XE',
-            'ip': '10.255.0.101',
-            'vlans': '10,20,30',
-            'routing': True
+        "sw1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "3850",
+            "ios": "3.6.XE",
+            "ip": "10.255.0.101",
+            "vlans": "10,20,30",
+            "routing": True
         }
     }
 
@@ -131,33 +131,33 @@
 Ограничение: нельзя изменять словарь london_co.
 
 Все задания надо выполнять используя только пройденные темы.
-То есть эту задачу можно решить без использования условия if.
+То есть эту задачу можно решить без использования условия if и других тем, которые рассматриваются позже.
 
 .. code:: python
 
     london_co = {
-        'r1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.1'
+        "r1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.1"
         },
-        'r2': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.2'
+        "r2": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.2"
         },
-        'sw1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '3850',
-            'ios': '3.6.XE',
-            'ip': '10.255.0.101',
-            'vlans': '10,20,30',
-            'routing': True
+        "sw1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "3850",
+            "ios": "3.6.XE",
+            "ip": "10.255.0.101",
+            "vlans": "10,20,30",
+            "routing": True
         }
     }
 
@@ -165,7 +165,7 @@
 ~~~~~~~~~~~~
 
 Переделать скрипт из задания 5.1b таким образом, чтобы, при запросе параметра,
-которого нет в словаре устройства, отображалось сообщение 'Такого параметра нет'.
+которого нет в словаре устройства, отображалось сообщение "Такого параметра нет".
 
 .. note::
     Попробуйте набрать неправильное имя параметра или несуществующий параметр,
@@ -186,33 +186,33 @@
 Ограничение: нельзя изменять словарь london_co.
 
 Все задания надо выполнять используя только пройденные темы.
-То есть эту задачу можно решить без использования условия if.
+То есть эту задачу можно решить без использования условия if и других тем, которые рассматриваются позже.
 
 .. code:: python
 
     london_co = {
-        'r1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.1'
+        "r1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.1"
         },
-        'r2': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.2'
+        "r2": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.2"
         },
-        'sw1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '3850',
-            'ios': '3.6.XE',
-            'ip': '10.255.0.101',
-            'vlans': '10,20,30',
-            'routing': True
+        "sw1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "3850",
+            "ios": "3.6.XE",
+            "ip": "10.255.0.101",
+            "vlans": "10,20,30",
+            "routing": True
         }
     }
 
@@ -235,33 +235,33 @@
 Ограничение: нельзя изменять словарь london_co.
 
 Все задания надо выполнять используя только пройденные темы.
-То есть эту задачу можно решить без использования условия if.
+То есть эту задачу можно решить без использования условия if и других тем, которые рассматриваются позже.
 
 .. code:: python
 
     london_co = {
-        'r1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.1'
+        "r1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.1"
         },
-        'r2': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '4451',
-            'ios': '15.4',
-            'ip': '10.255.0.2'
+        "r2": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "4451",
+            "ios": "15.4",
+            "ip": "10.255.0.2"
         },
-        'sw1': {
-            'location': '21 New Globe Walk',
-            'vendor': 'Cisco',
-            'model': '3850',
-            'ios': '3.6.XE',
-            'ip': '10.255.0.101',
-            'vlans': '10,20,30',
-            'routing': True
+        "sw1": {
+            "location": "21 New Globe Walk",
+            "vendor": "Cisco",
+            "model": "3850",
+            "ios": "3.6.XE",
+            "ip": "10.255.0.101",
+            "vlans": "10,20,30",
+            "routing": True
         }
     }
 
@@ -284,6 +284,13 @@
     11111111  11111111  11111111  00000000
 
 Проверить работу скрипта на разных комбинациях сеть/маска.
+
+Подсказка: Получить маску в двоичном формате можно так:
+
+::
+
+    In [1]: "1" * 28 + "0" * 4
+    Out[1]: "11111111111111111111111111110000"
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
@@ -317,9 +324,17 @@
     255       255       255       0
     11111111  11111111  11111111  00000000
 
-Проверить работу скрипта на разных комбинациях сеть/маска.
+Проверить работу скрипта на разных комбинациях хост/маска, например: 10.0.5.195/28, 10.0.1.1/24
+
+Подсказка:
+
+Есть адрес хоста в двоичном формате и маска сети 28. Адрес сети это 
+первые 28 бит адреса хоста + 4 ноля. То есть, например, адрес хоста 10.1.1.195/28  в двоичном формате будет ``bin_ip = "00001010000000010000000111000011"``.
+
+А адрес сети будет первых 28 символов из bin_ip + 0000 (4 потому что всего в адресе может быть 32 бита, а 32 - 28 = 4): ``00001010000000010000000111000000``
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
+
 
 Задание 5.2b
 ~~~~~~~~~~~~
@@ -348,6 +363,12 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 То есть эту задачу можно решить без использования условия if и циклов for/while.
+
+Подсказка:
+Подводящим к этому заданию было задание 5.1.
+Чтобы было легче решить это задание, можно посмотреть на задание 5.1 и разобраться как там получилось
+вывести разную информацию в зависимости от ввода пользователя.
+
 
 Ниже примеры выполнения скрипта, чтобы было проще понять задачу.
 
@@ -384,14 +405,14 @@
 .. code:: python
 
     access_template = [
-        'switchport mode access', 'switchport access vlan {}',
-        'switchport nonegotiate', 'spanning-tree portfast',
-        'spanning-tree bpduguard enable'
+        "switchport mode access", "switchport access vlan {}",
+        "switchport nonegotiate", "spanning-tree portfast",
+        "spanning-tree bpduguard enable"
     ]
 
     trunk_template = [
-        'switchport trunk encapsulation dot1q', 'switchport mode trunk',
-        'switchport trunk allowed vlan {}'
+        "switchport trunk encapsulation dot1q", "switchport mode trunk",
+        "switchport trunk allowed vlan {}"
     ]
 
 Задание 5.3a
@@ -401,8 +422,8 @@
 Дополнить скрипт из задания 5.3 таким образом, чтобы, в зависимости от выбранного режима,
 задавались разные вопросы в запросе о номере VLANа или списка VLANов:
 
-* для access: 'Введите номер VLAN:'
-* для trunk: 'Введите разрешенные VLANы:'
+* для access: "Введите номер VLAN:"
+* для trunk: "Введите разрешенные VLANы:"
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 То есть эту задачу можно решить без использования условия if и циклов for/while.
@@ -410,12 +431,12 @@
 .. code:: python
 
     access_template = [
-        'switchport mode access', 'switchport access vlan {}',
-        'switchport nonegotiate', 'spanning-tree portfast',
-        'spanning-tree bpduguard enable'
+        "switchport mode access", "switchport access vlan {}",
+        "switchport nonegotiate", "spanning-tree portfast",
+        "spanning-tree bpduguard enable"
     ]
 
     trunk_template = [
-        'switchport trunk encapsulation dot1q', 'switchport mode trunk',
-        'switchport trunk allowed vlan {}'
+        "switchport trunk encapsulation dot1q", "switchport mode trunk",
+        "switchport trunk allowed vlan {}"
     ]
