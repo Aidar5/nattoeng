@@ -14,6 +14,7 @@ Task 17.1
 Create write_dhcp_snooping_to_csv() function that processes the output of show dhcp snooping binding command from different files and writes processed data to csv file.
 
 Function arguments:
+
 * filenames - list with file names with show dhcp snooping binding outputs
 * output - file name in csv format to which the result will be written
 
