@@ -46,7 +46,7 @@ Add a check of entered IP address. An address is considered correct if it:
 * numbers separated by a dot
 * each number in range 0 to 255
 
-If address is not set correctly, display the message: "Wrong IP address". The message must be displayed only once.
+If address is not set correctly, display message: "Wrong IP address". Message must be displayed only once.
 
 
 Restriction: All tasks must be performed using only covered topics.
@@ -83,7 +83,7 @@ Tasks for ports 0/1, 0/2, 0/4:
 * generate configuration based on template trunk_template
 * based on keywords add, del, only
 
-The code should not be tied to specific port numbers. That is, if there are other interface numbers in *trunk* dictionary, the code should work..
+The code should not be tied to specific port numbers. That is, if there are other interface numbers in *trunk* dictionary, the code should work.
 
 Restriction: All tasks must be performed using only covered topics.
 
