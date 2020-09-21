@@ -113,7 +113,7 @@ Create convert_to_dict() function that expects two arguments:
 
 Function returns the result as a list of dictionaries, where keys are taken from first list and values are substituted from second list.
 
-For example, if functions pass as arguments * headers* list and list
+For example, if functions pass as arguments *headers* list and list
 
 .. code:: python
 
@@ -233,7 +233,7 @@ For example, if R1 has this command output:
 
 For interface Eth 0/0, you should generate this description  ``description Connected to SW1 port Eth 0/1``.
 
-Function should return a dictionary in which keys are interface names and values are command that defines interface description:
+Function should return a dictionary where keys are interface names and values are command that defines interface description:
 
 ::
 
