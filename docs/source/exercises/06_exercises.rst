@@ -15,7 +15,7 @@ Mac list contains MAC addresses in XXXXXX:XXXX:XXXX format. However, in cisco ha
 Write code that converts MAC addresses to cisco format and adds them to the new list mac_cisco
 
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -33,9 +33,9 @@ Task 6.2
    * "unassigned" - if IP address is 0.0.0.0
    * "unused" - in all other cases
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
-Задание 6.2a
+Task 6.2a
 ~~~~~~~~~~~~
 
 Make a copy of script from task 6.2.
@@ -49,9 +49,9 @@ Add a check of entered IP address. An address is considered correct if it:
 If address is not set correctly, display the message: "Wrong IP address". The message must be displayed only once.
 
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
-Задание 6.2b
+Task 6.2b
 ~~~~~~~~~~~~
 
 Make a copy of script from task 6.2a.
@@ -59,9 +59,9 @@ Make a copy of script from task 6.2a.
 Complete script:
 If address was entered incorrectly, ask for address again.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
-Задание 6.3
+Task 6.3
 ~~~~~~~~~~~
 
 Script has a configuration generator for access ports.
@@ -85,7 +85,7 @@ Tasks for ports 0/1, 0/2, 0/4:
 
 The code should not be tied to specific port numbers. That is, if there are other interface numbers in *trunk* dictionary, the code should work..
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
