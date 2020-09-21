@@ -22,7 +22,7 @@ Function expects such arguments:
      "FastEthernet0/14": 11,
      "FastEthernet0/16": 17}
 
-2. access port configuration template in the form of a list of commands (list access_mode_template)
+2. access port configuration template in the form of a list of commands (access_mode_template list)
 
 Function should return a list of all ports in access mode with configuration based on template access_mode_template. There should be no line feed at the end of lines in the list.
 
@@ -82,7 +82,7 @@ Restriction: All tasks must be performed using only covered topics.
 Task 9.1a
 ~~~~~~~~~~~~
 
-Make a copy of generate_access_config function from task 9.1.
+Make a copy of generate_access_config() function from task 9.1.
 
 Complete script: enter an additional parameter that controls whether port-security will be configured:
 
@@ -90,7 +90,7 @@ Complete script: enter an additional parameter that controls whether port-securi
 * default is None
 * to configure port-security, list of *port-security* commands should be passed as a value (in port_security_template list)
 
-Function should return a list of all ports in access mode with configuration based on the template access_mode_template and template port_security_template if it has been passed. There should be no line feed at the end of lines in the list.
+Function should return a list of all ports in access mode with configuration based on access_mode_template template and template port_security_template template if it has been passed. There should be no line feed at the end of lines in the list.
 
 
 Check function with access_config dictionary, with and without port-security configuration generation.
@@ -125,7 +125,7 @@ Restriction: All tasks must be performed using only covered topics.
 Task 9.2
 ~~~~~~~~~~~
 
-Create a generate_trunk_config function that generates configuration for trunk ports.
+Create a generate_trunk_config() function that generates configuration for trunk ports.
 
 Function should have such parameters:
 
@@ -141,7 +141,7 @@ Function should have such parameters:
 
 Function should return a list of commands with configuration based on specified ports and trunk_mode_template template. There should be no line feed at the end of lines in the list.
 
-Check function with trunk_config dictionaryand list of commands trunk_mode_template. If this check is successful, check function again with trunk_config_2 dictionary and make sure that the resulting list contains correct interface and vlan numbers.
+Check function with trunk_config dictionary and list of commands trunk_mode_template. If this check is successful, check function again with trunk_config_2 dictionary and make sure that the resulting list contains correct interface and vlan numbers.
 
 
 Example of resulting list (line feed after each item is made for ease of reading):
@@ -179,9 +179,9 @@ Restriction: All tasks must be performed using only covered topics.
 Task 9.2a
 ~~~~~~~~~~~~
 
-Make a copy of generate_trunk_config function from task 9.2.
+Make a copy of generate_trunk_config() function from task 9.2.
 
-Change the function to return a dictionary rather than a list of commands:
+Change function to return a dictionary rather than a list of commands:
 
 * keys: interface names like "FastEthernet0/1"
 * values: list of commands to execute on this interface
@@ -207,9 +207,9 @@ Restriction: All tasks must be performed using only covered topics.
 Task 9.3
 ~~~~~~~~~~~
 
-Create function get_int_vlan_map that processes switch configuration file and returns a tuple with two dictionaries:
+Create get_int_vlan_map() function that processes switch configuration file and returns a tuple with two dictionaries:
 
-1. dictionary of ports in trunk mode, where keys are port number and values are list of allowed VLAN (list of numbers):
+1. dictionary of ports in access mode, where keys are port numbers and values is access VLAN (numbers):
 
 .. code:: python
 
@@ -217,7 +217,7 @@ Create function get_int_vlan_map that processes switch configuration file and re
      "FastEthernet0/14": 11,
      "FastEthernet0/16": 17}
 
-2. словарь портов в режиме trunk, где ключи номера портов, а значения список разрешенных VLAN (список чисел):
+2. dictionary of ports in trunk mode, where keys are port number and values are list of allowed VLANs (list of numbers):
 
 .. code:: python
     {"FastEthernet0/1": [10, 20],
@@ -228,13 +228,13 @@ Function should have one parameter - config_filename, that expects as an argumen
 
 Check function with config_sw1.txt file
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 
 Task 9.3a
 ~~~~~~~~~~~~
 
-Copy function get_int_vlan_map from task 9.3.
+Copy get_int_vlan_map() function from task 9.3.
 
 Complete function: add configuration support when access port configuration is like:
 
@@ -263,7 +263,7 @@ Restriction: All tasks must be performed using only covered topics.
 Task 9.4
 ~~~~~~~~~~~
 
-Create a function convert_config_to_dict that processes switch configuration file and returns dictionary:
+Create convert_config_to_dict() function that processes switch configuration file and returns dictionary:
 
 * All top-level commands (global configuration mode) will be the keys.
 * If top-level command has a sub-command, it must be in value of corresponding key as a list (spaces at the beginning of line should be removed).
@@ -271,7 +271,7 @@ Create a function convert_config_to_dict that processes switch configuration fil
 
 Function should have one parameter - config_filename, that expects as an argument the name of configuration file.
 
-When processing a configuration file, you should ignore lines that start with "!" as well as the lines that contain words from * ignore * list. To check whether to ignore a line, use ignore_command() function.
+When processing a configuration file, you should ignore lines that start with "!" as well as the lines that contain words from *ignore* list. To check whether to ignore a line, use ignore_command() function.
 
 Check function with config_sw1.txt file
 
