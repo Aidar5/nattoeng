@@ -58,7 +58,7 @@ Function should return the list:
 Task 12.3
 ~~~~~~~~~~~~
 
-Create a print_ip_table() function that displays a table of available and unavailable IP addresses.
+Create a print_ip_table() function that displays a table of reachable and unreachable IP addresses.
 
 Function expects as arguments two lists:
 
