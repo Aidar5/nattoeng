@@ -48,9 +48,9 @@ This task requires:
 
 * take contents of several files with sh version command output
 * parse command output with regular expressions and get device information
-* write the received information to a CSV file format
+* write the received information to a CSV file
 
-To complete a task you need to create two functions.
+To complete task you need to create two functions.
 
 Function parse_sh_version():
 
