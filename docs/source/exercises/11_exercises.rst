@@ -43,7 +43,9 @@ Restriction: All tasks must be performed using only covered topics.
 
     def parse_cdp_neighbors(command_output):
         """
-        Here we pass command output with one string because it is in this form we will receive command output from equipment. Taking command output as argument, instead of a file name, we make function more universal: it can work with both files and output from equipment. Plus, we learn to work with that output.
+        Here we pass command output with one string because in this form we will receive command output from equipment. 
+        Taking command output as argument, instead of a file name, we make function more universal: 
+        it can work with both files and output from equipment. Plus, we learn to work with that output.
         """
 
 
@@ -57,7 +59,7 @@ Task 11.2
 
 Create a create_network_map() function that handles the output of show cdp neighbors command from multiple files and integrates it into one common topology.
 
-Function should have one parameter – filenames, that expects as an argument a list with file names in which show cdp neighbors output is found.
+Function should have one parameter – filenames, that expects as an argument a list of file names in which show cdp neighbors output is found.
 
 Function should return a dictionary that describes connections between devices. Structure of dictionary is the same as in task 11.1:
 
