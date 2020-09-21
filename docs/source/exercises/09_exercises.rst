@@ -50,7 +50,7 @@ Example of resulting list (line feed after each item is made for ease of reading
 
 Check function with access_config dictionary.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -103,7 +103,7 @@ Example of a function call:
     print(generate_access_config(access_config, access_mode_template, port_security_template))
 
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -160,7 +160,7 @@ Example of resulting list (line feed after each item is made for ease of reading
     ...]
 
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -188,7 +188,7 @@ Change the function to return a dictionary rather than a list of commands:
 
 Check function with trunk_config dictionary and trunk_mode_template template.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -257,7 +257,7 @@ Function should have one parameter - config_filename, that expects as an argumen
 
 Check function with config_sw2.txt
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 
 Task 9.4
@@ -275,7 +275,7 @@ When processing a configuration file, you should ignore lines that start with "!
 
 Check function with config_sw1.txt file
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
