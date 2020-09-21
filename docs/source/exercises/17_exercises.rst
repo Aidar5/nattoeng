@@ -230,7 +230,7 @@ Of these three entries, only one should be written to final file - the latest:
 
     C-3PO,c3po@gmail.com,16/12/2019 17:24
 
-It is convenient to use datetime objects from *datetime* module to compare dates. To simplify work with dates, convert_str_to_datetime() function was created - it converts a line with a date in format 11/10/2019 14:05 into an datetime object. The resulting datetime objects can be compared. The second convert_datetime_to_str() function does the reverse operation - converts datetime object into a string.
+It is convenient to use datetime objects from *datetime* module to compare dates. To simplify work with dates, convert_str_to_datetime() function was created - it converts a string with a date in format 11/10/2019 14:05 into an datetime object. The resulting datetime objects can be compared. The second convert_datetime_to_str() function does the reverse operation - converts datetime object into a string.
 
 Functions convert_str_to_datetime() and convert_datetime_to_str() are not necessary to use.
 
@@ -241,14 +241,14 @@ Functions convert_str_to_datetime() and convert_datetime_to_str() are not necess
 
     def convert_str_to_datetime(datetime_str):
         """
-        Converts a line with a date in format 11/10/2019 14:05 into an datetime object.
+        Converts a string with a date in format 11/10/2019 14:05 into an datetime object.
         """
         return datetime.datetime.strptime(datetime_str, "%d/%m/%Y %H:%M")
 
 
     def convert_datetime_to_str(datetime_obj):
         """
-        Converts datetime object into a string.
+        Converts datetime object into a string with a date in format 11/10/2019 14:05.
         """
         return datetime.datetime.strftime(datetime_obj, "%d/%m/%Y %H:%M")
 
