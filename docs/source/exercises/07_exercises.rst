@@ -20,7 +20,7 @@ Process lines from ospf.txt file and display information for each line as follow
     Last update           3d18h
     Outbound Interface    FastEthernet0/0
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 Task 7.2
 ~~~~~~~~~~~
@@ -31,7 +31,7 @@ Script should return commands from passed configuration file, excluding lines th
 
 Output should be without empty lines.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 Task 7.2a
 ~~~~~~~~~~~~
@@ -40,7 +40,7 @@ Make a copy of script from task 7.2.
 
 Complete script: Script should not display commands containing words that are specified in *ignore* list.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -54,7 +54,7 @@ Complete script from task 7.2a: instead of displaying to standard output stream,
 You have to filter lines from *ignore* list.
 Lines that start with  ``!`` should not be filtered.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -72,7 +72,7 @@ Inside, script should filter those lines in original configuration file that con
 
 Check script with config_sw1.txt.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 .. code:: python
 
@@ -93,7 +93,7 @@ Script should process entries in CAM_table.txt file. Every line with MAC address
     200    1a4b.c580.7000   Gi0/6
     300    0a1b.5c80.7000   Gi0/7
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 
 Task 7.3a
@@ -120,7 +120,7 @@ The result should be like this:
 
 Note, vlan 1000 should be the last to be displayed. The correct sort can be achieved if vlan is a number rather than a string.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
 
 Task 7.3b
@@ -133,5 +133,5 @@ Redo script:
 * Ask user to enter VLAN number.
 * Display information only for specified VLAN.
 
-All tasks must be performed using only covered topics.
+Restriction: All tasks must be performed using only covered topics.
 
