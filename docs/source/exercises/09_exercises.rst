@@ -271,7 +271,7 @@ Create a function convert_config_to_dict that processes switch configuration fil
 
 Function should have one parameter - config_filename, that expects as an argument the name of configuration file.
 
-When processing a configuration file, you should ignore lines that start with "!" as well as the lines that contain the words from the * ignore * list. To check whether to ignore a line, use ignore_command() function.
+When processing a configuration file, you should ignore lines that start with "!" as well as the lines that contain words from * ignore * list. To check whether to ignore a line, use ignore_command() function.
 
 Check function with config_sw1.txt file
 
@@ -284,13 +284,13 @@ All tasks must be performed using only covered topics.
 
     def ignore_command(command, ignore):
         """
-        Function checks whether command has words from *ignore* list.
+        Function checks whether command words from *ignore* list.
 
         command - string. Command that should be checked.
         ignore - list. List of words.
 
         Returns
-        * True, if command has word from *ignore* list.
+        * True, if command contains a word from *ignore* list.
         * False - if not
         """
         return any(word in command for word in ignore)
