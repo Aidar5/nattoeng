@@ -7,7 +7,7 @@
 
 .. include:: ./pytest.rst
 
-Задание 21.1
+Задание 20.1
 ~~~~~~~~~~~~
 
 Создать функцию generate_config.
@@ -21,19 +21,25 @@
 
 Проверить работу функции на шаблоне templates/for.txt и данных из файла data_files/for.yml.
 
+.. code:: python
 
-Задание 21.2
+    import yaml
+
+
+    # так должен выглядеть вызов функции
+    if __name__ == "__main__":
+        data_file = "data_files/for.yml"
+        template_file = "templates/for.txt"
+        with open(data_file) as f:
+            data = yaml.safe_load(f)
+        print(generate_config(template_file, data))
+
+
+Задание 20.2
 ~~~~~~~~~~~~
 
-На основе конфигурации config_r1.txt, создать шаблоны:
-
-* templates/cisco_base.txt - в нем должны быть все строки, кроме настройки alias и event manager. Имя хоста должно быть переменной hostname
-* templates/alias.txt - в этот шаблон перенести все alias
-* templates/eem_int_desc.txt - в этом шаблоне должен быть event manager applet
-
-В шаблонах templates/alias.txt и templates/eem_int_desc.txt переменных нет.
-
-Создать шаблон templates/cisco_router_base.txt. В шаблон templates/cisco_router_base.txt должно быть включено содержимое шаблонов:
+Создать шаблон templates/cisco_router_base.txt.
+В шаблон templates/cisco_router_base.txt должно быть включено содержимое шаблонов:
 
 * templates/cisco_base.txt
 * templates/alias.txt
@@ -41,18 +47,18 @@
 
 При этом, нельзя копировать текст шаблонов.
 
-Шаблоны надо создавать вручную, скопировав части конфига в соответствующие шаблоны.
-
 Проверьте шаблон templates/cisco_router_base.txt, с помощью
-функции generate_config из задания 21.1. Не копируйте код функции generate_config.
+функции generate_config из задания 20.1. Не копируйте код функции generate_config.
 
 В качестве данных, используйте информацию из файла data_files/router_info.yml
 
-Задание 21.3
+Задание 20.3
 ~~~~~~~~~~~~
 
 Создайте шаблон templates/ospf.txt на основе конфигурации OSPF в файле cisco_ospf.txt.
 Пример конфигурации дан, чтобы показать синтаксис.
+
+Шаблон надо создавать вручную, скопировав части конфига в соответствующий шаблон.
 
 Какие значения должны быть переменными:
 
@@ -90,11 +96,34 @@
 Все команды должны быть в соответствующих режимах.
 
 Проверьте получившийся шаблон templates/ospf.txt, на данных в файле data_files/ospf.yml,
-с помощью функции generate_config из задания 21.1.
+с помощью функции generate_config из задания 20.1.
 Не копируйте код функции generate_config.
 
 
-Задание 21.4
+В результате должна получиться конфигурация такого вида
+(команды в режиме router ospf не обязательно должны быть в таком порядке, главное чтобы они были в нужном режиме):
+
+::
+
+    router ospf 10
+     router-id 10.0.0.1
+     auto-cost reference-bandwidth 20000
+     network 10.255.0.1 0.0.0.0 area 0
+     network 10.255.1.1 0.0.0.0 area 0
+     network 10.255.2.1 0.0.0.0 area 0
+     network 10.0.10.1 0.0.0.0 area 2
+     network 10.0.20.1 0.0.0.0 area 2
+     passive-interface Fa0/0.10
+     passive-interface Fa0/0.20
+    interface Fa0/1
+     ip ospf hello-interval 1
+    interface Fa0/1.100
+     ip ospf hello-interval 1
+    interface Fa0/1.200
+     ip ospf hello-interval 1
+
+
+Задание 20.4
 ~~~~~~~~~~~~
 
 Создайте шаблон templates/add_vlan_to_switch.txt, который будет использоваться
@@ -125,11 +154,11 @@
 в файле data_files/add_vlan_to_switch.yaml.
 
 
-Проверьте шаблон templates/add_vlan_to_switch.txt на данных в файле data_files/add_vlan_to_switch.yaml, с помощью функции generate_config из задания 21.1.
+Проверьте шаблон templates/add_vlan_to_switch.txt на данных в файле data_files/add_vlan_to_switch.yaml, с помощью функции generate_config из задания 20.1.
 Не копируйте код функции generate_config.
 
 
-Задание 21.5
+Задание 20.5
 ~~~~~~~~~~~~
 
 Создать шаблоны templates/gre_ipsec_vpn_1.txt и templates/gre_ipsec_vpn_2.txt,
@@ -165,10 +194,10 @@ cisco_vpn_1.txt и cisco_vpn_2.txt.
         'tun_ip_2': '10.0.1.2 255.255.255.252'
     }
 
-Задание 21.5a
+Задание 20.5a
 ~~~~~~~~~~~~~
 
-Создать функцию configure_vpn, которая использует шаблоны из задания 21.5 для настройки VPN на маршрутизаторах на основе данных в словаре data.
+Создать функцию configure_vpn, которая использует шаблоны из задания 20.5 для настройки VPN на маршрутизаторах на основе данных в словаре data.
 
 Параметры функции:
 
@@ -178,8 +207,8 @@ cisco_vpn_1.txt и cisco_vpn_2.txt.
 * dst_template - имя файла с шаблоном, который создает конфигурацию для второй строны туннеля
 * vpn_data_dict - словарь со значениями, которые надо подставить в шаблоны
 
-Функция должна настроить VPN на основе шаблонов и данных на каждом устройстве.
-Функция возвращает вывод с набором команд с двух марушртизаторов (вывод, которые возвращает send_config_set).
+Функция должна настроить VPN на основе шаблонов и данных на каждом устройстве с помощью netmiko.
+Функция возвращает вывод с набором команд с двух марушртизаторов (вывод, которые возвращает метод netmiko send_config_set).
 
 При этом, в словаре data не указан номер интерфейса Tunnel, который надо использовать.
 Номер надо определить самостоятельно на основе информации с оборудования.
