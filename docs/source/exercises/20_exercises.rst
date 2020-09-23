@@ -2,48 +2,49 @@
 
    \newpage
 
-Задания
+Tasks
 =======
 
 .. include:: ./pytest.rst
 
-Задание 20.1
+Task 20.1
 ~~~~~~~~~~~~
 
-Создать функцию ping_ip_addresses, которая проверяет доступность IP-адресов.
-Проверка IP-адресов должна выполняться параллельно в разных потоках.
+Create ping_ip_addresses() function that checks if IP addresses are pingable. Checking IP addresses should be performed in parallel in different threads.
 
-Параметры функции:
+Function parameters:
 
-* ip_list - список IP-адресов
-* limit - максимальное количество параллельных потоков (по умолчанию 3)
+* ip_list - list of IP addresses
+* limit - maximum number of parallel threads (default 3)
 
-Функция должна возвращать кортеж с двумя списками:
+Function should return a tuple with two lists:
 
-* список доступных IP-адресов
-* список недоступных IP-адресов
+* list of available IP addresses
+* list of unreachable IP addresses
 
-Для выполнения задания можно создавать любые дополнительные функции.
+You can create any additional functions to complete task.
 
-Для проверки доступности IP-адреса, используйте ping.
+To check availability of IP address, use ping.
 
-Задание 20.2
+.. note::
+
+    concurrent.futures hint: If you need to ping multiple IP addresses in different threads, you need to create a function that pings one IP address and then run this function in different threads for different IP addresses with concurrent.futures (ping_ip_addresses() function should do this).
+
+Task 20.2
 ~~~~~~~~~~~~
 
-Создать функцию send_show_command_to_devices, которая отправляет
-одну и ту же команду show на разные устройства в параллельных потоках,
-а затем записывает вывод команд в файл.
+Create send_show_command_to_devices() function that sends the same show command to different devices in parallel threads and then writes output of commands to a file. Output from devices in file can be in any order.
 
-Параметры функции:
+Function parameters:
 
-* devices - список словарей с параметрами подключения к устройствам
-* command - команда
-* filename - имя файла, в который будут записаны выводы всех команд
-* limit - максимальное количество параллельных потоков (по умолчанию 3)
+* devices - list of dictionaries with connection parameters to devices
+* command - command
+* filename - name of text file into which the output of all commands will be written
+* limit - maximum number of parallel threads (default 3)
 
-Функция ничего не возвращает.
+Function does not return anything.
 
-Вывод команд должен быть записан в файл в таком формате (перед выводом команды надо написать имя хоста и саму команду):
+Output of commands should be written to a plain text file in this format (you should write host name and command itself before output of command):
 
 ::
 
@@ -60,27 +61,25 @@
     Ethernet0/0                192.168.100.3   YES NVRAM  up                    up
     Ethernet0/1                unassigned      YES NVRAM  administratively down down
 
-Для выполнения задания можно создавать любые дополнительные функции.
+You can create any additional functions to complete task.
 
-Проверить работу функции на устройствах из файла devices.yaml
+Check function with devices from device.yaml file
 
-Задание 20.3
+Task 20.3
 ~~~~~~~~~~~~
 
-Создать функцию send_command_to_devices, которая отправляет
-разные команды show на разные устройства в параллельных потоках,
-а затем записывает вывод команд в файл.
+Create send_command_to_devices() function that sends different show commands to different devices in parallel threads and then writes the output of commands to a file. Output from devices in file can be in any order.
 
-Параметры функции:
+Function parameters:
 
-* devices - список словарей с параметрами подключения к устройствам
-* commands_dict - словарь в котором указано на какое устройство отправлять какую команду. Пример словаря - commands
-* filename - имя файла, в который будут записаны выводы всех команд
-* limit - максимальное количество параллельных потоков (по умолчанию 3)
+* devices - list of dictionaries with devices connection parameters
+* commands_dict - dictionary that specifies which device to send which command. Example dictionary - *commands*
+* filename - name of file into which the outputs of all commands will be written
+* limit - maximum number of parallel threads (default 3)
 
-Функция ничего не возвращает.
+Function does not return anything.
 
-Вывод команд должен быть записан в файл в таком формате (перед выводом команды надо написать имя хоста и саму команду):
+Output of commands should be written to a plain text file in this format (you should write host name and command itself before output of command):
 
 ::
 
@@ -97,36 +96,37 @@
     Interface                  IP-Address      OK? Method Status                Protocol
     Ethernet0/0                192.168.100.3   YES NVRAM  up                    up
     Ethernet0/1                unassigned      YES NVRAM  administratively down down
+    
+You can create any additional functions to complete task.
 
-
-Для выполнения задания можно создавать любые дополнительные функции.
-
-Проверить работу функции на устройствах из файла devices.yaml и словаре commands
+Check function with devices from device.yaml file and commands dictionary
 
 .. code:: python
 
-    commands = {'192.168.100.1': 'sh ip int br',
-                '192.168.100.2': 'sh arp',
-                '192.168.100.3': 'sh ip int br'}
+    # This dictionary is only needed to check code operation, you can change IP addresses in it
+    # test takes addresses from device.yaml file
 
+    commands = {
+        "192.168.100.3": "sh run | s ^router ospf",
+        "192.168.100.1": "sh ip int br",
+        "192.168.100.2": "sh int desc",
+    }
 
-Задание 20.3a
+Task 20.3a
 ~~~~~~~~~~~~~
 
-Создать функцию send_command_to_devices, которая отправляет
-список указанных команды show на разные устройства в параллельных потоках,
-а затем записывает вывод команд в файл.
+Create send_command_to_devices() function that sends a list of specified show commands to different devices in parallel threads and then writes the output of commands to a file. Output from devices in file can be in any order.
 
-Параметры функции:
+Function parameters:
 
-* devices - список словарей с параметрами подключения к устройствам
-* commands_dict - словарь в котором указано на какое устройство отправлять какие команды. Пример словаря - commands
-* filename - имя файла, в который будут записаны выводы всех команд
-* limit - максимальное количество параллельных потоков (по умолчанию 3)
+* devices - list of dictionaries with devices connection parameters
+* commands_dict - dictionary that specifies which device to send which command. Example dictionary - *commands*
+* filename - name of file into which the outputs of all commands will be written
+* limit - maximum number of parallel threads (default 3)
 
-Функция ничего не возвращает.
+Function does not return anything.
 
-Вывод команд должен быть записан в файл в таком формате (перед выводом каждой команды надо написать имя хоста и саму команду):
+Output of commands should be written to a plain text file in this format (you should write host name and command itself before output of command):
 
 ::
 
@@ -155,35 +155,39 @@
     O        10.30.0.0/24 [110/20] via 192.168.100.1, 07:12:03, Ethernet0/0
 
 
-Порядок команд в файле может быть любым.
+Commands in file can be in any order.
 
-Для выполнения задания можно создавать любые дополнительные функции, а также использовать функции созданные в предыдущих заданиях.
+To complete task you can create any additional functions and use functions created in previous tasks.
 
-Проверить работу функции на устройствах из файла devices.yaml и словаре commands
+Check function with devices from device.yaml file and *commands* dictionary
 
 .. code:: python
 
-    commands = {'192.168.100.1': ['sh ip int br', 'sh arp'],
-                '192.168.100.2': ['sh arp'],
-                '192.168.100.3': ['sh ip int br', 'sh ip route | ex -']}
+    # This dictionary is only needed to check code operation, you can change IP addresses in it
+    # test takes addresses from device.yaml file
+    commands = {
+        "192.168.100.3": ["sh ip int br", "sh ip route | ex -"],
+        "192.168.100.1": ["sh ip int br", "sh int desc"],
+        "192.168.100.2": ["sh int desc"],
+    }
 
 
-Задание 20.4
+Task 20.4
 ~~~~~~~~~~~~
 
-Создать функцию send_commands_to_devices, которая отправляет команду show или config на разные устройства в параллельных потоках, а затем записывает вывод команд в файл.
+Create send_commands_to_devices() function that sends show or config command to different devices in parallel threads and then writes output to a file.
 
-Параметры функции:
+Function parameters:
 
-* devices - список словарей с параметрами подключения к устройствам
-* show - команда show, которую нужно отправить (по умолчанию, значение None)
-* config - команды конфигурационного режима, которые нужно отправить (по умолчанию, значение None)
-* filename - имя файла, в который будут записаны выводы всех команд
-* limit - максимальное количество параллельных потоков (по умолчанию 3)
+* devices - list of dictionaries with devices connection parameters
+* show - show command to send (default None)
+* config - configuration mode commands to send (default None)
+* filename - name of file into which outputs of all commands will be written
+* limit - maximum number of parallel threads (default 3)
 
-Функция ничего не возвращает.
+Function does not return anything.
 
-Вывод команд должен быть записан в файл в таком формате (перед выводом команды надо написать имя хоста и саму команду):
+Output of commands should be written to a file in this format (you should write host name and command itself before output of command):
 
 ::
 
@@ -201,7 +205,7 @@
     Ethernet0/0                192.168.100.3   YES NVRAM  up                    up
     Ethernet0/1                unassigned      YES NVRAM  administratively down down
 
-Пример вызова функции:
+Example of function call:
 
 .. code:: python
 
@@ -255,4 +259,4 @@
     R3#
 
 
-Для выполнения задания можно создавать любые дополнительные функции.
+You can create any additional functions to complete task.
