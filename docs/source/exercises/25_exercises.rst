@@ -2,24 +2,24 @@
 
    \newpage
 
-Задания
+Tasks
 =======
 
 .. include:: ./pytest.rst
 
 
-Задание 27.1
+Task 24.1
 ~~~~~~~~~~~~
 
-Создать класс CiscoSSH, который наследует класс BaseSSH из файла base_connect_class.py.
+Create CiscoSSH class that inherits BaseSSH class from base_connect_class.py.
 
-Создать метод __init__ в классе CiscoSSH таким образом, чтобы после подключения по SSH выполнялся переход в режим enable.
+Create __init__ method in CiscoSSH class in such a way that once connected by SSH, enable mode is activated.
 
-Для этого в методе __init__ должен сначала вызываться метод __init__ класса ConnectSSH, а затем выполняться переход в режим enable.
+To do this, __init__ method should first invoke __init__ method of ConnectSSH class and then switch to enable mode.
 
 .. code-block:: python
 
-    In [2]: from task_27_1 import CiscoSSH
+    In [2]: from task_24_1 import CiscoSSH
 
     In [3]: r1 = CiscoSSH(**device_params)
 
@@ -27,18 +27,16 @@
     Out[4]: 'Interface                  IP-Address      OK? Method Status                Protocol\nEthernet0/0                192.168.100.1   YES NVRAM  up                    up      \nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \nEthernet0/2                190.16.200.1    YES NVRAM  up                    up      \nEthernet0/3                192.168.230.1   YES NVRAM  up                    up      \nEthernet0/3.100            10.100.0.1      YES NVRAM  up                    up      \nEthernet0/3.200            10.200.0.1      YES NVRAM  up                    up      \nEthernet0/3.300            10.30.0.1       YES NVRAM  up                    up      '
 
 
-Задание 27.1a
+Task 24.1a
 ~~~~~~~~~~~~~
 
-Дополнить класс CiscoSSH из задания 27.1.
+Add CiscoSSH class from task 24.1.
 
-Перед подключением по SSH необходимо проверить если ли в словаре
-с параметрами подключения такие параметры: username, password, secret.
-Если нет, запросить их у пользователя, а затем выполнять подключение.
+Before connecting via SSH, you should check whether dictionary with parameters has:  username, password, secret. If not, request them from user and then establish connection. If parameters exist, establish connection immediately.
 
 .. code-block:: python
 
-    In [1]: from task_27_1a import CiscoSSH
+    In [1]: from task_24_1a import CiscoSSH
 
     In [2]: device_params = {
        ...:         'device_type': 'cisco_ios',
@@ -46,51 +44,66 @@
        ...: }
 
     In [3]: r1 = CiscoSSH(**device_params)
-    Введите имя пользователя: cisco
-    Введите пароль:
-    Введите пароль для режима enable:
+    Enter user name: cisco
+    Enter password:
+    Enter password for enable mode:
 
     In [4]: r1.send_show_command('sh ip int br')
     Out[4]: 'Interface                  IP-Address      OK? Method Status                Protocol\nEthernet0/0                192.168.100.1   YES NVRAM  up                    up      \nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \nEthernet0/2                190.16.200.1    YES NVRAM  up                    up      \nEthernet0/3                192.168.230.1   YES NVRAM  up                    up      \nEthernet0/3.100            10.100.0.1      YES NVRAM  up                    up      \nEthernet0/3.200            10.200.0.1      YES NVRAM  up                    up      \nEthernet0/3.300            10.30.0.1       YES NVRAM  up                    up      '
 
-Задание 27.2
+Task 24.2
 ~~~~~~~~~~~~
 
-Создать класс MyNetmiko, который наследует класс CiscoIosBase из netmiko.
+Create MyNetmiko class that inherits CiscoIosBase class from netmiko.
 
-Переписать метод __init__ в классе MyNetmiko таким образом, чтобы после подключения по SSH выполнялся переход в режим enable.
+Rewrite __init__ method in MyNetmiko class in such a way that once connected via SSH, enable mode is activated.
 
-Для этого в методе __init__ должен сначала вызываться метод __init__ класса CiscoIosBase, а затем выполнялся переход в режим enable.
+To do this, __init__ method should first call __init__ method of CiscoIosBase class and then switch to enable mode.
 
-Проверить, что в классе MyNetmiko доступны методы send_command и send_config_set
+Check that send_command() and send_config_set() methods are available in MyNetmiko class
 
 .. code-block:: python
 
-    In [2]: from task_27_2 import MyNetmiko
+    In [2]: from task_24_2 import MyNetmiko
 
     In [3]: r1 = MyNetmiko(**device_params)
 
     In [4]: r1.send_command('sh ip int br')
     Out[4]: 'Interface                  IP-Address      OK? Method Status                Protocol\nEthernet0/0                192.168.100.1   YES NVRAM  up                    up      \nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \nEthernet0/2                190.16.200.1    YES NVRAM  up                    up      \nEthernet0/3                192.168.230.1   YES NVRAM  up                    up      \nEthernet0/3.100            10.100.0.1      YES NVRAM  up                    up      \nEthernet0/3.200            10.200.0.1      YES NVRAM  up                    up      \nEthernet0/3.300            10.30.0.1       YES NVRAM  up                    up      '
 
-Задание 27.2a
+CiscoIosSSH class import:
+
+.. code:: python
+
+    from netmiko.cisco.cisco_ios import CiscoIosSSH
+
+
+    device_params = {
+        "device_type": "cisco_ios",
+        "ip": "192.168.100.1",
+        "username": "cisco",
+        "password": "cisco",
+        "secret": "cisco",
+    }
+
+Task 24.2a
 ~~~~~~~~~~~~~
 
-Дополнить класс MyNetmiko из задания 27.2.
+Complete MyNetmikoclass from task 24.2.
 
-Добавить метод _check_error_in_command, который выполняет проверку на такие ошибки:
+Add _check_error_in_command() method that checks for such errors:
 
- * Invalid input detected, Incomplete command, Ambiguous command
+* Invalid input detected
+* Incomplete command
+* Ambiguous command
 
-Метод ожидает как аргумент команду и вывод команды.
-Если в выводе не обнаружена ошибка, метод ничего не возвращает.
-Если в выводе найдена ошибка, метод генерирует исключение ErrorInCommand с сообщениеем о том какая ошибка была обнаружена, на каком устройстве и в какой команде.
+Method expects as an argument the command and output of command. If no error was found in output, method does not return anything. If error is found in output, method generates an ErrorInCommand exception with message about what error was detected, on which device and on which command.
 
-Переписать метод send_command netmiko, добавив в него проверку на ошибки.
+Rewrite send_command netmiko() method by adding error check.
 
-.. code-block:: python
+.. code:: python
 
-    In [2]: from task_27_2a import MyNetmiko
+    In [2]: from task_24_2a import MyNetmiko
 
     In [3]: r1 = MyNetmiko(**device_params)
 
@@ -103,21 +116,30 @@
     <ipython-input-2-1c60b31812fd> in <module>()
     ----> 1 r1.send_command('sh ip br')
     ...
-    ErrorInCommand: При выполнении команды "sh ip br" на устройстве 192.168.100.1 возникла ошибка "Invalid input detected at '^' marker."
+    ErrorInCommand: When executing command "sh ip br" on device 192.168.100.1 error occurred "Invalid input detected at '^' marker."
 
-Задание 27.2b
+ErrorInCommand exception:
+
+.. code:: python
+
+    class ErrorInCommand(Exception):
+        """
+        Exception is generated if error occurs while executing command on device.
+        """
+
+
+Task 24.2b
 ~~~~~~~~~~~~~
 
-Дополнить класс MyNetmiko из задания 27.2a.
+Copy MyNetmiko class from task 24.2a.
 
-Переписать метод send_config_set netmiko, добавив в него проверку на ошибки с помощью метода _check_error_in_command.
+Complete send_config_set netmiko() method functionality and add error check using _check_error_in_command() method.
 
-Метод send_config_set должен отправлять команды по одной и проверять каждую на ошибки.
-Если при выполнении команд не обнаружены ошибки, метод send_config_set возвращает вывод команд.
+Method send_config_set() should send commands one at a time and check each for errors. If no errors are detected while executing commands, send_config_set() method returns output of commands.
 
-.. code-block:: python
+.. code:: python
 
-    In [2]: from task_27_2b import MyNetmiko
+    In [2]: from task_24_2b import MyNetmiko
 
     In [3]: r1 = MyNetmiko(**device_params)
 
@@ -127,19 +149,18 @@
     <ipython-input-2-8e491f78b235> in <module>()
     ----> 1 r1.send_config_set('lo')
     ...
-    ErrorInCommand: При выполнении команды "lo" на устройстве 192.168.100.1 возникла ошибка "Incomplete command."
+    ErrorInCommand: When executing command "lo" on device 192.168.100.1 error occurred "Incomplete command."
 
-Задание 27.2c
+Задание 24.2c
 ~~~~~~~~~~~~~
 
+Check that send_command() method of MyNetmiko class from task 24.2b accepts additional arguments (as in netmiko), except command.
 
-Проверить, что метод send_command класса MyNetmiko из задания 27.2b, принимает дополнительные аргументы (как в netmiko), кроме команды.
+If error occurs, redo method so that it accepts any arguments that support netmiko.
 
-Если возникает ошибка, переделать метод таким образом, чтобы он принимал любые аргументы, которые поддерживает netmiko.
+.. code:: python
 
-.. code-block:: python
-
-    In [2]: from task_27_2c import MyNetmiko
+    In [2]: from task_24_2c import MyNetmiko
 
     In [3]: r1 = MyNetmiko(**device_params)
 
@@ -149,21 +170,18 @@
     In [5]: r1.send_command('sh ip int br', strip_command=True)
     Out[5]: 'Interface                  IP-Address      OK? Method Status                Protocol\nEthernet0/0                192.168.100.1   YES NVRAM  up                    up      \nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \nEthernet0/2                190.16.200.1    YES NVRAM  up                    up      \nEthernet0/3                192.168.230.1   YES NVRAM  up                    up      \nEthernet0/3.100            10.100.0.1      YES NVRAM  up                    up      \nEthernet0/3.200            10.200.0.1      YES NVRAM  up                    up      \nEthernet0/3.300            10.30.0.1       YES NVRAM  up                    up      '
 
-Задание 27.2d
+Task 24.2d
 ~~~~~~~~~~~~~
 
-Дополнить класс MyNetmiko из задания 27.2c или задания 27.2b.
+Copy MyNetmiko class from task 24.2c or 24.2b.
 
-Добавить параметр ignore_errors в метод send_config_set.
-Если передано истинное значение, не надо выполнять проверку на ошибки и метод должен работать точно так же как метод send_config_set в netmiko.
+Add ignore_errors parameter to send_config_set() method. If true value is passed, no error check should be performed and method should run in the same way as send_config_set() method in netmiko. If value is false, errors should be checked.
 
-Если значение ложное, ошибки должны проверяться.
+Errors should be ignored by default.
 
-По умолчанию ошибки должны игнорироваться.
+.. code:: python
 
-.. code-block:: python
-
-    In [2]: from task_27_2d import MyNetmiko
+    In [2]: from task_24_2d import MyNetmiko
 
     In [3]: r1 = MyNetmiko(**device_params)
 
@@ -180,5 +198,4 @@
     ----> 1 r1.send_config_set('lo', ignore_errors=False)
 
     ...
-    ErrorInCommand: При выполнении команды "lo" на устройстве 192.168.100.1 возникла ошибка "Incomplete command."
-
+    ErrorInCommand: When executing command "lo" on device 192.168.100.1 error occurred "Incomplete command."
