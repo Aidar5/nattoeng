@@ -4,7 +4,7 @@
 
 .. _jinja2_index:
 
-21. Jinja2 configuration templates
+20. Jinja2 configuration templates
 ============================
 
 Jinja2 is a template language used in Python. Jinja is not the only template language (template engine) for Python and not the only template language in general.
@@ -26,4 +26,4 @@ Examples of use:
    3_template_syntax
    4_template_inheritance
    further_reading
-   ../../exercises/21_exercises
+   ../../exercises/20_exercises
