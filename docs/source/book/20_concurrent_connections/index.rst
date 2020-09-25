@@ -25,4 +25,4 @@ Module concurrent.futures is used for parallel connection to devices in this sec
    logging
    concurrent_futures
    further_reading
-   ../../exercises/20_exercises
+   ../../exercises/19_exercises
