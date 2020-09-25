@@ -4,7 +4,7 @@
 
 .. _ssh_telnet_index:
 
-19. Connection to equipment
+18. Connection to equipment
 ==============================
 
 This section discusses how to connect to equipment via:
