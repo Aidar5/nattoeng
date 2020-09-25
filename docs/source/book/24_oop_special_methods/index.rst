@@ -23,4 +23,4 @@ Special methods are responsible for such features as working in context managers
    str_repr
    add_method
    protocols
-   ../../exercises/25_exercises.rst
+   ../../exercises/24_exercises.rst
