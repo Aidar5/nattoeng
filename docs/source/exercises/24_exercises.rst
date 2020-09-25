@@ -13,9 +13,9 @@ Task 24.1
 
 Create CiscoSSH class that inherits BaseSSH class from base_connect_class.py.
 
-Create __init__ method in CiscoSSH class in such a way that once connected by SSH, enable mode is activated.
+Create __init__() method in CiscoSSH class in such a way that once connected by SSH, enable mode is activated.
 
-To do this, __init__ method should first invoke __init__ method of ConnectSSH class and then switch to enable mode.
+To do this, __init__() method should first invoke __init__() method of ConnectSSH class and then switch to enable mode.
 
 .. code-block:: python
 
@@ -56,9 +56,9 @@ Task 24.2
 
 Create MyNetmiko class that inherits CiscoIosBase class from netmiko.
 
-Rewrite __init__ method in MyNetmiko class in such a way that once connected via SSH, enable mode is activated.
+Rewrite __init__() method in MyNetmiko class in such a way that once connected via SSH, enable mode is activated.
 
-To do this, __init__ method should first call __init__ method of CiscoIosBase class and then switch to enable mode.
+To do this, __init__() method should first call __init__() method of CiscoIosBase class and then switch to enable mode.
 
 Check that send_command() and send_config_set() methods are available in MyNetmiko class
 
