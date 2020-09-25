@@ -21,9 +21,9 @@ Duplicate refers to situation where dictionary contains such couples:
 
     ('R1', 'Eth0/0'): ('SW1', 'Eth0/1') и ('SW1', 'Eth0/1'): ('R1', 'Eth0/0')
 
-Each instance should have *topology* variable that contains topology dictionary, but witjout duplicates.
+Each instance should have *topology* variable that contains topology dictionary, but without duplicates.
 
-Example of class instance of creation:
+Example of class instance creation:
 
 .. code:: python
 
@@ -62,7 +62,7 @@ Task 22.1a
 
 Copy Topology class from task 22.1 and change it.
 
-If in task 22.1 duplicates removal was performed in __init__method, it is necessary to transfer function of duplicates removal to _normalize method.
+If in task 22.1 duplicates removal was performed in __init__() method, it is necessary to transfer function of duplicates removal to _normalize() method.
 
 The __init__ method has to look like this:
 
@@ -82,7 +82,7 @@ Add delete_link() method that removes specified connection. Method should also r
 
 If there is no such connection, message "There is no such connection" is displayed.
 
-Topology creation
+Topology creation:
 
 .. code:: python
 
@@ -138,7 +138,7 @@ Change Topology class from task 22.1b.
 
 Add delete_node() method that removes all connections with specified device. If there is no such device, message "There is no such device" is displayed.
 
-Topology creation
+Topology creation:
 
 .. code:: python
 
@@ -222,17 +222,17 @@ Create CiscoTelnet class that connects via Telnet to Cisco equipment.
 
 When creating class instance, Telnet connection should be created as well as switching to enable mode. Class should use telnetlib module to connect via Telnet.
 
-CiscoTelnet class, besides __init__, should have at least two methods:
+CiscoTelnet class, besides __init__(), should have at least two methods:
 
-* _write_line - takes as argument a string and sends to equipment a string converted to bytes and adds a line feed at the end. Method _write_line() should be used within class.
-* send_show_command - takes show command as argument and returns output received from device
+* _write_line() - takes as argument a string and sends to equipment a string converted to bytes and adds a line feed at the end. Method _write_line() should be used within class.
+* send_show_command() - takes show command as argument and returns output received from device
 
-Parameter of __init__ method:
+Parameter of __init__() method:
 
-* ip - IP-адрес
+* ip - IP address
 * username - username
 * password - password
-* secret - password enable
+* secret - enable password 
 
 
 Example of creating class instance:
@@ -256,8 +256,8 @@ Example of creating class instance:
 .. note::
 
     Tip:
-    МMethod _write_line() is needed to shorten line: ``self.telnet.write(line.encode("ascii") + b"\n")`` to such line: ``self._write_line(line)``.
-    It doesn’t have to do anything else.
+    Мethod _write_line() is needed to shorten line ``self.telnet.write(line.encode("ascii") + b"\n")`` to such line: ``self._write_line(line)``.
+    It should not do anything else.
 
 
 Task 22.2a
@@ -265,7 +265,7 @@ Task 22.2a
 
 Copy CiscoTelnet class from task 22.2 and change send_show_command() method by adding three parameters:
 
-* •	parse - controls whether the usual command output or list of dictionaries received after processing with Textfsm will be returned. If parse=True, list of dictionaries should be returned and if parse=False, usual output should be returned. Default value is True.
+* parse - controls whether the usual command output or list of dictionaries received after processing with Textfsm will be returned. If parse=True, list of dictionaries should be returned and if parse=False, usual output should be returned. Default value is True.
 * templates - path to template directory. Default value - "templates"
 * index - name of file where mapping between commands and templates is stored. Default value - "index"
 
@@ -363,17 +363,17 @@ Use of send_config_commands() method:
     Out[6]: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nR1(config)#interface loop55\r\nR1(config-if)#ip address 5.5.5.5 255.255.255.255\r\nR1(config-if)#end\r\nR1#'
 
 
-Задание 22.2c
+Task 22.2c
 ~~~~~~~~~~~~~
 
 Copy CiscoTelnet class from task 22.2b and change send_config_commands() method by adding error check.
 
 Method send_config_commands() should have an additional parameter *strict*:
 
-* strict=True means that if error is detected, it is necessary to generate a ValueError exception
+* strict=True means that if error is detected, it is necessary to generate ValueError exception
 * strict=False means that if error is detected, all you have to do is to display error message
 
-Method should return output similar to the send_config_set() method of netmiko (example of output below). Exception and error text in example below.
+Method should return output similar to send_config_set() method of netmiko (example of output below). Exception and error text in example below.
 
 Example of class instance creation:
 
