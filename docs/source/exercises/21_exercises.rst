@@ -18,7 +18,7 @@ Create parse_command_output() function. Function parameters:
 Function should return list:
 
 * first element - list with column names
-* other elements are lists containing results of output processing 
+* other elements - lists containing results of output processing 
 
 Check function with output/sh_ip_int_br.txt and templates/sh_ip_int_br.template template.
 
@@ -53,7 +53,7 @@ Function parameters:
 * template - name of file containing Textfsm template (templates/sh_ip_int_br.template)
 * command_output - output of corresponding show command (string)
 
-Function should return a list of dictionaries:
+Function should return list of dictionaries:
 
 * keys - variable names in Textfsm template
 * values  - parts of output that correspond to variables
@@ -92,7 +92,7 @@ Function parameters:
 * index_file - name of file where mapping between commands and templates is stored. Default value - "index"
 * templ_path - directory where templates are stored. Default value is - "templates"
 
-Function should return a list of dictionaries with output results (as in 21.1a):
+Function should return list of dictionaries with output results (as in 21.1a):
 
 * keys - variable names in Textfsm template
 * values  - parts of output that correspond to variables
@@ -125,7 +125,7 @@ Task 21.5
 
 Create send_and_parse_command_parallel() function.
 
-Function send_and_parse_command_parallel should run send_and_parse_show_command() functon in parallel threads from task 21.4.
+Function send_and_parse_command_parallel() should call send_and_parse_show_command() functon in parallel threads from task 21.4.
 
 In this task, you have to decide:
 
