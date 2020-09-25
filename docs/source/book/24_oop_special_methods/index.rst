@@ -4,7 +4,7 @@
 
 .. _oop_special_methods_index:
 
-24. Special methods
+23. Special methods
 ======================
 
 Special methods in Python - methods that are responsible for  "standard" possibilities of objects and are called automatically when these possibilities are used. For example, the expression ``a + b``  where a and b are numbers that is converted to such a call  ``a.__add__(b)``. That is, the special method __add__ is responsible for the addition operation. All special methods start and end with double underscore, therefore in English they are often called dunder methods, shortened from "double underscore".
@@ -23,4 +23,4 @@ Special methods are responsible for such features as working in context managers
    str_repr
    add_method
    protocols
-   ../../exercises/24_exercises.rst
+   ../../exercises/23_exercises.rst
