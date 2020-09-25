@@ -38,7 +38,7 @@ Check function with templates/for.txt template and data from data_files/for.yml.
 Task 20.2
 ~~~~~~~~~~~~
 
-Create templates/cisco_router_base.txt template. It should include template content:
+Create templates/cisco_router_base.txt template. It should include template content of:
 
 * templates/cisco_base.txt
 * templates/alias.txt
@@ -71,21 +71,15 @@ Which values should be variables:
 
 For all interfaces in *ospf_intf* list you should generate lines::
 
-::
-
-    network x.x.x.x 0.0.0.0 area x
+::   network x.x.x.x 0.0.0.0 area x
 
 If interface is passive, this line should be added:
 
-::
-
-     passive-interface x
+::   passive-interface x
 
 For interfaces that are not passive, in interface configuration mode you should add a line:
 
-::
-
-     ip ospf hello-interval 1
+::   ip ospf hello-interval 1
 
 All commands must be in appropriate modes.
 
@@ -117,12 +111,12 @@ The result should be a configuration of this kind (commands inside *router ospf*
 Задание 20.4
 ~~~~~~~~~~~~
 
-Create templates/add_vlan_to_switch.txt template that will be used if necessary to add VLAN to switch.
+Create templates/add_vlan_to_switch.txt template that will be used if it's necessary to add VLAN to switch.
 
 Template should support these features:
 
 * add VLAN and VLAN name
-* add VLAN as access on the specified interface
+* add VLAN as access on specified interface
 * add VLAN to list of allowed vlans on trunks
 
 If you want to add VLAN as access, you need to configure interface mode and add VLAN to it:
@@ -191,9 +185,9 @@ Function parameters:
 
 Function should configure VPN based on templates and data on each device using netmiko. Function returns output with a set of commands from two routers (output that returns netmiko send_config_set() method).
 
-However, *data* dictionary does not specify Tunnel interface number to be used. Number has to be determined independently information basis from equipment. If there are no Tunnel interfaces on router, take number 0. If there are some interfaces, take the nearest available number but it should be the same for two routers.
+However, *data* dictionary does not specify Tunnel interface number to be used. Number has to be determined independently based on information from equipment. If there are no Tunnel interfaces on router, take number 0. If there are some interfaces, take the nearest available number but it should be the same for two routers.
 
-For example, *src* router has such interfaces as Tunnel1, Tunnel4. On *dest* router: Tunnel2, Tunnel3, Tunnel8. The first available number for two routers will be 9. And you will need to configure Tunnel 9 interface.
+For example, *src* router has such interfaces as Tunnel1, Tunnel4. On *dest* router: Tunnel2, Tunnel3, Tunnel8. The first available number for two routers will be 9. And you will need to configure Tunnel9 interface.
 
 .. note::
 
