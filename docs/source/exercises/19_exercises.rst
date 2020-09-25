@@ -7,7 +7,7 @@ Tasks
 
 .. include:: ./pytest.rst
 
-Task 19.1
+Task 18.1
 ~~~~~~~~~~~~
 
 Create send_show_command() function.
@@ -16,7 +16,7 @@ Function connects via SSH (using netmiko) to one device and performs specified c
 
 Function parameters:
 
-* device - dictionary with device connection parametersву
+* device - dictionary with device connection parameters
 * command - command to execute
 
 Function returns a string with command output.
@@ -27,25 +27,25 @@ Script should send *command* command to all devices from device.yaml file using 
 
     command = "sh ip int br"
 
-Task 19.1a
+Task 18.1a
 ~~~~~~~~~~~~~
 
-Copy send_show_command() function from task 19.1 and redo it to process the exception that is generated when authentication on device fails.
+Copy send_show_command() function from task 18.1 and redo it to process the exception that is generated when authentication on device fails.
 
 If error occurs, exception message should be displayed on standard output stream.
 
 To verify this, change your password on device or in devices.yaml
 
-Task 19.1b
+Task 18.1b
 ~~~~~~~~~~~~~
 
-Copy send_show_command() function from task 19.1a and redo it in such a way that exception is generated not only when authentication on device fails, but also when device’s IP address is not available.
+Copy send_show_command() function from task 18.1a and redo it in such a way that exception is generated not only when authentication on device fails, but also when device’s IP address is not available.
 
 If error occurs, exception message should be displayed on standard output stream.
 
 To verify this, change your password on device or in devices.yaml
 
-Task 19.2
+Task 18.2
 ~~~~~~~~~~~~
 
 Create send_config_commands() function
@@ -95,13 +95,13 @@ Script should send *command* command to all devices from device.yaml file using 
         'logging 10.255.255.1', 'logging buffered 20010', 'no logging console'
     ]
 
-Task 19.2a
+Task 18.2a
 ~~~~~~~~~~~~~
 
-Copy send_config_commands() function from task 19.2 and add *verbose* parameter that controls whether information about to which device connection is established will be displayed in output.
+Copy send_config_commands() function from task 18.2 and add *verbose* parameter that controls whether information about to which device connection is established will be displayed in output.
 
 .. note::
-    verbose - parameter of send_config_commands function, not parameter of Connecthandler!
+    verbose - parameter of send_config_commands() function, not parameter of ConnectHandler!
 
 By default, the result should be displayed.
 
@@ -119,16 +119,16 @@ Example of function execution:
 Script should send commands list to all devices from devices.yaml file using the send_config_commands() function.
 
 
-Task 19.2b
+Task 18.2b
 ~~~~~~~~~~~~~
 
-Copy send_config_commands() function from task 19.2a and add error check.
+Copy send_config_commands() function from task 18.2a and add error check.
 
 When executing each command, script should check the result for such errors:
 
 * Invalid input detected, Incomplete command, Ambiguous command
 
-If error occurs during execution of any of commands, the function should output a message to standard output stream with information about: which error occurred, which command caused it and on which device. For example: "logging" command was executed with error "Incomplete command." on device 192.168.100.1
+If error occurs during execution of any of commands, function should output a message to standard output stream with information about: which error occurred, which command caused it and on which device. For example: "logging" command was executed with error "Incomplete command." on device 192.168.100.1
 
 Errors should always be displayed regardless of *verbose* parameter value. However, *verbose* still has to control whether the message will be displayed:
 Connecting to 192.168.100.1...
@@ -225,14 +225,14 @@ Lists of command lists with and without errors:
 
     commands = commands_with_errors + correct_commands
 
-Task 19.2c
+Task 18.2c
 ~~~~~~~~~~~~~
 
-Copy send_config_commands() function from 19.2b task and redo it in the following way: If you have an error when executing a command, ask user if you need to execute other commands.
+Copy send_config_commands() function from 18.2b task and redo it in the following way: If you have error when executing a command, ask user if you need to execute other commands.
 
 Response options [y]/n:
 
-* y - to execute other commands. This is the default, so pressing any combination is perceived as 'y'
+* y - to execute other commands. This is the default, so pressing any combination is perceived as "y"
 * n or no - do not execute other commands
 
 Function send_config_commands() should still return a tuple with two dictionaries:
@@ -275,7 +275,7 @@ Example of function execution:
                             '\n'
                             'R1(config)#'})
 
-Lists of command lists with and without errors:
+Lists of commands with and without errors:
 
 .. code:: python
 
@@ -284,7 +284,7 @@ Lists of command lists with and without errors:
 
     commands = commands_with_errors + correct_commands
 
-Task 19.3
+Task 18.3
 ~~~~~~~~~~~~
 
 Create send_commands() function (netmiko is used to connect via SSH).
@@ -299,15 +299,15 @@ Depending on which argument is passed, the function calls different functions wi
 
 Then follows the combination of argument and corresponding fucntion:
 
-* show - send_show_command() function from task 19.1
-* config - send_config_commands() function from task 19.2
+* show - send_show_command() function from task 18.1
+* config - send_config_commands() function from task 18.2
 
 Function returns string with execution results of command or commands.
 
-Check function:
+Check function with:
 
-* with *commands* list of commands
-* *command* command
+* *commands* - list of commands
+* *command* - command
 
 Example of function execution:
 
