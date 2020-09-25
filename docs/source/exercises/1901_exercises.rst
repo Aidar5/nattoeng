@@ -7,7 +7,7 @@ Tasks
 
 .. include:: ./pytest.rst
 
-Task 20.1
+Task 19.1
 ~~~~~~~~~~~~
 
 Create ping_ip_addresses() function that checks if IP addresses are pingable. Checking IP addresses should be performed in parallel in different threads.
@@ -30,7 +30,7 @@ To check availability of IP address, use ping.
 
     concurrent.futures hint: If you need to ping multiple IP addresses in different threads, you need to create a function that pings one IP address and then run this function in different threads for different IP addresses with concurrent.futures (ping_ip_addresses() function should do this).
 
-Task 20.2
+Task 19.2
 ~~~~~~~~~~~~
 
 Create send_show_command_to_devices() function that sends the same show command to different devices in parallel threads and then writes output of commands to a file. Output from devices in file can be in any order.
@@ -65,7 +65,7 @@ You can create any additional functions to complete task.
 
 Check function with devices from device.yaml file
 
-Task 20.3
+Task 19.3
 ~~~~~~~~~~~~
 
 Create send_command_to_devices() function that sends different show commands to different devices in parallel threads and then writes the output of commands to a file. Output from devices in file can be in any order.
@@ -112,7 +112,7 @@ Check function with devices from device.yaml file and commands dictionary
         "192.168.100.2": "sh int desc",
     }
 
-Task 20.3a
+Task 19.3a
 ~~~~~~~~~~~~~
 
 Create send_command_to_devices() function that sends a list of specified show commands to different devices in parallel threads and then writes the output of commands to a file. Output from devices in file can be in any order.
@@ -172,7 +172,7 @@ Check function with devices from device.yaml file and *commands* dictionary
     }
 
 
-Task 20.4
+Task 19.4
 ~~~~~~~~~~~~
 
 Create send_commands_to_devices() function that sends show or config command to different devices in parallel threads and then writes output to a file.
