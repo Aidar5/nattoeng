@@ -4,7 +4,7 @@
 
 .. _concurrent_connections_index:
 
-20. Concurent connections to multiple devices
+19. Concurent connections to multiple devices
 ======================================================
 
 When you have to poll many devices, the connections will take quite a long time to connect in turn. Of course, this will be faster than manual connection but we’d like to get response as soon as possible.
