@@ -7,10 +7,10 @@ Tasks
 
 .. include:: ./pytest.rst
 
-Task 18.1
+Task 25.1
 ~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
 Two scripts need to be created:
 
@@ -99,10 +99,10 @@ Example of script execution after data has been added to table (order in which d
 
 Both scripts are called without argument.
 
-Task 18.2
+Task 25.2
 ~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
 In this task you need to create get_data.py script.
 
@@ -114,7 +114,7 @@ Script can be passed arguments and depending on arguments, different information
 * with two arguments, output information from *dhcp* table which corresponds to field and value
 * with any other number of arguments, output message that script supports only two or zero arguments
 
-Database file can be copied from task 18.1.
+Database file can be copied from task 25.1.
 
 Examples of output for different amount and value of arguments:
 
@@ -159,14 +159,14 @@ Examples of output for different amount and value of arguments:
     $ python get_data.py ip vlan 10
     Please enter two or zero arguments
 
-Task 18.3
+Task 25.3
 ~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
 In past tasks information was added to empty database. In this task, the situation when database already has information is considered.
 
-Copy add_data.py script from task 18.1 and try to run it again on existing database.
+Copy add_data.py script from task 25.1 and try to run it again on existing database.
 The result should be:
 
 ::
@@ -184,7 +184,7 @@ The result should be:
     When adding data: ('00:09:BC:3F:A6:50', '192.168.100.100', '1', 'FastEthernet0/7', 'sw1') Error occurred: UNIQUE constraint failed: dhcp.mac
     ... (output ommited)
 
-When creating a database schema, it was explicitly stated that MAC address field should be unique. Therefore, when an entry with the same MAC address is added an exception (error) occurs. In task 18.1, exception is processed and message is displayed on standard output stream.
+When creating a database schema, it was explicitly stated that MAC address field should be unique. Therefore, when an entry with the same MAC address is added an exception (error) occurs. In task 25.1, exception is processed and message is displayed on standard output stream.
 
 In this task it is considered that information is periodically read from switches and written into files. After that, information from files should be transmitted to database. However, there may be changes in new data: MAC is missing, MAC has moved to another port/vlan, new MAC has appeared, etc.
 
@@ -272,12 +272,12 @@ Data should look like this (the order of lines can be any)
     -----------------  ---------------  --  ----------------  ---  -
 
 
-Task 18.4
+Task 25.4
 ~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
-Copy get_data file from 18.2 task. Add *active* column to script that we added to 18.3 task.
+Copy get_data file from 25.2 task. Add *active* column to script that we added to 25.3 task.
 
 Now, when information is requested, active entries should be displayed first and then inactive entries. If there are no inactive entries, do not display title "Inactive entries".
 
@@ -341,12 +341,12 @@ Examples of resulting script execution:
     00:A9:33:44:A6:50  10.1.10.77  10  FastEthernet0/4  sw2  1
     -----------------  ----------  --  ---------------  ---  -
 
-Task 18.5
+Task 25.5
 ~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
-After completing tasks 18.1 - 18.5 information about inactive entries is left in database. And if some MAC address has not appeared in new entries, the entry with it may remain in database forever.
+After completing tasks 25.1 - 25.5 information about inactive entries is left in database. And if some MAC address has not appeared in new entries, the entry with it may remain in database forever.
 
 Although it may be useful to see where MAC address was last, it is not very useful to keep this information permanently.
 
@@ -382,12 +382,12 @@ After this command such entry will appear in database:
     00:09:BC:3F:A6:50  192.168.100.100  1      FastEthernet0/7  sw1      0        2019-03-08 11:26:56
 
 
-Task 18.5a
+Task 25.5a
 ~~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
-After completing task 18.5, *dhcp* table has a new field *last_active*.
+After completing task 25.5, *dhcp* table has a new field *last_active*.
 
 Update add_data.py script to remove all entries that were active more than 7 days ago.
 
@@ -409,10 +409,10 @@ Note that you can compare lines with date that are written in database.
     #print(now > week_ago)
     #print(str(now) > str(week_ago))
 
-Task 18.6
+Task 25.6
 ~~~~~~~~~~~~
 
-There are no tests for tasks of section 18!
+There are no tests for tasks of section 25!
 
 There is a parse_dhcp_snooping.py file in this task. File parse_dhcp_snooping.py should not be changed.
 
