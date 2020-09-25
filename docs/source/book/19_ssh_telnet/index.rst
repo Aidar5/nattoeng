@@ -51,4 +51,4 @@ The parameters used in the section:
    paramiko
    netmiko
    further_reading
-   ../../exercises/19_exercises
+   ../../exercises/18_exercises
