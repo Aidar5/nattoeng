@@ -12,6 +12,6 @@ Although OOP is the basis of how everything works in Python, it is not necessary
 .. toctree::
    :maxdepth: 1
 
-   23_oop_basics/index.rst
-   24_oop_special_methods/index.rst
-   25_oop_inheritance/index.rst
+   22_oop_basics/index.rst
+   23_oop_special_methods/index.rst
+   24_oop_inheritance/index.rst
