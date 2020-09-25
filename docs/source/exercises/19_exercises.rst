@@ -28,7 +28,7 @@ To check availability of IP address, use ping.
 
 .. note::
 
-    concurrent.futures hint: If you need to ping multiple IP addresses in different threads, you need to create a function that pings one IP address and then run this function in different threads for different IP addresses with concurrent.futures (ping_ip_addresses() function should do this).
+    concurrent.futures hint: if you need to ping multiple IP addresses in different threads, you need to create a function that pings one IP address and then run this function in different threads for different IP addresses with concurrent.futures (ping_ip_addresses() function should do this).
 
 Task 19.2
 ~~~~~~~~~~~~
