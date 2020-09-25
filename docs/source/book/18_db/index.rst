@@ -4,7 +4,7 @@
 
 .. _db_index:
 
-18. Database operations
+25. Database operations
 ============================
 
 
@@ -24,4 +24,4 @@ The use of databases is another way of storing information. Databases are useful
    sql_basics
    sqlite3
    further_reading
-   ../../exercises/18_exercises
+   ../../exercises/25_exercises
