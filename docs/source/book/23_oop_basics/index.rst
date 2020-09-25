@@ -4,7 +4,7 @@
 
 .. _oop_basics_index:
 
-23. OOP basics
+22. OOP basics
 ============================
 
 .. toctree::
@@ -17,4 +17,4 @@
    init_method
    class_namespace
    class_variables
-   ../../exercises/23_exercises.rst
+   ../../exercises/22_exercises.rst
