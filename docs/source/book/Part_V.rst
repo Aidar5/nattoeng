@@ -6,12 +6,12 @@ In this part, the following topics are discussed:
 -  SSH and Telnet connection
 -  simultaneous connection to multiple devices
 -  creating configuration templates with Jinja2
--  •	command output processing with TextFSM
+-  command output processing with TextFSM
 
 .. toctree::
    :maxdepth: 1
 
-   19_ssh_telnet/index.rst
-   20_concurrent_connections/index.rst
-   21_jinja2/index.rst
-   22_textfsm/index.rst
+   18_ssh_telnet/index.rst
+   19_concurrent_connections/index.rst
+   20_jinja2/index.rst
+   21_textfsm/index.rst
